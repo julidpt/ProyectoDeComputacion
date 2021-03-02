@@ -1,1 +1,14 @@
-<app-navbar></app-navbar>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="home" style="margin-top:1%;margin-left:5%"><h1>Proyecto de Computación</h1></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav" style="margin-top:1%;margin-left:22%">
+        <a class="nav-item nav-link active" href="home">Home</a>
+        <a class="nav-item nav-link active" href="sentiment">Análisis del Sentimiento</a>
+      </div>
+    </div>
+  </nav>
+  
+  <router-outlet></router-outlet>
