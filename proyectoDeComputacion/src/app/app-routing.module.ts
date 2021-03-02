@@ -6,7 +6,7 @@ import {SentimentComponent} from './components/sentiment/sentiment.component';
 
 const routes: Routes = [
   {
-    path:'home',
+    path:'',
     component:HomeComponent
   },
   {
