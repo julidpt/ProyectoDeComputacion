@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@1&display=swap");
 
 body {
-    background-color: lightblue;
-  }
+  background-color: lightblue;
+}
+
+h1 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 120%;
+}
