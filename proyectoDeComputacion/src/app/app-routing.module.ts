@@ -6,17 +6,19 @@ import {SentimentComponent} from './components/sentiment/sentiment.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '', 
     component: HomeComponent
   },
   {
-    path:'sentiment',
-    component:SentimentComponent
-  }
+    path: 'sentiment', 
+    component: SentimentComponent
+  },
+  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
