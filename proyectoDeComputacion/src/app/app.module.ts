@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
 import { SentimentComponent } from './components/sentiment/sentiment.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SentimentComponent
+    SentimentComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
