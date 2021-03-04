@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SentimentComponent } from './components/sentiment/sentiment.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    HttpClientModule,
+    FormsModule,
     NgbModule
   ],
   providers: [],
