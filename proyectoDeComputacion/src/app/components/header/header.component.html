@@ -1,9 +1,16 @@
-<nav class="navbar nav-pills navbar-expand-lg col-xs-12 navbar navbar-light">
-    <a class="navbar-brand col-md-9 navbarPadding" routerLink="/home"><h1 class="titulo">Proyecto de Computación</h1></a>
-    <div class="col-md-3" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link col-xs-6" routerLink="/home" routerLinkActive="router-link-active">Inicio</a>
-        <a class="nav-item nav-link col-xs-6" routerLink="/sentiment" routerLinkActive="router-link-active">Análisis del Sentimiento</a>
-      </div>
-    </div>
+<nav class="navbar navbar-expand-lg navbar navbar-light">
+  <a class="navbar-brand" routerLink="/home">Proyecto de Computación</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="mr-auto collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="router-link-active">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sentiment" routerLinkActive="router-link-active">Análisis del Sentimiento</a>
+      </li> 
+    </ul>
+  </div>
 </nav>
