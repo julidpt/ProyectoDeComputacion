@@ -38,16 +38,8 @@ export class SentimentComponent implements OnInit {
         this.textitoresultante = "Texto Negativo"
       }
       }
-      
     )
-    
   }
-
-
-  
-
-
-
 }
 
 
