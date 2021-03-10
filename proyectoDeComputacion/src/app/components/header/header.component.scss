@@ -1,3 +1,5 @@
+$border-bottom: 0.080em solid grey;
+
 .router-link-active{
     font-weight: bold;
     position: center;
@@ -8,7 +10,7 @@
 }
 
 nav{
-    border-bottom: 0.080em solid grey;
+    border-bottom: $border-bottom;
 }
 
 .mr-auto{
