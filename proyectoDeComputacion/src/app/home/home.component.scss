@@ -3,7 +3,7 @@ $text-align: center;
 h1 {
   font-size: 200%;
   margin-top: 5%;
-  text-align: center;
+  text-align: $text-align;
   font-weight: bold;
 }
 
