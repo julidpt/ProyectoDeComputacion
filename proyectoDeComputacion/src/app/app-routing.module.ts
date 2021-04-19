@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { PuebloComponent } from './pueblo/pueblo.component';
 import { SentimentComponent } from './sentiment/sentiment.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdministradorComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 
