@@ -15,6 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PuebloComponent } from './pueblo/pueblo.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { UsuarioComponent } from './usuario/usuario.component';
     UsuarioComponent,
     PuebloComponent,
     AdministradorComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
