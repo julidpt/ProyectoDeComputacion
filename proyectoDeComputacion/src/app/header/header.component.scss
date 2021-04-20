@@ -1,16 +1,28 @@
-$border-bottom: 0.080em solid grey;
+.flex-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 .router-link-active{
     font-weight: bold;
     position: center;
 }
 
-.navbar-brand{
-    margin-left: 5%;
-}
-
 nav{
-    border-bottom: $border-bottom;
+    box-shadow: 0 0.01em 1em #adadad;
 }
 
 .mr-auto{

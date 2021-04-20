@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar navbar-light">
+<!-- <nav class="navbar navbar-expand-lg navbar navbar-light">
   <a class="navbar-brand" routerLink="/">Proyecto de Computación</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,5 +15,30 @@
         <a class="nav-link" routerLink="/login" routerLinkActive="router-link-active">Login</a>
       </li> 
     </ul>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-light flex-nav">
+  <a class="navbar-brand" routerLink="/">Proyecto de Computación</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse flex-input" id="navbarSupportedContent">
+    <!-- <ul class="navbar-nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="router-link-active">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sentiment" routerLinkActive="router-link-active">Análisis del Sentimiento</a>
+      </li> 
+    </ul> -->
+    <form class="nav-item form-inline  flex-search">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduce el pueblo">
+      <button class="btn btn-outline-success" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+    <div class="nav-item flex-profile">
+      <i class="bi bi-person"></i>
+    </div>
   </div>
 </nav>
