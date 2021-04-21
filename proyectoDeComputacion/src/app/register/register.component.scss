@@ -3,7 +3,6 @@
 }
 
 i {
-    margin-left: 43%;
     font-size: 6em;
 }
 
@@ -24,13 +23,8 @@ button {
     width: 100%;
 }
 
-a {
-    margin-left: 30%;
-}
-
 @media (max-width: 600px) {
     a {
         font-size: 13px;
-        margin-left: 5%;
       }
   }
