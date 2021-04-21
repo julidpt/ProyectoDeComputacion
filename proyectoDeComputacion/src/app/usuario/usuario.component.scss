@@ -1,4 +1,15 @@
 .bi-person {
     font-size: 10em;
-    margin-left: 10%;
+}
+
+.vertical {
+    border-left: 1px solid black;
+    margin-top: 20%;
+    height: 75vh;
+}
+
+@media (max-width: 800px) {
+    .vertical {
+        display: none;
+    }
 }

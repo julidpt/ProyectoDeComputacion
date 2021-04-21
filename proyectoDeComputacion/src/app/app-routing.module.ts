@@ -18,7 +18,7 @@ const routes: Routes = [
     component: SentimentComponent
   },
   {
-    path: 'usuario',
+    path: 'user',
     component: UsuarioComponent
   },
   {
