@@ -31,14 +31,16 @@
         <a class="nav-link" routerLink="/sentiment" routerLinkActive="router-link-active">Análisis del Sentimiento</a>
       </li> 
     </ul> -->
-    <form class="nav-item form-inline  flex-search">
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduce el pueblo">
-      <button class="btn btn-outline-success" type="submit">
+    <form class="nav-item form-inline flex-search">
+      <input type="text" class="form-control" placeholder="Introduce el pueblo">
+      <button class="btn btn-outline-primary" type="submit">
         <i class="bi bi-search"></i>
       </button>
     </form>
     <div class="nav-item flex-profile">
-      <i class="bi bi-person"></i>
+      <a routerLink="/login" routerLinkActive="is-active">
+        <i class="bi bi-person"></i>
+      </a>
     </div>
   </div>
 </nav>

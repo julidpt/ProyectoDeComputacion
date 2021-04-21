@@ -1,49 +1,16 @@
-<form class="form-horizontal" action='' method="POST">
-    <fieldset>
-      <div id="legend">
-        <legend class="">Register</legend>
-      </div>
-      <div class="control-group">
-        <!-- Username -->
-        <label class="control-label"  for="username">Username</label>
-        <div class="controls">
-          <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-          <p class="help-block">Username can contain any letters or numbers, without spaces</p>
-        </div>
-      </div>
-   
-      <div class="control-group">
-        <!-- E-mail -->
-        <label class="control-label" for="email">E-mail</label>
-        <div class="controls">
-          <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-          <p class="help-block">Please provide your E-mail</p>
-        </div>
-      </div>
-   
-      <div class="control-group">
-        <!-- Password-->
-        <label class="control-label" for="password">Password</label>
-        <div class="controls">
-          <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-          <p class="help-block">Password should be at least 4 characters</p>
-        </div>
-      </div>
-   
-      <div class="control-group">
-        <!-- Password -->
-        <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-        <div class="controls">
-          <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
-          <p class="help-block">Please confirm password</p>
-        </div>
-      </div>
-   
-      <div class="control-group">
-        <!-- Button -->
-        <div class="controls">
-          <button class="btn btn-success">Register</button>
-        </div>
-      </div>
-    </fieldset>
-  </form>
+<div class="container">
+  <div class="col-md-12">
+    <i class="bi bi-person"></i>
+    <br>
+    <label for="uname"><b>Usuario</b></label>
+    <input type="text" placeholder="Introduce usuario" name="uname" required>
+    <label for="psw"><b>Contraseña</b></label>
+    <input type="password" placeholder="Introduce contraseña" name="psw" required>
+    <label for="uname"><b>Nombre</b></label>
+    <input type="text" placeholder="Introduce nombre" name="uname" required>
+    <label for="apellidos"><b>Apellidos</b></label>
+    <input type="text" placeholder="Introduce apellidos" name="apellidos" required>
+    <button class="btn btn-primary" type="submit">Registro</button>
+    <a routerLink="/login"> ¿Ya tienes una cuenta? Inicia Sesión </a>
+  </div>
+</div>
