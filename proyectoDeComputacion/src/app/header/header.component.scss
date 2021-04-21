@@ -21,7 +21,18 @@ nav {
     box-shadow: 0 0.01em 1em #adadad;
 }
 
-.flex-profile {
-    margin-left: 43%;
+.d-inline-block {
+    margin-left: 20%;
     font-size: 2em;
+}
+
+@media (max-width: 600px) {
+    .flex-search {
+        margin-top: 2%;
+        margin-left: 5%;
+    }
+    .fd-inline-block {
+        margin-left: 85%;
+        margin-top: -8%;
+    }
 }
