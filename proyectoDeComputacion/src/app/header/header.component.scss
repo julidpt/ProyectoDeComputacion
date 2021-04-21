@@ -6,12 +6,6 @@ button {
     margin-left: 1%;
 }
 
-// .flex-nav {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-around;
-// }
-
 .flex-search {
     margin-left: 16%;
     display: flex;
@@ -19,23 +13,13 @@ button {
     justify-content: space-around;
 }
 
-// .flex-input {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-around;
-// }
-
 .is-active{
-    color: grey;
+    color: #0d6efd;
 }
 
 nav {
     box-shadow: 0 0.01em 1em #adadad;
 }
-
-// .mr-auto{
-//     margin-left: 50%;
-// }
 
 .flex-profile {
     margin-left: 43%;
