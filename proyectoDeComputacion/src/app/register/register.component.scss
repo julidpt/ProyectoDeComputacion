@@ -1,31 +1,11 @@
-.container {
-    width: 50%;
+section {
+    margin-top: 5%
 }
 
-i {
-    font-size: 6em;
+.bi-person {
+    font-size: 3em;
 }
 
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.form-control.login-user {
+    border: 0px solid white !important;
 }
-
-button {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-    margin-bottom: 2%;
-}
-
-@media (max-width: 600px) {
-    a {
-        font-size: 13px;
-      }
-  }
