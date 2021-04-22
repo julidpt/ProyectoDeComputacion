@@ -19,7 +19,11 @@ export class RegisterComponent implements OnInit {
     var email = <HTMLInputElement>document.getElementById('email');
     var password = <HTMLInputElement>document.getElementById('password');
 
-    console.log(JSON.stringify({ Nombre: name.value, Apellidos: apellidos.value, Telefono: phone.value, Email: email.value, Password: password.value }));
+    var result = JSON.stringify({ Nombre: name.value, Apellidos: apellidos.value, Telefono: phone.value, Email: email.value, Password: password.value })
+
+    window.alert("¡Registrado con éxito!" + "\n" + result);
+
+    window.location.href = "/user";
 
   }
 
