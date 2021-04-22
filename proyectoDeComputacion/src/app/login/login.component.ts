@@ -12,4 +12,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit() {
+    var email = <HTMLInputElement>document.getElementById('email');
+    var password = <HTMLInputElement>document.getElementById('password');
+
+    console.log(email.value);
+    console.log(password.value);
+  
+    if (email.value !== null && password.value !== null) {
+      window.alert('¡ERROR!');
+    } else {
+      window.location.href = '/user';
+    }
+
+  }
+
 }

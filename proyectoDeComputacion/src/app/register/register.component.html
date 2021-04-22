@@ -8,7 +8,15 @@
               <form>
                 <h1 class="h3 mb-3 font-weight-normal"><i class="bi bi-person"></i></h1>
                 <div class="form-group">
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Nombre" required>
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" required>
+                </div>
+                <br>
+                <div class="form-group">
+                  <input type="text" id="phone" name="name" class="form-control" placeholder="Teléfono" required>
                 </div>
                 <br>
                 <div class="form-group">
@@ -19,9 +27,9 @@
                   <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-lg btn-primary btn-block"> Register </button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="submit()"> Register </button>
                 <div class="form-group">
-                  <a routerLink="/login" class="form-control login-user"> ¿Ya tienes una cuenta? </a>
+                <a routerLink="/login" class="form-control login-user">¿Ya tienes cuenta?</a>
                 </div>
               </form>
             </div>
