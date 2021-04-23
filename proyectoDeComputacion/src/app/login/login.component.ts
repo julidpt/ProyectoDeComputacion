@@ -29,16 +29,6 @@ export class LoginComponent implements OnInit {
       }
     )
 
-
-    // var email = <HTMLInputElement>document.getElementById('email');
-    // var password = <HTMLInputElement>document.getElementById('password');
-
-    // var result = JSON.stringify({ Email: email.value, Password: password.value });
-
-    // window.alert("Bienvenido " + email.value + "\n" + result);
-
-    // window.location.href = "/user";
-
   }
 
 }
