@@ -1,4 +1,5 @@
 $font-size: 1.5em;
+$margin-footer: 8%;
 
 .navbar {
     margin-top: 20%;
@@ -7,24 +8,14 @@ $font-size: 1.5em;
     bottom: 0;
     width: 100%;
 }
-  
-.navbar a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
 
 #left {
-    margin-left: 5%;
+    margin-left: $margin-footer;
     font-size: $font-size;
 }
 
 #right {
-    margin-right: 5%;
+    margin-right: $margin-footer;
     font-size: $font-size;
 }
 
