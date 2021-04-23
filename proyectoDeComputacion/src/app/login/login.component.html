@@ -8,11 +8,11 @@
               <form>
                 <h1 class="h3 mb-3 font-weight-normal"><i class="bi bi-person"></i></h1>
                 <div class="form-group">
-                  <input type="email" id="email" name="email" class="form-control" class="form-control" placeholder="Email" required>
+                  <input type="email" id="email" name="email" [(ngModel)]="Email" class="form-control" placeholder="Email" required>
                 </div>
                 <br>
                 <div class="form-group">
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                  <input type="password" id="password" [(ngModel)]="Password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="submit()"> Login </button>
