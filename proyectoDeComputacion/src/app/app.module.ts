@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -38,6 +39,7 @@ import { RegisterComponent } from './register/register.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [],

@@ -1,30 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
 
-  constructor() { }
+export class RegisterComponent implements OnInit {
+  firstName: string = '';
+  lastName: string = '';
+  Phone: string = '';
+  Email: string = '';
+  Password: string = '';
+  json: any = false;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
   submit() {
-    var name = <HTMLInputElement>document.getElementById('name');
-    var apellidos = <HTMLInputElement>document.getElementById('apellidos');
-    var phone = <HTMLInputElement>document.getElementById('phone');
-    var email = <HTMLInputElement>document.getElementById('email');
-    var password = <HTMLInputElement>document.getElementById('password');
+    this.http.post(environment.apiSentimentUrl, { 
+      Name: this.firstName,
+      lastName: this.lastName,
+      Phone: this.Phone,
+      Email: this.Email,
+      Password: this.Password
 
-    var result = JSON.stringify({ Nombre: name.value, Apellidos: apellidos.value, Telefono: phone.value, Email: email.value, Password: password.value })
-
-    window.alert("¡Registrado con éxito!" + "\n" + result);
-
-    window.location.href = "/user";
-
+    }).toPromise().then(response => {
+      console.log(response);
+      this.json = response;
+      }
+    )
   }
 
 }

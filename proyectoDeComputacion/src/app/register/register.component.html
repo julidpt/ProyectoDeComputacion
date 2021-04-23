@@ -8,23 +8,23 @@
               <form>
                 <h1 class="h3 mb-3 font-weight-normal"><i class="bi bi-person"></i></h1>
                 <div class="form-group">
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Nombre" required>
+                  <input type="text" formControlName="firstName" [(ngModel)]="firstName" id="name" name="name" class="form-control" placeholder="Nombre" required>
                 </div>
                 <br>
                 <div class="form-group">
-                  <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" required>
+                  <input type="text" id="apellidos" formControlName="lastName" [(ngModel)]="lastName" name="apellidos" class="form-control" placeholder="Apellidos" required>
                 </div>
                 <br>
                 <div class="form-group">
-                  <input type="text" id="phone" name="name" class="form-control" placeholder="Teléfono" required>
+                  <input type="text" id="phone" formControlName="Phone" name="name" [(ngModel)]="Phone" class="form-control" placeholder="Teléfono" required>
                 </div>
                 <br>
                 <div class="form-group">
-                  <input type="email" id="email" name="email" class="form-control" class="form-control" placeholder="Email" required>
+                  <input type="email" id="email" name="email" formControlName="Email" [(ngModel)]="Email" class="form-control" class="form-control" placeholder="Email" required>
                 </div>
                 <br>
                 <div class="form-group">
-                  <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                  <input type="password" id="password" formControlName="Password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="submit()"> Register </button>
