@@ -2,7 +2,21 @@ $font-size: 1.5em;
 
 .navbar {
     margin-top: 20%;
+    overflow: hidden;
+    background-color: #FBFAFA;
     position: relative;
+    bottom: 0;
+    width: 100%;
+}
+  
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 #left {
@@ -10,23 +24,19 @@ $font-size: 1.5em;
     font-size: $font-size;
 }
 
-.navbar-brand {
-    margin-left: 3%;
-}
-
 #right {
     margin-right: 5%;
     font-size: $font-size;
 }
 
-@media (max-width: 600px) {
-    #left {
-        font-size: 18px;
-      }
-    .navbar-brand {
-        font-size: 16px;
-    }
-    #right {
-        font-size: 18px;
-    }
-  }
+// @media (max-width: 600px) {
+//     #left {
+//         font-size: 18px;
+//       }
+//     .navbar-brand {
+//         font-size: 16px;
+//     }
+//     #right {
+//         font-size: 18px;
+//     }
+//   }
