@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministradorComponent } from './administrador/administrador.component';
+import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
-import { PuebloComponent } from './pueblo/pueblo.component';
 import { SentimentComponent } from './sentiment/sentiment.component';
-import { UsuarioComponent } from './usuario/usuario.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { TownComponent } from './town/town.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -19,15 +19,15 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    component: UsuarioComponent
+    component: UserComponent
   },
   {
-    path: 'pueblo',
-    component: PuebloComponent
+    path: 'town',
+    component: TownComponent
   },
   {
     path: 'admin',
-    component: AdministradorComponent
+    component: AdminComponent
   },
   {
     path: 'login',
