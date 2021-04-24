@@ -13,11 +13,11 @@ import { HomeComponent } from './home/home.component';
 import { SentimentComponent } from './sentiment/sentiment.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { PuebloComponent } from './pueblo/pueblo.component';
-import { AdministradorComponent } from './administrador/administrador.component';
-import { UsuarioComponent } from './usuario/usuario.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { TownComponent } from './town/town.component';
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +26,12 @@ import { RegisterComponent } from './register/register.component';
     SentimentComponent,
     HeaderComponent,
     FooterComponent,
-    UsuarioComponent,
-    PuebloComponent,
-    AdministradorComponent,
-    UsuarioComponent,
+    UserComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TownComponent,
+    UserComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
