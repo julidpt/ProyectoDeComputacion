@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       }
     )
 
+    window.location.href = '/user';
+
   }
 
 }
