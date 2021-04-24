@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { baseUrl, environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sentiment',
@@ -21,7 +21,7 @@ export class SentimentComponent implements OnInit {
   }
 
   makeRequest() {
-    this.http.post(environment.apiSentimentUrl, { 
+    this.http.post(`${baseUrl}sentiment`, { 
       cuerpo: this.textareaContent
     }).toPromise().then(response => {
       console.log(response);

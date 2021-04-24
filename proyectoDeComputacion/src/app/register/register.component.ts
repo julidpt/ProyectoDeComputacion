@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { baseUrl } from 'src/environments/environment';
 import { sha256, sha224 } from 'js-sha256';
 
 @Component({
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
-    this.http.post(environment.apiRegisterUrl, { 
+    this.http.post(`${baseUrl}register`, { 
       Name: this.firstName,
       lastName: this.lastName,
       Phone: this.Phone,
