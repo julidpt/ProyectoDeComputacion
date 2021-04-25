@@ -12,4 +12,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  exit(){
+    window.alert("¡Has cerrado sesión correctamente!");
+  }
+
 }

@@ -16,7 +16,7 @@
           <button ngbDropdownItem routerLink="/sentiment" routerLinkActive="is-active"><i class="bi bi-emoji-smile"></i> Análisis del Sentimiento </button>
           <button ngbDropdownItem routerLink="/login" routerLinkActive="is-active"><i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión </button>
           <button ngbDropdownItem routerLink="/register" routerLinkActive="is-active"><i class="bi bi-pencil-square"></i> Registro </button>
-          <button ngbDropdownItem routerLink="#"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión </button>
+          <button ngbDropdownItem routerLink="/" (click)="exit()"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión </button>
         </div>
       </div>
     </div>
