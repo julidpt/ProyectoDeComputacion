@@ -7,6 +7,10 @@
             <div class="card-body text-center">
               <form [formGroup]="form" (ngSubmit)="submit()">
                 <h1 class="h3 mb-3 font-weight-normal"><i class="bi bi-person"></i></h1>
+                <!-- <div class="alert alert-danger" role="alert" *ngIf="emptyFields()">
+                  email y/o contraseña incorrectos
+                </div> -->
+                <div class="alert alert-light" role="alert">{{alert}}</div>
                 <div class="form-group">
                   <input formControlName="email" type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                 </div>
@@ -15,7 +19,7 @@
                   <input formControlName="password" type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-lg btn-primary btn-block"> Login </button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="emptyFields()"> Login </button>
                 <div class="form-group">
                   <a routerLink="/register" class="form-control login-user"> ¿No tienes cuenta? </a>
                 </div>

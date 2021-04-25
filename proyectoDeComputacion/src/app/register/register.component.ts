@@ -20,10 +20,27 @@ export class RegisterComponent implements OnInit {
     phone: new FormControl('', Validators.required),
   });
   json: any = false;
+  alert: any;
 
   constructor(private http: HttpClient, private route: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  emptyFields() {    
+    if (this.form.controls['email'].value == "") {
+      this.alert = "rellene todos los campos";
+    } else if (this.form.controls['password'].value == "") {
+      this.alert = "rellene todos los campos";
+    } else if (this.form.controls['name'].value == "") {
+      this.alert = "rellene todos los campos";
+    } else if (this.form.controls['lastNames'].value == "") {
+      this.alert = "rellene todos los campos";
+    } else if (this.form.controls['phone'].value == "") {
+      this.alert = "rellene todos los campos";
+    } else {
+      this.alert = ("Bienvenido " + this.form.controls['email'].value);
+    }
   }
 
   submit() {
@@ -41,7 +58,7 @@ export class RegisterComponent implements OnInit {
     }).toPromise().then(response => {
       console.log(response);
       this.json = response;
-      this.route.navigate['login']
+      this.route.navigate['/login']
       }
     )
   }

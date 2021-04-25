@@ -9,33 +9,48 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class AuthService {
+  api = `${baseUrl}login`;
   user: BehaviorSubject<any> = new BehaviorSubject(null);
   helper = new JwtHelperService();
 
   constructor() { }
 
-  userLogin(userPayload) {
-    console.log(userPayload);
-    const accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QiLCJzdWIiOjIsImlhdCI6MTYwNDMwOTc0OSwiZXhwIjoxNjA0MzA5ODA5fQ.jHez9kegJ7GT1AO5A2fQp6Dg9A6PBmeiDW1YPaCQoYs";
-    const refreshToken = "newtoken";
-    console.log(1);
+  // loadUser() {
+  //   if (!this.user) {
+  //     const accesstoken = localStorage.getItem("accestoken");
 
-    localStorage.setItem("accesstoken", accessToken);
-    localStorage.setItem("refershtoken", refreshToken);
-    console.log(1);
+  //     if (accesstoken) {
+  //       const decryptedUser = this.helper.decodeToken(accesstoken);
 
-    const decryptedUser = this.helper.decodeToken(accessToken);
-    console.log(decryptedUser);
+  //       const data = {
+  //         accessToken : accesstoken,
+  //         refreshToken : localStorage.getItem("refreshtoken"),
+  //         username : decryptedUser.username,
+  //         userid : decryptedUser.sub,
+  //         tokenExpiration : decryptedUser.exp
+  //       };
 
-    const data = {
-      accessToken : accessToken,
-      refreshToken : refreshToken,
-      username : decryptedUser.username,
-      userid : decryptedUser.sub,
-      tokenExpiration : decryptedUser.exp,
+  //       this.user.next()
+  //     }
+  //   }
+  // }
 
-    }
+  // userLogin(userPayload) {
+  //   console.log(userPayload);
+  //   const accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QiLCJzdWIiOjIsImlhdCI6MTYwNDMwOTc0OSwiZXhwIjoxNjA0MzA5ODA5fQ.jHez9kegJ7GT1AO5A2fQp6Dg9A6PBmeiDW1YPaCQoYs";
+  //   const refreshToken = "newtoken";
 
-    this.user.next(data);
-  }
+  //   localStorage.setItem("accesstoken", accessToken);
+  //   localStorage.setItem("refershtoken", refreshToken);
+
+  //   const data = {
+  //     accessToken : accessToken,
+  //     refreshToken : refreshToken,
+  //     username : decryptedUser.username,
+  //     userid : decryptedUser.sub,
+  //     tokenExpiration : decryptedUser.exp
+  //   }
+
+  //   this.user.next(data);
+  // }
 }

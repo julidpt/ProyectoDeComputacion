@@ -20,11 +20,17 @@ $font-size-media: 0.6em;
     font-size: $font-size;
 }
 
-@media (max-width: 600px) {
-    a {
-        font-size: $font-size-media;
-    }
-    #dropdownBasic2 {
-        font-size: $font-size-media;
-    }
+@media (max-width: 800px) {
+    // a {
+    //     font-size: $font-size-media;
+    // }
+    // .btn-outline-dark {
+    //     font-size: $font-size-media;
+    // }
+    // .bi-github {
+    //     font-size: $font-size-media;
+    // }
+    // .bi-linkedin {
+    //     font-size: $font-size-media;
+    // }
   }
