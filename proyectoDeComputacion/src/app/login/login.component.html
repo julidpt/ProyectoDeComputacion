@@ -5,17 +5,17 @@
         <div class="card_register">
           <div class="card">
             <div class="card-body text-center">
-              <form [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+              <form [formGroup]="form" (ngSubmit)="submit()">
                 <h1 class="h3 mb-3 font-weight-normal"><i class="bi bi-person"></i></h1>
                 <div class="form-group">
-                  <input type="email" id="email" name="email" [(ngModel)]="Email" class="form-control" placeholder="Email" formControlName="emailField" required>
+                  <input formControlName="email" type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                 </div>
                 <br>
                 <div class="form-group">
-                  <input type="password" id="password" [(ngModel)]="Password" name="password" class="form-control" placeholder="Password" formControlName="passwField" required>
+                  <input formControlName="password" type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="loginProcess()"> Login </button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block"> Login </button>
                 <div class="form-group">
                   <a routerLink="/register" class="form-control login-user"> ¿No tienes cuenta? </a>
                 </div>

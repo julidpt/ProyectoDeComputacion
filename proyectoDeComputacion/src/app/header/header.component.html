@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light flex-nav">
+<div class="navbar navbar-expand-lg sticky-top navbar-light flex-nav">
   <div class="container">
     <div class="col-md-4 title">
       <a class="navbar-brand" routerLink="/">Proyecto de Computación</a>
@@ -13,6 +13,7 @@
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle><i class="bi bi-person"></i> Usuario </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem routerLink="/sentiment" routerLinkActive="is-active"><i class="bi bi-emoji-smile"></i> Análisis del Sentimiento </button>
           <button ngbDropdownItem routerLink="/login" routerLinkActive="is-active"><i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión </button>
           <button ngbDropdownItem routerLink="/register" routerLinkActive="is-active"><i class="bi bi-pencil-square"></i> Registro </button>
           <button ngbDropdownItem routerLink="#"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión </button>

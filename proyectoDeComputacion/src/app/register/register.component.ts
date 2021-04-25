@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from 'src/environments/environment';
-import { sha256, sha224 } from 'js-sha256';
+import { sha256 } from 'js-sha256';
+import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,30 +12,36 @@ import { sha256, sha224 } from 'js-sha256';
 })
 
 export class RegisterComponent implements OnInit {
-  firstName: string = '';
-  lastName: string = '';
-  Phone: string = '';
-  Email: string = '';
-  Password: string = '';
+  form = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
+    lastNames: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
+  });
   json: any = false;
 
-  
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
   submit() {
+    console.log(this.form.controls['name'].value);
+    console.log(this.form.controls['lastNames'].value);
+    console.log(this.form.controls['phone'].value);
+    console.log(this.form.controls['email'].value);
+    console.log(this.form.controls['password'].value);
     this.http.post(`${baseUrl}register`, { 
-      Name: this.firstName,
-      lastName: this.lastName,
-      Phone: this.Phone,
-      Email: this.Email,
-      Password: sha256(this.Password)
-
+      name: this.form.controls['name'].value,
+      lastNames: this.form.controls['lastNames'].value,
+      phone: this.form.controls['phone'].value,
+      email: this.form.controls['email'].value,
+      password: sha256(this.form.controls['password'].value)
     }).toPromise().then(response => {
       console.log(response);
       this.json = response;
+      this.route.navigate['login']
       }
     )
   }

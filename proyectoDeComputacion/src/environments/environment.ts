@@ -4,9 +4,6 @@
 
 export const environment = {
   production: false,
-  // apiSentimentUrl: 'http://127.0.0.1:5000/analisis',
-  // apiRegisterUrl: 'http://127.0.0.1:5000/register',
-  // apiLogInUrl: 'http://127.0.0.1:5000/login'
 };
 
 export const baseUrl = 'http://127.0.0.1:5000/'
