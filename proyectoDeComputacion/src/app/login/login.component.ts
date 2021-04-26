@@ -44,8 +44,8 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-
-    if (this.form.controls['email'].value != "a") {
+  //Habría que hacer la conexión aqui para que cruzara datos con la BBDD y comprobara si existe el ususario
+    if (this.form.controls['email'].value != "a") { 
       this.alert = "Email y/o contraseña incorrectos";
     } else if (this.form.controls['password'].value != "a") {
       this.alert = "Email y/o contraseña incorrectos";
