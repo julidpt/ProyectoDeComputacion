@@ -25,13 +25,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  emptyFields() {    
-    if (this.form.controls['email'].value == "") {
-      this.alert = "Email y/o contraseña incorrectos";
-    } else if (this.form.controls['password'].value == "") {
-      this.alert = "Email y/o contraseña incorrectos";
+  emptyFields() {
+    var click = false;
+    
+    if (click && this.form.controls['email'].value == "") {
+      return true;
+    } else if ( click && this.form.controls['password'].value == "") {
+      return true;
     } else {
-      this.alert = ("Bienvenido " + this.form.controls['email'].value);
+      return false;
     }
 
     // if (this.form.controls['email'].value == "") {
@@ -46,14 +48,14 @@ export class LoginComponent implements OnInit {
   submit() {
   //Habría que hacer la conexión aqui para que cruzara datos con la BBDD y comprobara si existe el ususario
     if (this.form.controls['email'].value != "a") { 
-      this.alert = "Email y/o contraseña incorrectos";
+      this.alert = "Email y/o contraseña no válidos";
     } else if (this.form.controls['password'].value != "a") {
-      this.alert = "Email y/o contraseña incorrectos";
+      this.alert = "Email y/o contraseña no válidos";
     } else {
+      alert("User logged in");
       this.alert = ("Bienvenido " + this.form.controls['email'].value);
       console.log(this.form.value);
       this.authService.userLogin(this.form.value);
-      alert("User logged in");
       this.route.navigate([''])
     }
     
