@@ -29,15 +29,15 @@ export class RegisterComponent implements OnInit {
 
   emptyFields() {    
     if (this.form.controls['email'].value == "") {
-      this.alert = "rellene todos los campos";
+      this.alert = "Rellene todos los campos";
     } else if (this.form.controls['password'].value == "") {
-      this.alert = "rellene todos los campos";
+      this.alert = "Rellene todos los campos";
     } else if (this.form.controls['name'].value == "") {
-      this.alert = "rellene todos los campos";
+      this.alert = "Rellene todos los campos";
     } else if (this.form.controls['lastNames'].value == "") {
-      this.alert = "rellene todos los campos";
+      this.alert = "Rellene todos los campos";
     } else if (this.form.controls['phone'].value == "") {
-      this.alert = "rellene todos los campos";
+      this.alert = "Rellene todos los campos";
     } else {
       this.alert = ("Bienvenido " + this.form.controls['email'].value);
     }

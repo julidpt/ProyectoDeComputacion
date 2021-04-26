@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
 
   emptyFields() {    
     if (this.form.controls['email'].value == "") {
-      this.alert = "email y/o contraseña incorrectos";
+      this.alert = "Email y/o contraseña incorrectos";
     } else if (this.form.controls['password'].value == "") {
-      this.alert = "email y/o contraseña incorrectos";
+      this.alert = "Email y/o contraseña incorrectos";
     } else {
       this.alert = ("Bienvenido " + this.form.controls['email'].value);
     }
@@ -44,10 +44,19 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
-    this.authService.userLogin(this.form.value);
-    alert("user logged in");
-    this.route.navigate(['/user'])
+
+    if (this.form.controls['email'].value != "a") {
+      this.alert = "Email y/o contraseña incorrectos";
+    } else if (this.form.controls['password'].value != "a") {
+      this.alert = "Email y/o contraseña incorrectos";
+    } else {
+      this.alert = ("Bienvenido " + this.form.controls['email'].value);
+      console.log(this.form.value);
+      this.authService.userLogin(this.form.value);
+      alert("User logged in");
+      this.route.navigate([''])
+    }
+    
     // this.route.navigate(['/register'])
     // this.http.post(`${baseUrl}login`, {
     //   email: this.form.controls['email'].value,
