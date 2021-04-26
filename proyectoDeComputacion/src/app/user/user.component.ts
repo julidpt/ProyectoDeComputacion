@@ -15,11 +15,11 @@ export class UserComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.user.subscribe(value => {
-      if (value) {
-        this.user.id = value.userid;
-        this.user.username = value.username;
-      }
-    })
+    // this.authService.user.subscribe(value => {
+    //   if (value) {
+    //     this.user.id = value.userid;
+    //     this.user.username = value.username;
+    //   }
+    // })
   }
 }

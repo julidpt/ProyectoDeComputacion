@@ -17,46 +17,22 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   });
-  json: any = false;
-  alert: any;
 
   constructor(private http: HttpClient, private route: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  emptyFields() {
-    var click = false;
-    
-    if (click && this.form.controls['email'].value == "") {
-      return true;
-    } else if ( click && this.form.controls['password'].value == "") {
-      return true;
-    } else {
-      return false;
-    }
-
-    // if (this.form.controls['email'].value == "") {
-    //   return true;
-    // } else if (this.form.controls['password'].value == "") {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
-  }
-
   submit() {
-  //Habría que hacer la conexión aqui para que cruzara datos con la BBDD y comprobara si existe el ususario
-    if (this.form.controls['email'].value != "a") { 
-      this.alert = "Email y/o contraseña no válidos";
-    } else if (this.form.controls['password'].value != "a") {
-      this.alert = "Email y/o contraseña no válidos";
+    if (this.form.controls['email'].value == "") { 
+      alert('Email y/o contraseña no válidos');
+    } else if (this.form.controls['password'].value == "") {
+      alert('Email y/o contraseña no válidos');
     } else {
-      alert("User logged in");
-      this.alert = ("Bienvenido " + this.form.controls['email'].value);
-      console.log(this.form.value);
+      var pass = this.form.controls['password'].value;
+      this.form.controls['password'].setValue(sha256(pass));
+      
       this.authService.userLogin(this.form.value);
-      this.route.navigate([''])
     }
     
     // this.route.navigate(['/register'])

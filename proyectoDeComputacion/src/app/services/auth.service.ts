@@ -11,18 +11,27 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 
 export class AuthService {
-  token;
-  user: BehaviorSubject<any> = new BehaviorSubject(null);
-  // helper = new JwtHelperService();
 
   constructor(private http: HttpClient, private router: Router) { }
+
+  userRegister(userPayload) {
+    console.log(userPayload);
+
+    this.http.post(`${baseUrl}register`, userPayload).subscribe((response: any) => {
+      this.router.navigate(['/login']);
+    })
+  }
 
   userLogin(userPayload) {
     console.log(userPayload);
 
     this.http.post(`${baseUrl}login`, userPayload).subscribe((response: any) => {
-      this.router.navigate(['/user']);
-      localStorage.setItem('token', response.token);
+      if (response.message == 'user registred correctly') {
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/user']);
+      } else {
+        alert('usuario no registrado en la bbdd')
+      }
     })
   }
 
