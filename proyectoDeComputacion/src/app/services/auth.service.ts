@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,12 +9,26 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  api = `${baseUrl}login`;
-  user: BehaviorSubject<any> = new BehaviorSubject(null);
-  helper = new JwtHelperService();
 
-  constructor() { }
+export class AuthService {
+  token;
+  // user: BehaviorSubject<any> = new BehaviorSubject(null);
+  // helper = new JwtHelperService();
+
+  constructor(private http: HttpClient, private router: Router) { }
+
+  userLogin(userPayload) {
+    console.log(userPayload);
+
+    this.http.post(`${baseUrl}login`, userPayload).subscribe((response: any) => {
+      this.router.navigate(['/user']);
+      localStorage.setItem('token', response.token);
+    })
+  }
+
+  userLogout() {
+    localStorage.removeItem('token');
+  }
 
   // loadUser() {
   //   if (!this.user) {
@@ -52,5 +67,5 @@ export class AuthService {
   //   }
 
   //   this.user.next(data);
-  // }
+  //  }
 }
