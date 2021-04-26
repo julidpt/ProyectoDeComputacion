@@ -12,7 +12,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 export class AuthService {
   token;
-  // user: BehaviorSubject<any> = new BehaviorSubject(null);
+  user: BehaviorSubject<any> = new BehaviorSubject(null);
   // helper = new JwtHelperService();
 
   constructor(private http: HttpClient, private router: Router) { }
