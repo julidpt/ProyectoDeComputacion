@@ -18,7 +18,7 @@ export class AuthService {
     console.log(userPayload);
 
     this.http.post(`${baseUrl}register`, userPayload).subscribe((response: any) => {
-      this.router.navigate(['/login']);
+      alert("insertado en bbdd")
     })
   }
 
@@ -26,8 +26,9 @@ export class AuthService {
     console.log(userPayload);
 
     this.http.post(`${baseUrl}login`, userPayload).subscribe((response: any) => {
-      if (response.message == 'user registred correctly') {
-        localStorage.setItem('token', response.token);
+      console.log(response);
+      if (response['message'] == 'Access allowed') {
+        localStorage.setItem('token', response['token']);
         this.router.navigate(['/user']);
       } else {
         alert('usuario no registrado en la bbdd')

@@ -5,6 +5,7 @@ import { sha256 } from 'js-sha256';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { PathLocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -41,10 +42,15 @@ export class RegisterComponent implements OnInit {
     } else if (this.form.controls['password'].value == "") {
       alert('Datos mal introducidos');
     } else {
-      var pass = this.form.controls['password'].value;
-      this.form.controls['password'].setValue(sha256(pass));
+      var user = {
+        'name': this.form.controls['name'].value,
+        'surnames': this.form.controls['surnames'].value,
+        'phone': this.form.controls['phone'].value,
+        'email': this.form.controls['email'].value,
+        'password': sha256(this.form.controls['password'].value)
+      }
       
-      this.authService.userRegister(this.form.value);
+      this.authService.userRegister(user);
     }
 
     // this.http.post(`${baseUrl}register`, { 

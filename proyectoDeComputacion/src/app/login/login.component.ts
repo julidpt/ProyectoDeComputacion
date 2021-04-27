@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { baseUrl } from 'src/environments/environment';
 import { sha256 } from 'js-sha256';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -29,10 +28,12 @@ export class LoginComponent implements OnInit {
     } else if (this.form.controls['password'].value == "") {
       alert('Email y/o contraseña no válidos');
     } else {
-      var pass = this.form.controls['password'].value;
-      this.form.controls['password'].setValue(sha256(pass));
-      
-      this.authService.userLogin(this.form.value);
+      var user = {
+        'email': this.form.controls['email'].value,
+        'password': sha256(this.form.controls['password'].value)
+      }
+
+      this.authService.userLogin(user);
     }
     
     // this.route.navigate(['/register'])
