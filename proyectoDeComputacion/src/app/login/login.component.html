@@ -1,31 +1,34 @@
 <section id="register">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="card_register">
-          <div class="card">
-            <div class="card-body text-center">
-              <form [formGroup]="form" (ngSubmit)="submit()">
-                <h1 class="h3 mb-3 font-weight-normal"><i class="bi bi-person"></i></h1>
-                <!-- <div class="alert alert-danger" role="alert" *ngIf="emptyFields()">
-                  Email y/o contraseña incorrectos
-                </div> -->
-                <div class="form-group">
-                  <input formControlName="email" type="email" id="email" name="email" class="form-control" placeholder="Email" required>
-                </div>
-                <br>
-                <div class="form-group">
-                  <input formControlName="password" type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-lg btn-primary btn-block"> Login </button>
-                <div class="form-group">
-                  <a routerLink="/register" class="form-control login-user"> ¿No tienes cuenta? </a>
-                </div>
-              </form>
-            </div>
+    <div class="row content">
+      <div class="col-md-6 img">
+        <img src="assets/pueblo.svg" class="img-fluid" alt="image">
+      </div>
+      <div class="col-md-6">
+        <h3 class="signin-text mb-3">Iniciar Sesión</h3>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <!-- <div class="alert alert-danger" role="alert" *ngIf="emptyFields()">
+            Email y/o contraseña incorrectos
+          </div> -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" id="email" name="email" class="form-control" required>
           </div>
-        </div>
+          <br>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input formControlName="password" type="password" id="password" name="password" class="form-control" required>
+          </div>
+          <br>
+          <div class="submitButton">
+            <button type="submit" class="btn btn-lg btn-primary btn-block"> Login </button>
+          </div>
+          <div class="form-group link">
+            <p align="center">
+              <a routerLink="/register" class="form-control login-user"> ¿No tienes cuenta? </a>
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   </div>

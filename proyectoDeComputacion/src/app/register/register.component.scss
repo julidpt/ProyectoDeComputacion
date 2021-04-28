@@ -1,11 +1,74 @@
-section {
-    margin-top: 5%
+.content {
+    margin: 8%;
+    background-color: #fff;
+    padding: 4rem 1rem 4rem 1rem;
+    box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
 }
 
-.bi-person {
-    font-size: 3em;
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    img {
+      width: 75%;
+      height: 75%;
+    }
 }
+
+.signin-text {
+font-style: normal;
+font-weight: 600 !important;
+}
+
+.form-control {
+display: block;
+width: 100%;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+border-color: blue !important;
+border-style: solid !important;
+border-width: 0 0 1px 0 !important;
+color: #495057;
+height: auto;
+border-radius: 0;
+background-color: #fff;
+background-clip: padding-box;
+}
+
+.form-control:focus {
+color: #495057;
+background-color: #fff;
+border-color: #fff;
+outline: 0;
+box-shadow: none;
+}
+
+.submitButton{
+    display: flex;
+    align-content: center;
+    
+    .btn {
+        width: 100%;
+    }
+
+    .btn:hover {
+        background-color: 0099ff;
+        
+    }
+}
+
+.link{
+    padding: 2rem 0 0 0;
+
+    a {
+        border: 0 solid white !important;
+    }
+}
+
 
 .form-control.login-user {
-    border: 0px solid white !important;
+border: 0px solid white !important;
 }
+
