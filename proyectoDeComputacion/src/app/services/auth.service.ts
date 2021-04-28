@@ -15,7 +15,12 @@ export class AuthService {
     console.log(userPayload);
 
     this.http.post(`${baseUrl}register`, userPayload).subscribe((response: any) => {
-      alert("insertado en bbdd")
+      console.log(response);
+      if (response['message'] == 'user created') {
+        this.router.navigate(['/login']);
+      } else {
+        alert('email ya existente en la bbdd')
+      }
     })
   }
 
@@ -24,7 +29,7 @@ export class AuthService {
 
     this.http.post(`${baseUrl}login`, userPayload).subscribe((response: any) => {
       console.log(response);
-      if (response['message'] == 'Access allowed') {
+      if (response['message'] == 'access allowed') {
         localStorage.setItem('token', response['token']);
         this.router.navigate(['/user']);
       } else {
