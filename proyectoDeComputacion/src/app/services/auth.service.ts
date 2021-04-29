@@ -16,10 +16,10 @@ export class AuthService {
 
     this.http.post(`${baseUrl}register`, userPayload).subscribe((response: any) => {
       console.log(response);
-      if (response['message'] == 'user created') {
+      if (response['message'] == 'ok') {
         this.router.navigate(['/login']);
       } else {
-        alert('email ya existente en la bbdd')
+        alert('email ya existente en la bbdd');
       }
     })
   }
@@ -29,7 +29,7 @@ export class AuthService {
 
     this.http.post(`${baseUrl}login`, userPayload).subscribe((response: any) => {
       console.log(response);
-      if (response['message'] == 'access allowed') {
+      if (response['message'] == 'ok') {
         localStorage.setItem('token', response['token']);
         this.router.navigate(['/user']);
       } else {
