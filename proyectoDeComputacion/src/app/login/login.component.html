@@ -1,27 +1,23 @@
 <section id="register">
   <div class="container">
     <div class="row content">
-      <div class="col-md-6 img">
-        <img src="assets/pueblo.svg" class="img-fluid" alt="image">
-      </div>
-      <div class="col-md-6">
-        <h3 class="signin-text mb-3">Iniciar Sesión</h3>
+      <div>
+        <h3 class="signin-text">Iniciar Sesión</h3>
         <form [formGroup]="form" (ngSubmit)="submit()">
-          <!-- <div class="alert alert-danger" role="alert" *ngIf="emptyFields()">
-            Email y/o contraseña incorrectos
-          </div> -->
           <div class="form-group">
             <label for="email">Email</label>
-            <input formControlName="email" type="email" id="email" name="email" class="form-control" required>
+            <input type="email" formControlName="email" class="form-control" required>
+            <span class="error" *ngIf="email?.invalid && (email?.touched || email?.dirty)">Introduzca un email valido</span>
           </div>
           <br>
           <div class="form-group">
             <label for="password">Contraseña</label>
             <input formControlName="password" type="password" id="password" name="password" class="form-control" required>
+            <span class="error" *ngIf="password?.invalid && (password?.touched || password?.dirty)">Minimo 6 caracteres</span>
           </div>
           <br>
           <div class="submitButton">
-            <button type="submit" class="btn btn-lg btn-primary btn-block"> Login </button>
+            <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-primary btn-block mx-auto"> Login </button>
           </div>
           <div class="form-group link">
             <p align="center">

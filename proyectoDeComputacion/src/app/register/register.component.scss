@@ -23,27 +23,25 @@ text-align: center;
 }
 
 .form-control {
-display: block;
-width: 100%;
-font-size: 1rem;
-font-weight: 400;
-line-height: 1.5;
-border-color: blue !important;
-border-style: solid !important;
-border-width: 0 0 1px 0 !important;
-color: #495057;
-height: auto;
-border-radius: 0;
-background-color: #fff;
-background-clip: padding-box;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-style: solid !important;
+    border-width: 0 0 0.063rem 0 !important;
+    color: #495057;
+    height: auto;
+    border-radius: 0;
+    background-color: #fff;
+    background-clip: padding-box;
 }
 
 .form-control:focus {
-color: #495057;
-background-color: #fff;
-border-color: #fff;
-outline: 0;
-box-shadow: none;
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+    box-shadow: none;
 }
 
 .submitButton{
@@ -60,6 +58,14 @@ box-shadow: none;
     }
 }
 
+input.ng-invalid {
+    border-bottom: solid red;
+  }
+  
+  input.ng-valid {
+    border-bottom: solid green;
+  }
+
 .link{
     padding: 2rem 0 0 0;
 
@@ -70,6 +76,9 @@ box-shadow: none;
 
 
 .form-control.login-user {
-border: 0px solid white !important;
+    border: 0px solid white !important;
 }
 
+.error {
+    color: red;
+}

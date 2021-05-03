@@ -13,15 +13,46 @@ import { MustMatch} from '../utils/register.validator';
 
 export class RegisterComponent implements OnInit {
   form = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-    password: new FormControl('', Validators.required),
-    confirm_password: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
     surnames: new FormControl('', Validators.required),
+    //regex para el telefono
     phone: new FormControl('', Validators.required),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6)]),
+    confirmPassword: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6)])
   });
   json: any = false;
   alert: any;
+
+  get name(){
+    return this.form.get('name')
+  }
+
+  get surnames(){
+    return this.form.get('surnames')
+  }
+
+  get phone(){
+    return this.form.get('phone')
+  }
+
+  get email(){
+    return this.form.get('email')
+  }
+
+  get password(){
+    return this.form.get('password')
+  }
+
+  get confirmPassword(){
+    return this.form.get('confirmPassword')
+  }
 
   checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
     return (group: FormGroup) => {
@@ -44,27 +75,7 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
-    if (this.form.controls['name'].value == "") { 
-      alert('Datos mal introducidos');
-    } else if (this.form.controls['surnames'].value == "") {
-      alert('Datos mal introducidos');
-    } else if (this.form.controls['phone'].value == "") {
-      alert('Datos mal introducidos');
-    } else if (this.form.controls['email'].value == "") {
-      alert('Datos mal introducidos');
-    } else if (this.form.controls['password'].value == "") {
-      alert('Datos mal introducidos');
-    } else {
-      // var user = {
-      //   'name': this.form.controls['name'].value,
-      //   'surnames': this.form.controls['surnames'].value,
-      //   'phone': this.form.controls['phone'].value,
-      //   'email': this.form.controls['email'].value,
-      //   'password': this.form.controls['password'].value
-      // }
-      
-      this.authService.userRegister(this.form.value);
-    }
+    this.authService.userRegister(this.form.value);
   }
 
 }
