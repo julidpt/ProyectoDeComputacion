@@ -1,11 +1,9 @@
 <section id="register">
-  <div class="container">
+  <div class="container col-6">
     <div class="row content">
-      <div class="col-md-6 img">
-        <img src="assets/pueblo.svg" class="img-fluid" alt="image">
-      </div>
-      <div class="col-md-6 block">
+      <div class="col-md-12 block">
         <h3 class="signin-text mb-3">Registro</h3>
+        <br>
         <form [formGroup]="form" (ngSubmit)="submit()">
           <!-- <div class="alert alert-danger" role="alert">
             Email y/o contraseña incorrectos
@@ -29,9 +27,12 @@
           <div class="form-group">
             <input type="password" formControlName="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
           </div>
-          <br>
+          <div class="form-group">
+            <input type="password" formControlName="passwordValidator" id="confirm_password" name="password" class="form-control" placeholder="Confirmar constraseña" required>
+          </div>
+          <br><br>
           <div class="submitButton">
-            <button type="submit" class="btn btn-lg btn-primary btn-block"> Register </button>
+            <button type="submit" class="btn btn-lg btn-primary btn-block"> Registrarse </button>
           </div>
           <div class="form-group link">
             <p align="center">

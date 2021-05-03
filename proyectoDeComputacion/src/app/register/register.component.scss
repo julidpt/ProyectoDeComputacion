@@ -19,6 +19,7 @@
 .signin-text {
 font-style: normal;
 font-weight: 600 !important;
+text-align: center;
 }
 
 .form-control {
@@ -47,10 +48,10 @@ box-shadow: none;
 
 .submitButton{
     display: flex;
-    align-content: center;
+    justify-content: center;
     
     .btn {
-        width: 100%;
+        width: 40%;
     }
 
     .btn:hover {
