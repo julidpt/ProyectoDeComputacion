@@ -60,11 +60,15 @@ text-align: center;
 
 input.ng-invalid {
     border-bottom: solid red;
-  }
+}
   
-  input.ng-valid {
+input.ng-valid {
     border-bottom: solid green;
-  }
+}
+
+input.ng-untouched {
+    border-bottom: solid grey;
+}
 
 .link{
     padding: 2rem 0 0 0;

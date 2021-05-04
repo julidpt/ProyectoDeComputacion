@@ -15,6 +15,10 @@ input.ng-invalid {
   border-bottom: solid red;
 }
 
+input.ng-untouched {
+  border-bottom: solid grey;
+}
+
 input.ng-valid {
   border-bottom: solid green;
 }

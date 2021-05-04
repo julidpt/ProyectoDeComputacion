@@ -35,17 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.controls['email'].value == "") { 
-      alert('Email y/o contraseña no válidos');
-    } else if (this.form.controls['password'].value == "") {
-      alert('Email y/o contraseña no válidos');
-    } else {
-      // var user = {
-      //   'email': this.form.controls['email'].value,
-      //   'password': this.form.controls['password'].value
-      // }
-
-      this.authService.userLogin(this.form.value);
-    }
+    this.authService.userLogin(this.form.value);
   }
 }
