@@ -38,7 +38,7 @@
           <div class="form-group">
             <label for="password">Repetir Contraseña</label>
             <input type="password" formControlName="confirmPassword" id="confirmPassword" name="password" class="form-control" required>
-            <span class="error" *ngIf="confirmPassword?.invalid && (confirmPassword?.touched || confirmPassword?.dirty)">Minimo 6 caracteres</span>
+            <span class="error" *ngIf="confirmPassword?.invalid && (confirmPassword?.touched || confirmPassword?.dirty)">Las contraseñas deben coincidir</span>
           </div>
           <br>
           <div class="submitButton">

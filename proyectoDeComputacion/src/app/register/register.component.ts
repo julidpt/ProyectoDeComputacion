@@ -54,18 +54,34 @@ export class RegisterComponent implements OnInit {
     return this.form.get('confirmPassword')
   }
 
-  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
-    return (group: FormGroup) => {
-      let passwordInput = group.controls[passwordKey],
-          passwordConfirmationInput = group.controls[passwordConfirmationKey];
-      if (passwordInput.value !== passwordConfirmationInput.value) {
-        return passwordConfirmationInput.setErrors({notEquivalent: true})
-      }
-      else {
-          return passwordConfirmationInput.setErrors(null);
-      }
+  confirmedValidator(controlName: string, matchingControlName: string){
+    return (formGroup: FormGroup) => {
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+
+        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+            return;
+        }
+        if (control.value !== matchingControl.value) {
+            matchingControl.setErrors({ confirmedValidator: true });
+        } else {
+            matchingControl.setErrors(null);
+        }
     }
-  }
+  } 
+
+  // checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+  //   return (group: FormGroup) => {
+  //     let passwordInput = group.controls[passwordKey],
+  //         passwordConfirmationInput = group.controls[passwordConfirmationKey];
+  //     if (passwordInput.value !== passwordConfirmationInput.value) {
+  //       return passwordConfirmationInput.setErrors({notEquivalent: true})
+  //     }
+  //     else {
+  //         return passwordConfirmationInput.setErrors(null);
+  //     }
+  //   }
+  // }
 
   constructor(private http: HttpClient, private route: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
 
