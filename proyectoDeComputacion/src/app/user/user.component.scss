@@ -26,6 +26,10 @@
         font-size: 14px;
     }
 
+    a:link, a:visited, a:active {
+        text-decoration:none;
+    }
+
     .bookmark {
         margin-top: 5%;
         // margin-right: 1px;
