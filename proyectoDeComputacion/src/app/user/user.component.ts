@@ -8,10 +8,10 @@ import { AuthService } from '../services/auth.service';
 })
 export class UserComponent implements OnInit {
   user = {
-    username:'',
-    surnames:'', 
-    email:'',
-    phone:''
+    name:'Juan',
+    surnames:'Lasso de la Vega', 
+    email:'juan@gmail.com',
+    phone:'1234567890'
   }
 
   constructor(private authService: AuthService) { }

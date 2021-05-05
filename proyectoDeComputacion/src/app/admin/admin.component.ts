@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  user = {
+    name:'Alfonso',
+    surnames:'Vega', 
+    email:'alfonso@gmail.com',
+    phone:'1234567890'
+  }
 
   constructor() { }
 
