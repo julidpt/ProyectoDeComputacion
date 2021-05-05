@@ -7,9 +7,9 @@
             <hr>
             <div class="row">
                 <div class="col-md-10">
-                    <p align="left"><i class="bi bi-person"></i> {{user.name}} {{user.surnames}}</p>
-                    <p align="left"><i class="bi bi-inbox"></i> {{user.email}}</p>
-                    <p align="left"><i class="bi bi-telephone"></i> {{user.phone}}</p>
+                    <p align="left"><i class="bi bi-person"></i> {{admin.name}} {{admin.surnames}}</p>
+                    <p align="left"><i class="bi bi-inbox"></i> {{admin.email}}</p>
+                    <p align="left"><i class="bi bi-telephone"></i> {{admin.phone}}</p>
                 </div>
                 <div class="col-md-2">
                     <p align="right"><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
@@ -25,65 +25,32 @@
             <div class="grid">
                 <h5 align="center">Usuarios</h5>
                 <hr>
-                <div class="row">
-                    <div class="col-md-10">
-                        <p align="left"><i class="bi bi-person-fill"></i> Alfonso Vega </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> David Merle </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Julian de Pablo </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Juan Lasso de la Vega </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Jorge Moreno </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Ignacio Triguero </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Javier Merino </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Carlos Valle </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Miguel Fernández </p>
-                        <p align="left"><i class="bi bi-person-fill"></i> Alexey Zhelezov </p>
-                    </div>
-                    <div class="col-md-2 icon">
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                    </div>
-                </div>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                        <th></th>
+                        <td>{{ user }}</td>
+                        <td><i class="bi bi-pencil-square"></i></td>
+                        <td><i class="bi bi-x-square"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col-md-3">
             <div class="grid">
                 <h5 align="center">Pueblos más buscados</h5>
                 <hr>
-                <div class="row">
-                    <div class="col-md-10">
-                        <p align="left"><i class="bi bi-house-fill"></i> Santillana del Mar </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Trujillo </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Pedraza </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Chinchón </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Comillas </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Almagro </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Potes </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Guadalupe </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Lerma </p>
-                        <p align="left"><i class="bi bi-house-fill"></i> Olivenza </p>
-                    </div>
-                    <div class="col-md-2 icon">
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                        <p><a routerLink="#"><i class="bi bi-compass"></i></a></p>
-                    </div>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr *ngFor="let town of towns">
+                            <th></th>
+                            <td>{{ town }}</td>
+                            <td><a routerLink="#"><i class="bi bi-compass"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-</div>

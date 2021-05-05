@@ -6,6 +6,20 @@ p {
     font-weight: bold;
 }
 
+table {
+    counter-reset: rowNumber;
+  }
+  
+  table tr {
+    counter-increment: rowNumber;
+  }
+  
+  table tr th:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+
 .vertical {
     border-left: 1px solid black;
     margin-top: 20%;

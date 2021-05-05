@@ -6,14 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  user = {
+  admin = {
     name:'Alfonso',
     surnames:'Vega', 
     email:'alfonso@gmail.com',
     phone:'1234567890'
   }
 
-  constructor() { }
+  users: string[];
+  towns: string[];
+
+  constructor() {
+    this.users = ['Alfonso Vega', 
+                  'David Merle', 
+                  'Julian de Pablo', 
+                  'Juan Lasso de la Vega', 
+                  'Jorge Moreno', 
+                  'Ignacio Triguero', 
+                  'Javier Merino', 
+                  'Carlos Valle', 
+                  'Miguel Fernández'];
+    
+    this.towns = ['Santillana del Mar', 
+                  'Trujillo', 
+                  'Pedraza',
+                  'Chinchón',
+                  'Comillas',
+                  'Almagro',
+                  'Potes',
+                  'Guadalupe',
+                  'Lerma'];
+   }
 
   ngOnInit(): void {
   }
