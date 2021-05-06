@@ -14,7 +14,13 @@ export class UserComponent implements OnInit {
     phone:'1234567890'
   }
 
-  constructor(private authService: AuthService) { }
+  towns: string[];
+  // photos: string[];
+
+  constructor(private authService: AuthService) {
+    this.towns = ['Santillana del Mar', 'Trujillo', 'Pedraza', 'Chinchón', 'Comillas', 'Almagro', 'Potes', 'Guadalupe', 'Lerma'];
+    // this.photos = ['../../assets/towns/santillana.jpg', '../../assets/towns/trujillo.jpg']
+  }
 
   ngOnInit(): void {
     // this.authService.user.subscribe(value => {

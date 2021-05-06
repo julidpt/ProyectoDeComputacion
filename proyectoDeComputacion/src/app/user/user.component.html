@@ -23,43 +23,12 @@
         </div>
         <div class="col-md-6 cards">
             <carousel [height]="500" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
-                <div class="carousel-cell">
+                <div class="carousel-cell" *ngFor="let town of towns">
                     <div class="card">
-                        <img class="card-img-top" src="https://www.santillana-del-mar.com/resources/cache/35342ede2d3791452183e318ecc7b99b-11eb99acacbe876027bf1b49c337d395db78fc67.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../assets/towns/santillana.jpg" alt="Card image cap">
                         <div class="card-body">
-                        <h5 class="card-title">Santillana del Mar</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-cell">
-                    <div class="card">
-                        <img class="card-img-top" src="https://aws.traveler.es/prod/designs/v1/assets/2000x1328/126599.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">Trujillo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-cell">
-                    <div class="card">
-                        <img class="card-img-top" src="https://aws.traveler.es/prod/designs/v1/assets/2000x1333/127864.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">Pedraza</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-cell">
-                    <div class="card">
-                        <img class="card-img-top" src="https://www.escapadarural.com/blog/wp-content/uploads/2017/07/Chinchon-6-de-10-1.jpg" alt="Card image cap">
-                        <div class="card-body">
-                        <h5 class="card-title">Chinchón</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">{{town}}</h5>
+                        <a routerLink="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
