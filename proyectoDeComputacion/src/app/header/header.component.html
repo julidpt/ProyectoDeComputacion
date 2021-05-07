@@ -4,10 +4,10 @@
       <a class="navbar-brand" routerLink="/">Proyecto de Computación</a>
     </div>
     <div class="col-md-4 input">
-      <input type="text" class="form-control" placeholder="Introduce el pueblo">
+      <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduce el pueblo">
     </div>
     <div class="col-md-2 button">
-      <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+      <button class="btn btn-outline-primary" (click)="search()" type="submit"><i class="bi bi-search"></i></button>
     </div>
     <div class="col-md-2 user">
       <div ngbDropdown class="d-inline-block">
