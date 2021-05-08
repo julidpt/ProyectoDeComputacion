@@ -12,9 +12,9 @@
                     <p align="left"><i class="bi bi-telephone"></i> {{admin.phone}}</p>
                 </div>
                 <div class="col-md-2">
-                    <p align="right"><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                    <p align="right"><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                    <p align="right"><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
+                    <p align="right"><a routerLink="/admin" (click)="editUser()"><i class="bi bi-pencil-square"></i></a></p>
+                    <p align="right"><a routerLink="/admin" (click)="editEmail()"><i class="bi bi-pencil-square"></i></a></p>
+                    <p align="right"><a routerLink="/admin" (click)="editPhone()"><i class="bi bi-pencil-square"></i></a></p>
                 </div>
             </div>
         </div>
@@ -30,8 +30,8 @@
                         <tr *ngFor="let user of users">
                         <th></th>
                         <td>{{ user }}</td>
-                        <td><i class="bi bi-pencil-square"></i></td>
-                        <td><i class="bi bi-x-square"></i></td>
+                        <td><a routerLink="/admin"><i class="bi bi-pencil-square" (click)="editUser()"></i></a></td>
+                        <td><a routerLink="/admin"><i class="bi bi-x-square" (click)="deleteUser()"></i></a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -46,7 +46,7 @@
                             <tr *ngFor="let town of towns">
                             <th></th>
                             <td>{{ town }}</td>
-                            <td><a routerLink="#"><i class="bi bi-compass"></i></a></td>
+                            <td><a href="https://es.wikipedia.org/wiki/{{town}}" target="_blank"><i class="bi bi-compass"></i></a></td>
                             </tr>
                         </tbody>
                     </table>

@@ -41,4 +41,22 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  editUser() {
+    var name = prompt('Introduce el nombre:', '');
+    var surnames = prompt('Introduce el apellido:', '')
+    console.log(name, surnames);
+  }
+
+  editEmail() {
+    var email = prompt('Introduce el email:', '');
+    console.log(email);
+  }
+
+  editPhone() {
+    var phone = prompt('Introduce el teléfono:', '');
+    console.log(phone);
+  }
+
+  deleteUser() {}
+
 }

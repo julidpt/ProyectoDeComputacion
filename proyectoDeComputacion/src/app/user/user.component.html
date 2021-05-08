@@ -12,9 +12,9 @@
                     <p align="left"><i class="bi bi-telephone"></i> {{user.phone}}</p>
                 </div>
                 <div class="col-md-2">
-                    <p align="right"><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                    <p align="right"><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
-                    <p align="right"><a routerLink="#"><i class="bi bi-pencil-square"></i></a></p>
+                    <p align="right"><a routerLink="/user" (click)="editUser()"><i class="bi bi-pencil-square"></i></a></p>
+                    <p align="right"><a routerLink="/user" (click)="editEmail()"><i class="bi bi-pencil-square"></i></a></p>
+                    <p align="right"><a routerLink="/user" (click)="editPhone()"><i class="bi bi-pencil-square"></i></a></p>
                 </div>
             </div>
         </div>
