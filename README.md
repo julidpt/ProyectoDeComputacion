@@ -32,6 +32,12 @@ Bootstrap icons
 npm install bootstrap-icons
 ```
 
+Carousel for Angular
+
+```sh
+npm i angular-responsive-carousel
+```
+
 # Comandos de Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
