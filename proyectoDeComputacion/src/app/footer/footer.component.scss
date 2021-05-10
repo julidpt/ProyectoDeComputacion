@@ -5,8 +5,8 @@ $font-size-media: 0.6em;
 .navbar {
     margin-top: 50%;
     background-color: #FBFAFA;
-    position: absolute;
-    // bottom: 0;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
 
