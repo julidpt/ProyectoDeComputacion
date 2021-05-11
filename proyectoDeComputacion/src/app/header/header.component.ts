@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from 'src/environments/environment';
+import { Observable, OperatorFunction } from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -11,12 +13,23 @@ import { baseUrl } from 'src/environments/environment';
 export class HeaderComponent implements OnInit {
   fieldSearch: string = '';
   json: any;
+  townsList: [{id: string, name: string}] | [] =  []
 
 
   constructor(private authService: AuthService,private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get(`${baseUrl}getTowns`).toPromise().then(response => {
+      this.townsList = response as [{id: string, name: string}]
+    })
   }
+
+  filterTowns: OperatorFunction<any, any> = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => this.townsList.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).map(town => town.name).slice(0, 10))
+    )
 
   search() {
     this.http.post(`${baseUrl}search`, { 

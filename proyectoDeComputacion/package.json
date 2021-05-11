@@ -25,14 +25,12 @@
     "angular-responsive-carousel": "^2.0.2",
     "bootstrap": "^5.0.0-beta2",
     "bootstrap-icons": "^1.4.1",
-    "jquery": "^3.6.0",
-    "mdbootstrap": "^4.19.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1101.4",
+    "@angular-devkit/build-angular": "^0.1102.12",
     "@angular/cli": "~11.1.4",
     "@angular/compiler-cli": "~11.1.2",
     "@types/jasmine": "~3.6.0",

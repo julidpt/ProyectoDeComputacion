@@ -18,7 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { TownComponent } from './town/town.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
-import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
