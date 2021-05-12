@@ -6,21 +6,54 @@
     <div class="tarjeta">
       <div class="col-md-12">
         <h2>Más visitados</h2>
+        <carousel [height]="500" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
+          <div class="carousel-cell" *ngFor="let card of cards">
+            <div class="card">
+              <img class="card-img-top" src="{{card.imagen}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{card.nombre}}</h5>
+                <a routerLink="/town" class="btn btn-primary">Ver más</a>
+                <a class="align-right"><i class="bi bi-bookmark-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </carousel>
+      </div>
+    </div>
+    <div class="tarjeta">
+      <div class="col-md-12">
+        <h2>Mejor valorados</h2>
       </div>
       <carousel [height]="500" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
-        <div class="carousel-cell" *ngFor="let card of cards">
+        <div class="carousel-cell" *ngFor="let card of cards2">
           <div class="card">
             <img class="card-img-top" src="{{card.imagen}}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{card.nombre}}</h5>
-              <a routerLink="#" class="btn btn-primary">Go somewhere</a>
+              <a routerLink="/town" class="btn btn-primary">Go somewhere</a>
               <a class="align-right"><i class="bi bi-bookmark-fill"></i></a>
             </div>
           </div>
         </div>
       </carousel>
     </div>
-    <br>
+    <div class="tarjeta">
+      <div class="col-md-12">
+        <h2>Rural</h2>
+      </div>
+      <carousel [height]="500" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
+        <div class="carousel-cell" *ngFor="let card of cards3">
+          <div class="card">
+            <img class="card-img-top" src="{{card.imagen}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{card.nombre}}</h5>
+              <a routerLink="/town" class="btn btn-primary">Go somewhere</a>
+              <a class="align-right"><i class="bi bi-bookmark-fill"></i></a>
+            </div>
+          </div>
+        </div>
+      </carousel>
+    </div>
     <!-- <p class="parrafoHome">
   
           <br />
