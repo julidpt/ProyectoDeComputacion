@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   { "imagen": "../../assets/towns/trujillo.jpg", "nombre": "Trujillo" },
   { "imagen": "../../assets/towns/pedraza.jpg", "nombre": "Pedraza" },
   { "imagen": "../../assets/towns/chinchon.jpg", "nombre": "Chinchón" },
-  { "imagen": "../../assets/hotel3.png", "nombre": "Hotel 1" },
   { "imagen": "../../assets/hotel2.png", "nombre": "Hotel 2" }];
 
   //Mejor valorados
@@ -21,7 +20,6 @@ export class HomeComponent implements OnInit {
   { "imagen": "../../assets/towns/trujillo.jpg", "nombre": "Trujillo" },
   { "imagen": "../../assets/towns/pedraza.jpg", "nombre": "Pedraza" },
   { "imagen": "../../assets/towns/chinchon.jpg", "nombre": "Chinchón" },
-  { "imagen": "../../assets/hotel1.png", "nombre": "Hotel 1" },
   { "imagen": "../../assets/hotel2.png", "nombre": "Hotel 2" }];
 
   //Rural
@@ -29,7 +27,6 @@ export class HomeComponent implements OnInit {
   { "imagen": "../../assets/towns/trujillo.jpg", "nombre": "Trujillo" },
   { "imagen": "../../assets/towns/pedraza.jpg", "nombre": "Pedraza" },
   { "imagen": "../../assets/towns/chinchon.jpg", "nombre": "Chinchón" },
-  { "imagen": "../../assets/hotel3.png", "nombre": "Hotel 1" },
   { "imagen": "../../assets/hotel2.png", "nombre": "Hotel 2" }];
   constructor() { }
 
