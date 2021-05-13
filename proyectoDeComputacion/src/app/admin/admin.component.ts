@@ -41,6 +41,22 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  jobToday() {
+    alert("Scraper de JobToda lanzado!");
+  }
+
+  veinteMinutos() {
+    alert("Scraper de 20 Minutos lanzado!");
+  }
+
+  buscoRestaurantes() {
+    alert("Scraper de Busco Restaurantes lanzado!");
+  }
+
+  quinceMpedia() {
+    alert("Scraper de 15 Mpedia lanzado!");
+  }
+
   editUser() {
     var name = prompt('Introduce el nombre:', '');
     var surnames = prompt('Introduce el apellido:', '')
