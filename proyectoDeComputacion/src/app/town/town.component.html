@@ -1,7 +1,81 @@
 <div class="container">
     <div class="row">
+<<<<<<< Updated upstream
         <div class="col-md-12">
             <h1>Descripción del lugar</h1>
         </div>
     </div>
 </div>
+=======
+      <div class="col-md-12">
+        <h1>Resultados obtenidos para {{townData.name}}</h1>
+      </div>
+      <div class="tarjeta">
+        <div class="col-md-12">
+          <h2>Restaurantes</h2>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100" *ngFor="let restaurantData of townData.restaurants">
+                <img src="{{restaurantData.imagen}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{restaurantData.name}}</h5>
+                  <p class="card-text">
+                      <i class="bi bi-geo-alt"></i>
+                      {{restaurantData.location}}
+                    </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="col-md-12">
+          <h2>Ofertas de trabajo</h2>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100" *ngFor="let jobData of townData.restaurants">
+                <img src="{{jobData.imagen}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{jobData.name}}</h5>
+                  <p class="card-text">
+                      <i class="bi bi-geo-alt"></i>
+                      {{jobData.location}}
+                    </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <div class="col-md-12">
+          <h2>Noticias</h2>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100" *ngFor="let newsData of townData.restaurants">
+                <img src="{{newsData.imagen}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{newsData.name}}</h5>
+                  <p class="card-text">
+                      <i class="bi bi-geo-alt"></i>
+                      {{newsData.location}}
+                    </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> Stashed changes
