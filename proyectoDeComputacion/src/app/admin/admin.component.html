@@ -38,7 +38,15 @@
             </div>
             <br>
             <h5>Gráficas y estadísticas</h5>
-            <img src="https://www.ingeniovirtual.com/wp-content/uploads/tipos-de-graficos-y-diagramas-1.jpg" width="500" height="300">
+            <div>
+                <div>
+                  <div style="display: block">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+                  </div>
+                  <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+                </div>
+              </div>
+            <!-- <img src="https://www.ingeniovirtual.com/wp-content/uploads/tipos-de-graficos-y-diagramas-1.jpg" width="500" height="300"> -->
         </div>
         <!-- <div class="col-md-3">
             <div class="grid">

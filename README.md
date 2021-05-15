@@ -38,6 +38,24 @@ Carousel for Angular
 npm i angular-responsive-carousel
 ```
 
+ng2-charts
+
+```sh
+npm install --save ng2-charts
+```
+```sh
+npm install --save chart.js
+```
+```sh
+npm install chart.js@2.9.4 ng2-charts@2.4.2
+```
+```sh
+npm install @types/chart.js
+```
+```sh
+npm install chartjs-plugin-datalabels
+```
+
 # Comandos de Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.

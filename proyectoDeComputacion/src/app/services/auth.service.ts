@@ -41,4 +41,20 @@ export class AuthService {
   userLogout() {
     localStorage.removeItem('token');
   }
+
+  searchJobs() {
+    return this.http.get(`${baseUrl}search/jobs`);
+  }
+
+  searchNews() {
+    return this.http.get(`${baseUrl}search/news`);
+  }
+
+  serachRestaurants() {
+    return this.http.get(`${baseUrl}search/restaurants`);
+  }
+
+  searchMunicipios() {
+    return this.http.get(`${baseUrl}search/municipios`);
+  }
 }
