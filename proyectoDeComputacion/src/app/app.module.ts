@@ -19,6 +19,7 @@ import { TownComponent } from './town/town.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+// import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    // ChartsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
