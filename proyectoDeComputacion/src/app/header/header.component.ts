@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { HttpClient } from '@angular/common/http';
@@ -13,10 +14,10 @@ import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
   fieldSearch: string = '';
   json: any;
-  townsList: [{id: string, name: string}] | [] =  []
+  townsList: [{id: string, name: string}] | [] = []
 
 
-  constructor(private authService: AuthService,private http: HttpClient) { }
+  constructor(private authService: AuthService, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.http.get(`${baseUrl}getTowns`).toPromise().then(response => {
@@ -30,6 +31,15 @@ export class HeaderComponent implements OnInit {
       distinctUntilChanged(),
       map(term => this.townsList.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).map(town => town.name).slice(0, 10))
     )
+
+  getTown() {
+    for (var i = 0; i < this.townsList.length; i++){
+      if (this.fieldSearch === this.townsList[i].name) {
+        var town = this.townsList[i].id
+        this.router.navigate(['town/', town])
+      } 
+    }
+  }
 
   search() {
     this.http.post(`${baseUrl}search`, { 
