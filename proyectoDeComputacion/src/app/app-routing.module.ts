@@ -22,7 +22,7 @@ const routes: Routes = [
     component: UserComponent
   },
   {
-    path: 'town',
+    path: 'town/:town',
     component: TownComponent
   },
   {

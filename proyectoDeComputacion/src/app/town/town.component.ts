@@ -9,12 +9,14 @@ import { baseUrl } from 'src/environments/environment';
   styleUrls: ['./town.component.scss']
 })
 export class TownComponent implements OnInit {
+  town = ""
   townData: any
   loading: boolean = true
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.town = this.route.snapshot.params.town
     this.http.get(`${baseUrl}getTown/${this.route.snapshot.params.town}`).toPromise().then(response => {
       this.townData = response;
       this.loading = false

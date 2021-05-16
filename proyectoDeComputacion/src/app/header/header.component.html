@@ -7,7 +7,7 @@
       <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la busqueda" [ngbTypeahead]="filterTowns">
     </div>
     <div class="col-md-2 button">
-      <button class="btn btn-outline-primary" (click)="search()" type="submit"><i class="bi bi-search"></i></button>
+      <button class="btn btn-outline-primary" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
     </div>
     <div class="col-md-2 user">
       <div ngbDropdown class="d-inline-block">
