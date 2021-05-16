@@ -21,7 +21,7 @@
         <div class="col-md-2">
             <div class="vertical"></div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <h5>Lanzar un Webscrapper</h5>
             <div class="row">
                 <div class="col">
@@ -39,14 +39,11 @@
             <br>
             <h5>Gráficas y estadísticas</h5>
             <div>
-                <div>
-                  <div style="display: block">
-                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
-                  </div>
-                  <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+                <div style="display: block">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" width="200" height="100"></canvas>
                 </div>
-              </div>
-            <!-- <img src="https://www.ingeniovirtual.com/wp-content/uploads/tipos-de-graficos-y-diagramas-1.jpg" width="500" height="300"> -->
+                <button type="button" class="btn btn-primary" (click)="randomize()">Update</button>
+            </div>
         </div>
         <!-- <div class="col-md-3">
             <div class="grid">
