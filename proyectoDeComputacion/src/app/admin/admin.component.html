@@ -37,44 +37,24 @@
                 </div>
             </div>
             <br>
+            <div class="progress">
+                <div id="trainingProgressBar" class="progress-bar 
+                    progress-bar-success progress-bar-striped active" 
+                    role="progressbar" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    [attr.aria-valuenow]="trainingProgress" 
+                    [style.width.%]="trainingProgress">
+                    {{trainingProgress}}% Completado
+                </div>
+            </div>
+            <br>
             <h5>Gráficas y estadísticas</h5>
             <div>
                 <div style="display: block">
                     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" width="200" height="100"></canvas>
                 </div>
-                <button type="button" class="btn btn-primary" (click)="randomize()">Update</button>
+                <button type="button" class="btn btn-primary" (click)="randomize()" style="margin-bottom: 10%;">Update</button>
             </div>
         </div>
-        <!-- <div class="col-md-3">
-            <div class="grid">
-                <h5 align="center">Usuarios</h5>
-                <hr>
-                <table class="table table-striped">
-                    <tbody>
-                        <tr *ngFor="let user of users">
-                        <th></th>
-                        <td>{{ user }}</td>
-                        <td><a routerLink="/admin"><i class="bi bi-pencil-square" (click)="editUser()"></i></a></td>
-                        <td><a routerLink="/admin"><i class="bi bi-x-square" (click)="deleteUser()"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="grid">
-                <h5 align="center">Pueblos más buscados</h5>
-                <hr>
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr *ngFor="let town of towns">
-                            <th></th>
-                            <td>{{ town }}</td>
-                            <td><a href="https://es.wikipedia.org/wiki/{{town}}" target="_blank"><i class="bi bi-compass"></i></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div> -->
     </div>

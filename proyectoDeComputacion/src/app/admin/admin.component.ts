@@ -64,24 +64,31 @@ export class AdminComponent implements OnInit {
 
   deleteUser() {}
 
+  public trainingProgress: number = 0;
+
   jobToday() {
-    alert("Scraper de JobToda lanzado!");
+    // alert("Scraper de JobToda lanzado!");
     this.authService.searchJobs();
+    this.trainingProgress = 100;
+    
   }
 
   veinteMinutos() {
-    alert("Scraper de 20 Minutos lanzado!");
+    // alert("Scraper de 20 Minutos lanzado!");
     this.authService.searchNews();
+    this.trainingProgress = 100;
   }
 
   buscoRestaurantes() {
-    alert("Scraper de Busco Restaurantes lanzado!");
+    // alert("Scraper de Busco Restaurantes lanzado!");
     this.authService.serachRestaurants();
+    this.trainingProgress = 100;
   }
 
   quinceMpedia() {
-    alert("Scraper de 15 Mpedia lanzado!");
+    // alert("Scraper de 15 Mpedia lanzado!");
     this.authService.searchMunicipios();
+    this.trainingProgress = 100;
   }
 
   public barChartOptions: ChartOptions = {
