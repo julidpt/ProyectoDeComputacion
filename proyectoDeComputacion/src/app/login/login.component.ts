@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient, private route: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.userValidation;
   }
 
   get email(){
@@ -36,5 +37,10 @@ export class LoginComponent implements OnInit {
 
   submit() {
     this.authService.userLogin(this.form.value);
+  }
+
+  validate() {
+    // this.authService.post('')
+    alert('email confirmado')
   }
 }

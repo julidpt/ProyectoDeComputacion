@@ -1,6 +1,6 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { baseUrl } from 'src/environments/environment';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { baseUrl } from 'src/environments/environment';
 
 export class AuthService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   userRegister(userPayload) {
     console.log(userPayload);
@@ -21,6 +21,16 @@ export class AuthService {
       } else {
         alert('email ya existente en la bbdd');
       }
+    })
+  }
+
+  userValidation() {
+    this.activatedRoute.queryParams.subscribe(params => {
+      let email = params['email'];
+      let token = params['token'];
+
+      console.log(email);
+      console.log(token);
     })
   }
 

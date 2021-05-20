@@ -70,7 +70,6 @@ export class AdminComponent implements OnInit {
     // alert("Scraper de JobToda lanzado!");
     this.authService.searchJobs();
     this.trainingProgress = 100;
-    
   }
 
   veinteMinutos() {
