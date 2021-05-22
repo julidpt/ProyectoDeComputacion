@@ -20,6 +20,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { ChartsModule } from 'ng2-charts';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ChartsModule } from 'ng2-charts';
     RegisterComponent,
     TownComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
