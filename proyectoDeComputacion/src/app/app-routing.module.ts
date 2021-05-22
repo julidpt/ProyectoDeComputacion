@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TownComponent } from './town/town.component';
 import { UserComponent } from './user/user.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'search/:town',
     component: TownComponent
+  },
+  {
+    path: 'confirmation',
+    component: ConfirmationComponent
   }
 ];
 

@@ -1,0 +1,22 @@
+.container {
+    width: 90vh;
+    height: 60vh;
+    position: relative;
+    margin-top: 5%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5%;
+
+    .cuadrado {
+        justify-content: center;
+    }
+
+    img {
+        margin-left: 30%;
+    }
+
+    button {
+        margin-top: 2%;
+        margin-left: 47%;
+    }
+}
