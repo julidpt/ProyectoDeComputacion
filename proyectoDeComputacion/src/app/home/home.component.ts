@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { baseUrl } from 'src/environments/environment';
 
 
 @Component({
@@ -7,31 +10,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  topTowns: any
+  likedTowns: any
+  loadingTopTowns: boolean = true
+  loadingLikedTowns: boolean = true
 
-  //Mas visitados
-  cards = [{ "imagen": "../../assets/towns/santillana.jpg", "nombre": "Santillana del Mar" },
-  { "imagen": "../../assets/towns/trujillo.jpg", "nombre": "Trujillo" },
-  { "imagen": "../../assets/towns/pedraza.jpg", "nombre": "Pedraza" },
-  { "imagen": "../../assets/towns/chinchon.jpg", "nombre": "Chinchón" },
-  { "imagen": "../../assets/hotel2.png", "nombre": "Hotel 2" }];
-
-  //Mejor valorados
-  cards2 = [{ "imagen": "../../assets/towns/santillana.jpg", "nombre": "Santillana del Mar" },
-  { "imagen": "../../assets/towns/trujillo.jpg", "nombre": "Trujillo" },
-  { "imagen": "../../assets/towns/pedraza.jpg", "nombre": "Pedraza" },
-  { "imagen": "../../assets/towns/chinchon.jpg", "nombre": "Chinchón" },
-  { "imagen": "../../assets/hotel2.png", "nombre": "Hotel 2" }];
-
-  //Rural
-  cards3 = [{ "imagen": "../../assets/towns/santillana.jpg", "nombre": "Santillana del Mar" },
-  { "imagen": "../../assets/towns/trujillo.jpg", "nombre": "Trujillo" },
-  { "imagen": "../../assets/towns/pedraza.jpg", "nombre": "Pedraza" },
-  { "imagen": "../../assets/towns/chinchon.jpg", "nombre": "Chinchón" },
-  { "imagen": "../../assets/hotel2.png", "nombre": "Hotel 2" }];
-  constructor() { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get(`${baseUrl}town/getTopTowns`).toPromise().then(response => {
+      this.topTowns = response;
+      this.loadingTopTowns = false
+    })
+    console.log(this.topTowns)
+    this.http.get(`${baseUrl}town/getLikedTowns`).toPromise().then(response => {
+      this.likedTowns = response;
+      this.loadingLikedTowns = false
+    })
+    console.log(this.likedTowns)
   }
 
+  convertImage(array): void {
+    for (var i = 0; i < array.length; i++){
+      console.log(array[i].image_url)
+      if (array[i].image_url === "NULL") {
+        array[i].image_url = 'assets/no_image.svg'
+      } 
+    }
+  }
 }
 

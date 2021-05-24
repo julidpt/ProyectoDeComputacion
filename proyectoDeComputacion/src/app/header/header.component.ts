@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get(`${baseUrl}getTowns`).toPromise().then(response => {
+    this.http.get(`${baseUrl}town/getTowns`).toPromise().then(response => {
       this.townsList = response as [{id: string, name: string}]
     })
   }
