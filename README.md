@@ -56,6 +56,11 @@ npm install @types/chart.js
 npm install chartjs-plugin-datalabels
 ```
 
+Angular Material
+```sh
+ng add @angular/material
+```
+
 # Comandos de Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
