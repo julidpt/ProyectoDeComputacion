@@ -21,6 +21,9 @@ import { AdminComponent } from './admin/admin.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { ChartsModule } from 'ng2-charts';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
     ReactiveFormsModule,
     NgbModule,
     IvyCarouselModule,
-    ChartsModule
+    ChartsModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

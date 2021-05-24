@@ -66,29 +66,35 @@ export class AdminComponent implements OnInit {
 
   public trainingProgress: number = 0;
 
-  jobToday() {
-    // alert("Scraper de JobToda lanzado!");
-    this.authService.searchJobs();
+  webScraper() {
+    // alert("¡Web Scrapers lanzados!");
+    this.authService.webScraper();
     this.trainingProgress = 100;
   }
 
-  veinteMinutos() {
-    // alert("Scraper de 20 Minutos lanzado!");
-    this.authService.searchNews();
-    this.trainingProgress = 100;
-  }
+  // jobToday() {
+  //   // alert("Scraper de JobToda lanzado!");
+  //   this.authService.searchJobs();
+  //   this.trainingProgress = 100;
+  // }
 
-  buscoRestaurantes() {
-    // alert("Scraper de Busco Restaurantes lanzado!");
-    this.authService.serachRestaurants();
-    this.trainingProgress = 100;
-  }
+  // veinteMinutos() {
+  //   // alert("Scraper de 20 Minutos lanzado!");
+  //   this.authService.searchNews();
+  //   this.trainingProgress = 100;
+  // }
 
-  quinceMpedia() {
-    // alert("Scraper de 15 Mpedia lanzado!");
-    this.authService.searchMunicipios();
-    this.trainingProgress = 100;
-  }
+  // buscoRestaurantes() {
+  //   // alert("Scraper de Busco Restaurantes lanzado!");
+  //   this.authService.serachRestaurants();
+  //   this.trainingProgress = 100;
+  // }
+
+  // quinceMpedia() {
+  //   // alert("Scraper de 15 Mpedia lanzado!");
+  //   this.authService.searchMunicipios();
+  //   this.trainingProgress = 100;
+  // }
 
   public barChartOptions: ChartOptions = {
     responsive: true,

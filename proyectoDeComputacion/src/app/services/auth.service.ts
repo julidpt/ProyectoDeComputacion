@@ -52,19 +52,23 @@ export class AuthService {
     localStorage.removeItem('token');
   }
 
-  searchJobs() {
-    return this.http.get(`${baseUrl}search/jobs`);
+  webScraper() {
+    return this.http.get(`${baseUrl}search`);
   }
 
-  searchNews() {
-    return this.http.get(`${baseUrl}search/news`);
-  }
+  // searchJobs() {
+  //   return this.http.get(`${baseUrl}search/jobs`);
+  // }
 
-  serachRestaurants() {
-    return this.http.get(`${baseUrl}search/restaurants`);
-  }
+  // searchNews() {
+  //   return this.http.get(`${baseUrl}search/news`);
+  // }
 
-  searchMunicipios() {
-    return this.http.get(`${baseUrl}search/municipios`);
-  }
+  // serachRestaurants() {
+  //   return this.http.get(`${baseUrl}search/restaurants`);
+  // }
+
+  // searchMunicipios() {
+  //   return this.http.get(`${baseUrl}search/municipios`);
+  // }
 }
