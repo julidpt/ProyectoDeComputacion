@@ -48,6 +48,16 @@ export class AuthService {
     })
   }
 
+  userGet() {
+    this.http.get(`${baseUrl}user/get`).subscribe((response: any) => {
+      console.log(response);
+    })
+  }
+
+  // userDelete() {
+  //   this.http.post(`${baseUrl}/user/delete`, ).subscribe((response: any) => {})
+  // }
+
   userLogout() {
     localStorage.removeItem('token');
   }

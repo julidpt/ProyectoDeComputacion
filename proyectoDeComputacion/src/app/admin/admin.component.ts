@@ -44,6 +44,7 @@ export class AdminComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.authService.userGet();
   }
 
   editUser() {
@@ -62,7 +63,10 @@ export class AdminComponent implements OnInit {
     console.log(phone);
   }
 
-  deleteUser() {}
+  deleteUser() {
+    alert("Usuario borrado")
+    // this.authService.userDelete();
+  }
 
   public trainingProgress: number = 0;
 
