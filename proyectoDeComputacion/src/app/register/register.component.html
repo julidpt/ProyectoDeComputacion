@@ -18,12 +18,6 @@
           </div>
           <br>
           <div class="form-group">
-            <label for="phone">Telefono</label>
-            <input type="text" formControlName="phone" id="phone" name="phone" class="form-control" placeholder="+34 645 68 74 35" required>
-            <span class="error" *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">Introduzca un numero de telefono</span>
-          </div>
-          <br>
-          <div class="form-group">
             <label for="email">Email</label>
             <input type="email" formControlName="email" id="email" name="email" class="form-control" placeholder="email@example.com" required>
             <span class="error" *ngIf="email?.invalid && (email?.touched || email?.dirty)">Introduzca un email valido</span>

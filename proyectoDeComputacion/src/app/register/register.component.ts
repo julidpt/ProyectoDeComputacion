@@ -15,8 +15,6 @@ export class RegisterComponent implements OnInit {
   form = new FormGroup({
     name: new FormControl('', Validators.required),
     surnames: new FormControl('', Validators.required),
-    //regex para el telefono
-    phone: new FormControl('', Validators.required),
     email: new FormControl('', [
       Validators.required,
       Validators.email]),
@@ -36,10 +34,6 @@ export class RegisterComponent implements OnInit {
 
   get surnames(){
     return this.form.get('surnames')
-  }
-
-  get phone(){
-    return this.form.get('phone')
   }
 
   get email(){

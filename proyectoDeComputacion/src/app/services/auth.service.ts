@@ -14,9 +14,9 @@ export class AuthService {
   userRegister(userPayload) {
     console.log(userPayload);
 
-    this.http.post(`${baseUrl}register`, userPayload).subscribe((response: any) => {
+    this.http.post(`${baseUrl}user/register`, userPayload).subscribe((response: any) => {
       console.log(response);
-      if (response['message'] == 'ok') {
+      if (response['status'] == "ok") {
         this.router.navigate(['/login']);
       } else {
         alert('email ya existente en la bbdd');
@@ -37,7 +37,7 @@ export class AuthService {
   userLogin(userPayload) {
     console.log(userPayload);
 
-    this.http.post(`${baseUrl}login`, userPayload).subscribe((response: any) => {
+    this.http.post(`${baseUrl}user/login`, userPayload).subscribe((response: any) => {
       console.log(response);
       if (response['message'] == 'ok') {
         localStorage.setItem('token', response['token']);
@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   userGet() {
-    this.http.get(`${baseUrl}user/get`).subscribe((response: any) => {
+    this.http.get(`${baseUrl}user/getUsers`).subscribe((response: any) => {
       console.log(response);
     })
   }
