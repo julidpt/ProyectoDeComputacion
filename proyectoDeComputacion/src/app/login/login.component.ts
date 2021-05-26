@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
       Validators.minLength(6)
     ])
   });
+  // @ViewChild('content') block: ElementRef;
 
   constructor(private http: HttpClient, private route: Router, private authService: AuthService) { }
 

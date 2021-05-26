@@ -7,11 +7,11 @@
       <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la busqueda" [ngbTypeahead]="filterTowns">
     </div>
     <div class="col-md-2 button">
-      <button class="btn btn-outline-primary" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
+      <button class="btn btn-light" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
     </div>
     <div class="col-md-2 user">
       <div ngbDropdown class="d-inline-block">
-        <i class="bi bi-list" id="dropdownBasic1" ngbDropdownToggle></i>
+        <i class="bi bi-text-right"id="dropdownBasic1" ngbDropdownToggle></i>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem routerLink="/sentiment" routerLinkActive="is-active"><i class="bi bi-emoji-smile"></i> Análisis del Sentimiento </button>
           <button ngbDropdownItem routerLink="/login" routerLinkActive="is-active"><i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión </button>

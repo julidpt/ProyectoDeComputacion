@@ -4,7 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from 'src/environments/environment';
 import { Observable, OperatorFunction } from 'rxjs';
-import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   fieldSearch: string = '';
   json: any;
   townsList: [{id: string, name: string}] | [] = []
+  // @ViewChild(componente hijo) child: componente hijo
 
 
   constructor(private authService: AuthService, private http: HttpClient, private router: Router) { }

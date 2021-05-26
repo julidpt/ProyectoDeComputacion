@@ -1,30 +1,101 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Descripción del lugar con id {{town}}</h1>
-        </div>
-    </div>
-</div>
-      <div class="col-md-12">
-        <h1>Resultados obtenidos para {{townData.name}}</h1>
+  <div class="rown head">
+    <h1>Resultados obtenidos para {{townData.name}}</h1>
+  </div>
+  <div class="row town">
+    <div class="col-md-6">
+      <div class="image">
+        <img class="" src="http://via.placeholder.com/1000x50" alt="Card image cap">
       </div>
-      <div class="tarjeta">
-        <div class="col-md-12">
-          <h2>Restaurantes</h2>
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card" *ngFor="let restaurantData of townData.restaurants">
+    </div>
+    <div class="col-md-6">
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item"><i class="bi bi-people"></i> People</li>
+          <li class="list-group-item"><i class="bi bi-briefcase"></i> Work</li>
+          <li class="list-group-item"><i class="bi bi-shop"></i> Restaurants</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row restaurants">
+    <div class="tarjeta">
+      <div class="col-md-12">
+        <h2>Restaurantes mejor valorados...</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Restaurante</h5>
+                <p class="card-text">
+                    <i class="bi bi-geo-alt"></i>
+                    Localizacion
+                  </p>
+              </div>
+            </div>
+            <!-- <div class="card" *ngFor="let restaurantData of townData.restaurants">
+              <div class="card-body">
+                <h5 class="card-title">{{restaurantData.name}}</h5>
+                <p class="card-text">
+                    <i class="bi bi-geo-alt"></i>
+                    {{restaurantData.location}}
+                  </p>
+              </div>
+            </div> -->
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-horizontal">
+                <div class="img-square-wrapper">
+                    <img class="" src="http://via.placeholder.com/100x100" alt="Card image cap">
+                </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{restaurantData.name}}</h5>
+                  <h5 class="card-title">Restaurante</h5>
                   <p class="card-text">
-                      <i class="bi bi-geo-alt"></i>
-                      {{restaurantData.location}}
-                    </p>
+                    <i class="bi bi-geo-alt"></i>
+                    Localizacion
+                  </p>
+                  <p class="card-text">
+                    <i class="bi bi-star"></i>
+                    4.5/5
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Restaurante</h5>
+                <p class="card-text">
+                    <i class="bi bi-geo-alt"></i>
+                    Localizacion
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-horizontal">
+                <div class="img-square-wrapper">
+                    <img class="" src="http://via.placeholder.com/100x100" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Restaurante</h5>
+                  <p class="card-text">
+                    <i class="bi bi-geo-alt"></i>
+                    Localizacion
+                  </p>
+                  <p class="card-text">
+                    <i class="bi bi-star"></i>
+                    4.5/5
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <!-- </div> -->
-  <!-- </div> -->
+    </div>
+  </div>
+</div>

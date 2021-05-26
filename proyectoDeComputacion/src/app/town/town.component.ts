@@ -17,11 +17,9 @@ export class TownComponent implements OnInit {
 
   ngOnInit(): void {
     this.town = this.route.snapshot.params.town
-    this.http.get(`${baseUrl}getTown/${this.route.snapshot.params.town}`).toPromise().then(response => {
+    this.http.get(`${baseUrl}town/getTown/${this.route.snapshot.params.town}`).toPromise().then(response => {
       this.townData = response;
       this.loading = false
-      console.log(this.townData)
     })
   }
-
 }
