@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { HttpClient } from '@angular/common/http';
+import { baseUrl } from 'src/environments/environment';
 
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
@@ -18,39 +20,21 @@ export class AdminComponent implements OnInit {
     phone:'1234567890'
   }
 
-  users: string[];
-  towns: string[];
+  admins: any;
 
-  constructor(private authService: AuthService) {
-    this.users = ['Alfonso Vega', 
-                  'David Merle', 
-                  'Julian de Pablo', 
-                  'Juan Lasso de la Vega', 
-                  'Jorge Moreno', 
-                  'Ignacio Triguero', 
-                  'Javier Merino', 
-                  'Carlos Valle', 
-                  'Miguel Fernández'];
-    
-    this.towns = ['Santillana del Mar', 
-                  'Trujillo', 
-                  'Pedraza',
-                  'Chinchón',
-                  'Comillas',
-                  'Almagro',
-                  'Potes',
-                  'Guadalupe',
-                  'Lerma'];
-   }
+  constructor(private authService: AuthService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.authService.userGet();
+    this.http.get(`${baseUrl}user/getUsers`).toPromise().then(response => {
+      this.admins = response;
+    })
   }
 
   editUser() {
     var name = prompt('Introduce el nombre:', '');
     var surnames = prompt('Introduce el apellido:', '')
-    console.log(name, surnames);
+    // console.log(name, surnames);
+    // this.http.post(`${baseUrl}user/edit`, ).toPromise().then(response => {})
   }
 
   editEmail() {
@@ -102,7 +86,6 @@ export class AdminComponent implements OnInit {
 
   public barChartOptions: ChartOptions = {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
     scales: { xAxes: [{}], yAxes: [{}] },
     plugins: {
       datalabels: {

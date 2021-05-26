@@ -48,12 +48,6 @@ export class AuthService {
     })
   }
 
-  userGet() {
-    this.http.get(`${baseUrl}user/getUsers`).subscribe((response: any) => {
-      console.log(response);
-    })
-  }
-
   // userDelete() {
   //   this.http.post(`${baseUrl}/user/delete`, ).subscribe((response: any) => {})
   // }

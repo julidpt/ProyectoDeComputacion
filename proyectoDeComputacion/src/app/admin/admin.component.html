@@ -36,19 +36,6 @@
                         <br><br>
                         <button type="button" class="btn btn-primary" (click)="webScraper()">Lanzar Webscrapers</button>
                     </section>
-                    <!-- <div class="row webScraper">
-                        <div class="col">
-                            <div ngbDropdown class="d-inline-block">
-                                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Selecciona un scraper</button>
-                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                    <button ngbDropdownItem (click)="jobToday()">jobtoday.py</button>
-                                    <button ngbDropdownItem (click)="veinteMinutos()">20minutos.py</button>
-                                    <button ngbDropdownItem (click)="buscoRestaurantes()">buscorestaurantes.py</button>
-                                    <button ngbDropdownItem (click)="quinceMpedia()">15mpedia.py</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <br>
                     <div class="progress" style="margin-top:5%;">
                         <div id="trainingProgressBar" class="progress-bar progress-bar-success progress-bar-striped active" 
@@ -72,9 +59,9 @@
                 <mat-tab label="Administradores">
                     <table class="table table-striped">
                         <tbody>
-                            <tr *ngFor="let user of users">
+                            <tr *ngFor="let admin of admins">
                             <th></th>
-                            <td>{{ user }}</td>
+                            <td> {{ admin.name }} {{ admin.surnames }} </td>
                             <td><a routerLink="/admin"><i class="bi bi-pencil-square" (click)="editUser()"></i></a></td>
                             <td><a routerLink="/admin"><i class="bi bi-x-square" (click)="deleteUser()"></i></a></td>
                             </tr>
