@@ -57,6 +57,10 @@ export class AuthService {
     })
   }
 
+  loggedIn() {
+    return !!localStorage.getItem('token')
+  }
+
   // userDelete() {
   //   this.http.post(`${baseUrl}/user/delete`, ).subscribe((response: any) => {})
   // }

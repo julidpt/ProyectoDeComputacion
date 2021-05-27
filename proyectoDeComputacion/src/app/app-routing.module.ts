@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { TownComponent } from './town/town.component';
 import { UserComponent } from './user/user.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -28,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    // canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -36,7 +38,8 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    // canActivate: [AuthGuard]
   },
   {
     path: 'search/:town',
