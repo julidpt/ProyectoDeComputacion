@@ -16,7 +16,7 @@ import { Label } from 'ng2-charts';
 export class AdminComponent implements OnInit {
   admin = {
     name:'Alfonso',
-    surnames:'Vega', 
+    surnames:'Vega García', 
     email:'alfonso@gmail.com',
     phone:'1234567890'
   }
@@ -43,11 +43,6 @@ export class AdminComponent implements OnInit {
     console.log(email);
   }
 
-  editPhone() {
-    var phone = prompt('Introduce el teléfono:', '');
-    console.log(phone);
-  }
-
   deleteUser() {
     alert("Usuario borrado")
     // this.authService.userDelete();
@@ -60,30 +55,6 @@ export class AdminComponent implements OnInit {
     this.authService.webScraper();
     this.trainingProgress = 100;
   }
-
-  // jobToday() {
-  //   // alert("Scraper de JobToda lanzado!");
-  //   this.authService.searchJobs();
-  //   this.trainingProgress = 100;
-  // }
-
-  // veinteMinutos() {
-  //   // alert("Scraper de 20 Minutos lanzado!");
-  //   this.authService.searchNews();
-  //   this.trainingProgress = 100;
-  // }
-
-  // buscoRestaurantes() {
-  //   // alert("Scraper de Busco Restaurantes lanzado!");
-  //   this.authService.serachRestaurants();
-  //   this.trainingProgress = 100;
-  // }
-
-  // quinceMpedia() {
-  //   // alert("Scraper de 15 Mpedia lanzado!");
-  //   this.authService.searchMunicipios();
-  //   this.trainingProgress = 100;
-  // }
 
   public barChartOptions: ChartOptions = {
     responsive: true,

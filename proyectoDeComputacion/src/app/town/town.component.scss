@@ -8,8 +8,10 @@
   border-radius: 0.5%;
   border-color: black;
   text-align: center;
+  padding: 1em;
   img {
-    width: 100%;
+    max-height: 16em;
+    width: auto;
     height: auto;
   }
 }

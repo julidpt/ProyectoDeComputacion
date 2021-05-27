@@ -1,7 +1,9 @@
 <div class="navbar navbar-expand-lg sticky-top navbar-light flex-nav">
   <div class="container">
     <div class="col-md-4 title">
-      <a class="navbar-brand" routerLink="/">Proyecto de Computación</a>
+      <a class="navbar-brand" routerLink="/">
+        <img src="/assets/logo.png" width="200" height="50" class="d-inline-block align-top" alt="">
+      </a>
     </div>
     <div class="col-md-4 input">
       <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la busqueda" [ngbTypeahead]="filterTowns">
@@ -10,15 +12,7 @@
       <button class="btn btn-light" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
     </div>
     <div class="col-md-2 user">
-      <div ngbDropdown class="d-inline-block">
-        <i class="bi bi-text-right"id="dropdownBasic1" ngbDropdownToggle></i>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem routerLink="/sentiment" routerLinkActive="is-active"><i class="bi bi-emoji-smile"></i> Análisis del Sentimiento </button>
-          <button ngbDropdownItem routerLink="/login" routerLinkActive="is-active"><i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión </button>
-          <!-- <button ngbDropdownItem routerLink="/register" routerLinkActive="is-active"><i class="bi bi-pencil-square"></i> Registro </button>
-          <button ngbDropdownItem routerLink="/" (click)="exit()"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión </button> -->
-        </div>
-      </div>
+      <button class="btn btn-outline-primary" routerLink="/login" routerLinkActive="is-active"><i class="bi bi-person"></i> Iniciar Sesión </button>
     </div>
   </div>
 </div>
