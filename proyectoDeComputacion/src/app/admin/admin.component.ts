@@ -12,6 +12,7 @@ import { Label } from 'ng2-charts';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
+
 export class AdminComponent implements OnInit {
   admin = {
     name:'Alfonso',

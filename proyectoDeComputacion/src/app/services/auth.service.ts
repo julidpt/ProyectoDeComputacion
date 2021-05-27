@@ -8,8 +8,17 @@ import { baseUrl } from 'src/environments/environment';
 })
 
 export class AuthService {
+  private loggedInStatus = false;
 
   constructor(private http: HttpClient, private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  setLoggedIn(value: boolean) {
+    this.loggedInStatus = value;
+  }
+
+  get isLoggedIn() {
+    return this.loggedInStatus
+  }
 
   userRegister(userPayload) {
     console.log(userPayload);
