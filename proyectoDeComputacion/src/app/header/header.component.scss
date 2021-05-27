@@ -39,6 +39,13 @@ input.ng-untouched {
     margin-left: 3%;
 }
 
+img {
+    height: auto;
+    width: auto;
+    max-width: 7em;
+    max-height: 3em;
+}
+
 @media (max-width: 600px) {}
 
 // .navbar-brand {

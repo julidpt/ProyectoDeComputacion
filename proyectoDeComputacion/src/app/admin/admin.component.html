@@ -1,27 +1,27 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2 admin">
             <p align="center">
                 <i class="bi bi-person user"></i>
             </p>
             <hr>
             <div class="row">
                 <div class="col-md-10">
-                    <p align="left"><i class="bi bi-person"></i> {{admin.name}} {{admin.surnames}}</p>
-                    <p align="left"><i class="bi bi-inbox"></i> {{admin.email}}</p>
-                    <p align="left"><i class="bi bi-telephone"></i> {{admin.phone}}</p>
+                    <p align="left"> {{admin.name}} </p>
+                    <p align="left"> {{admin.surnames}} </p>
+                    <p align="left"> {{admin.email}} </p>
                 </div>
                 <div class="col-md-2">
                     <p align="right"><a routerLink="/admin" (click)="editUser()"><i class="bi bi-pencil-square"></i></a></p>
                     <p align="right"><a routerLink="/admin" (click)="editEmail()"><i class="bi bi-pencil-square"></i></a></p>
-                    <p align="right"><a routerLink="/admin" (click)="editPhone()"><i class="bi bi-pencil-square"></i></a></p>
+                    <p align="right"><a routerLink="/admin" (click)="editEmail()"><i class="bi bi-pencil-square"></i></a></p>
                 </div>
             </div>
         </div>
         <div class="col-md-2">
             <div class="vertical"></div>
         </div>
-        <div class="col-md-6 functions">
+        <div class="col-md-8 functions">
             <mat-tab-group style="margin-top:5%;">
                 <mat-tab label="Lanzar un Webscraper">
                     <section class="example-section">

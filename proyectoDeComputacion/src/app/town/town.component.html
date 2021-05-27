@@ -1,19 +1,32 @@
 <div class="container">
   <div class="rown head">
-    <h1>Resultados obtenidos para {{townData.name}}</h1>
+    <h1>Resultados obtenidos para {{townData.name}}...</h1>
   </div>
   <div class="row town">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="image">
-        <img class="" src="http://via.placeholder.com/1000x50" alt="Card image cap">
+        <img class="" src="{{townData.image}}" alt="Card image cap">
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
+      <h3>Información</h3>
       <div>
         <ul class="list-group">
-          <li class="list-group-item"><i class="bi bi-people"></i> People</li>
-          <li class="list-group-item"><i class="bi bi-briefcase"></i> Work</li>
-          <li class="list-group-item"><i class="bi bi-shop"></i> Restaurants</li>
+          <li class="list-group-item">Región: {{townData.region}}</li>
+          <li class="list-group-item">Provincia: {{townData.province}}</li>
+          <li class="list-group-item">Comunidad Autonoma: {{townData.aacc}}</li>
+          <li class="list-group-item">Población: {{townData.population}}</li>
+          <li class="list-group-item">Densidad: {{townData.density}}</li>
+          <li class="list-group-item">Vaciada: {{townData.empty}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>Ocio</h3>
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item"><i class="bi bi-briefcase"></i> {{townData.jobs.length}}</li>
+          <li class="list-group-item"><i class="bi bi-shop"></i> {{townData.restaurants.length}}</li>
         </ul>
       </div>
     </div>
