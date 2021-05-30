@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   townsList: [{id: string, name: string}] | [] = []
   // @ViewChild(componente hijo) child: componente hijo
 
+  text!: string;
 
   constructor(private authService: AuthService, private http: HttpClient, private router: Router) { }
 
@@ -53,9 +54,14 @@ export class HeaderComponent implements OnInit {
     )
   }
 
-  exit(){
-    alert("¡Has cerrado sesión correctamente!");
-    this.authService.userLogout();
+  exit() {
+    if (this.authService.loggedIn()) {
+      this.text = "Cerrar Sesión";
+      this.authService.userLogout();
+      // this.router.navigate(['/']);
+    } else {
+      this.text = "Iniciar Sesión";
+      this.router.navigate(['/login']);
+    }
   }
-
 }

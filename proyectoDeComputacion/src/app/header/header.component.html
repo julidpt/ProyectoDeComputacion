@@ -12,7 +12,7 @@
       <button class="btn btn-light" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
     </div>
     <div class="col-md-2 user">
-      <button class="btn btn-outline-primary" routerLink="/login" routerLinkActive="is-active"><i class="bi bi-person"></i> Iniciar Sesión </button>
+      <button class="btn btn-outline-primary" routerLinkActive="is-active" (click)="exit()"><i class="bi bi-person"></i> {{ text }} </button>
     </div>
   </div>
 </div>

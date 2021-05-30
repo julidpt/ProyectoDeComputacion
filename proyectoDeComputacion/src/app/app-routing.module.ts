@@ -30,7 +30,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -39,7 +39,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'search/:town',
