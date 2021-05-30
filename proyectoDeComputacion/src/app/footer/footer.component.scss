@@ -2,14 +2,15 @@ $font-size: 1.5em;
 $margin-footer: 8%;
 $font-size-media: 0.6em;
 
-// .navbar {
+.navbar {
 //     margin-top: 50%;
 //     background-color: #FBFAFA;
 //     position: fixed;
 //     bottom: 0;
-//     width: 100%;
-//     z-index: 99999;
-// }
+    // width: 100%;
+    z-index: 99999;
+    padding-left: 8%;
+}
 
 #left {
     margin-left: $margin-footer;
