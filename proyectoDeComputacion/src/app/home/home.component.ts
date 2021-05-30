@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   loadingLikedTowns: boolean = true
   showNavigationArrows = false;
   showNavigationIndicators = false;
-  townsList: [{id: string, name: string}] | [] = [] 
+  townsList: [{id_town: string, name: string}] | [] = [] 
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(`${baseUrl}town/getTowns`).toPromise().then(response => {
-      this.townsList = response as [{id: string, name: string}]
+      this.townsList = response as [{id_town: string, name: string}]
     })
-    this.http.get(`${baseUrl}town/getTopTowns`).toPromise().then(response => {
+    this.http.get(`${baseUrl}town/getTopWeekTowns`).toPromise().then(response => {
       this.topTowns = response;
       this.loadingTopTowns = false
     })
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   getTown() {
     for (var i = 0; i < this.townsList.length; i++){
       if (this.fieldSearch === this.townsList[i].name) {
-        var town = this.townsList[i].id
+        var town = this.townsList[i].id_town
         this.router.navigate(['town/', town])
       } 
     }

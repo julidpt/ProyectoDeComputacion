@@ -48,9 +48,9 @@ export class AuthService {
 
     this.http.post(`${baseUrl}user/login`, userPayload).subscribe((response: any) => {
       console.log(response);
-      if (response['message'] == 'ok') {
+      if (response['status'] == 'ok') {
         localStorage.setItem('token', response['token']);
-        this.router.navigate(['/user']);
+        this.router.navigate(['/admin']);
       } else {
         alert('usuario no registrado en la bbdd')
       }

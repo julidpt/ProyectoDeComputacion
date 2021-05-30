@@ -33,7 +33,7 @@ table {
   
   table tr th:first-child::before {
     content: counter(rowNumber);
-    min-width: 1em;
+    // min-width: 1em;
     margin-right: 0.5em;
 }
 
