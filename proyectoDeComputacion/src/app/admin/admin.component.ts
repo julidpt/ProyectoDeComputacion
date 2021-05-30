@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
     var name = prompt('Introduce el nombre:', '');
     var surnames = prompt('Introduce el apellido:', '')
     // console.log(name, surnames);
-    // this.http.post(`${baseUrl}user/edit`, ).toPromise().then(response => {})
+    this.http.post(`${baseUrl}user/edit`, name && surnames).toPromise().then(response => {})
   }
 
   editEmail() {
