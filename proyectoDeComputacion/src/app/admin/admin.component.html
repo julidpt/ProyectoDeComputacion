@@ -29,13 +29,9 @@
                             <h5>Búsquedas de los últimos 7 días</h5>
                             <table class="table table-striped">
                                 <tbody>
-                                    <tr>
-                                        <th></th>
-                                        <td>Chinchón</td>
-                                    </tr>
-                                    <tr>
-                                        <th></th>
-                                        <td></td>
+                                    <tr *ngFor="let topWeekTown of topWeekTowns">
+                                    <th></th>
+                                    <td> {{ topWeekTown.name }} </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -44,13 +40,9 @@
                             <h5>10 búsquedas más realizadas</h5>
                             <table class="table table-striped">
                                 <tbody>
-                                    <tr>
-                                        <th></th>
-                                        <td>Villanueva del Trabuco</td>
-                                    </tr>
-                                    <tr>
-                                        <th></th>
-                                        <td></td>
+                                    <tr *ngFor="let topTown of topTowns">
+                                    <th></th>
+                                    <td> {{ topTown.name }} </td>
                                     </tr>
                                 </tbody>
                             </table>

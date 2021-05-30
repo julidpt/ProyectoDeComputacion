@@ -22,6 +22,8 @@ export class AdminComponent implements OnInit {
   }
 
   admins: any;
+  topWeekTowns: any;
+  topTowns: any;
 
   constructor(private authService: AuthService, private http: HttpClient) {}
 
@@ -29,13 +31,22 @@ export class AdminComponent implements OnInit {
     this.http.get(`${baseUrl}user/getUsers`).toPromise().then(response => {
       this.admins = response;
     })
+
+    this.http.get(`${baseUrl}town/getTopWeekTowns`).toPromise().then(response => {
+      this.topWeekTowns = response;
+    })
+
+    this.http.get(`${baseUrl}town/getTopTowns`).toPromise().then(response => {
+      this.topTowns = response;
+    })
+
   }
 
   editUser() {
     var name = prompt('Introduce el nombre:', '');
     var surnames = prompt('Introduce el apellido:', '')
     // console.log(name, surnames);
-    this.http.post(`${baseUrl}user/edit`, name && surnames).toPromise().then(response => {})
+    // this.http.post(`${baseUrl}user/edit`, name && surnames).toPromise().then(response => {})
   }
 
   editEmail() {
@@ -48,13 +59,13 @@ export class AdminComponent implements OnInit {
     // this.authService.userDelete();
   }
 
-  public trainingProgress: number = 0;
+  // public trainingProgress: number = 0;
 
-  webScraper() {
-    // alert("¡Web Scrapers lanzados!");
-    this.authService.webScraper();
-    this.trainingProgress = 100;
-  }
+  // webScraper() {
+  //   // alert("¡Web Scrapers lanzados!");
+  //   this.authService.webScraper();
+  //   this.trainingProgress = 100;
+  // }
 
   public barChartOptions: ChartOptions = {
     responsive: true,
