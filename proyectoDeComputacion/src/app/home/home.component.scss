@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url('/assets/home.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('/assets/home.jpg');
 
   .title {
     font-size: 2.5em;
@@ -37,13 +37,12 @@
 
   .card {
     width: 18rem;
-  }
-
-  img {
-    width: auto;
-    max-width: 10em;
-    height: auto;
-    max-height: 10em;
+    img {
+      width: auto;
+      max-width: 10em;
+      height: 50%;
+      max-height: 10em;
+    }
   }
 
   h2 {
