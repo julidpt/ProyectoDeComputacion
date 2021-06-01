@@ -56,7 +56,7 @@ export class AdminComponent implements OnInit {
 
   deleteUser() {
     alert("Usuario borrado")
-    // this.authService.userDelete();
+    // this.http.delete(`${baseUrl}user/delete/:id`, ).toPromise().then(response => {})
   }
 
   // public trainingProgress: number = 0;

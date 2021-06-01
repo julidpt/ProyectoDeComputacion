@@ -25,6 +25,8 @@ export class HeaderComponent implements OnInit {
     this.http.get(`${baseUrl}town/getTowns`).toPromise().then(response => {
       this.townsList = response as [{id: string, name: string}]
     })
+
+    this.exit()
   }
 
   filterTowns: OperatorFunction<any, any> = (text$: Observable<string>) =>
