@@ -61,31 +61,7 @@ export class AuthService {
     return !!localStorage.getItem('token')
   }
 
-  // userDelete() {
-  //   this.http.post(`${baseUrl}/user/delete`, ).subscribe((response: any) => {})
-  // }
-
   userLogout() {
     localStorage.removeItem('token');
   }
-
-  webScraper() {
-    return this.http.get(`${baseUrl}search`);
-  }
-
-  // searchJobs() {
-  //   return this.http.get(`${baseUrl}search/jobs`);
-  // }
-
-  // searchNews() {
-  //   return this.http.get(`${baseUrl}search/news`);
-  // }
-
-  // serachRestaurants() {
-  //   return this.http.get(`${baseUrl}search/restaurants`);
-  // }
-
-  // searchMunicipios() {
-  //   return this.http.get(`${baseUrl}search/municipios`);
-  // }
 }

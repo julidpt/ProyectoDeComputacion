@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from 'src/environments/environment';
-import {HttpParams} from "@angular/common/http";
 
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
@@ -36,7 +35,7 @@ export class AdminComponent implements OnInit {
     this.http.get(`${baseUrl}user/getUser`).toPromise().then(response => {
       this.currentUsers = response;
     })
-
+ 
     this.http.get(`${baseUrl}user/getUsers`).toPromise().then(response => {
       this.admins = response;
     })
