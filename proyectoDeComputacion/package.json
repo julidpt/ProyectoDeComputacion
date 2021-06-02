@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.1.2",
     "@angular/router": "~11.1.2",
     "@auth0/angular-jwt": "^5.0.2",
+    "@fullpage/angular-fullpage": "0.0.15",
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "@types/chart.js": "^2.9.32",
     "angular-responsive-carousel": "^2.0.2",

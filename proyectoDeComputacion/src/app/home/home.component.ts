@@ -15,6 +15,8 @@ import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
   providers: [NgbCarouselConfig]
 })
 export class HomeComponent implements OnInit {
+  config: any;
+  fullpage_api: any;
   topTowns: any
   likedTowns: any
   fieldSearch: string = '';
@@ -27,6 +29,21 @@ export class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
+    this.config = {
+
+      // fullpage options
+      anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+      menu: '#menu',
+
+      // fullpage callbacks
+      afterResize: () => {
+        console.log("After resize");
+      },
+      afterLoad: (origin, destination, direction) => {
+        console.log(origin.index);
+      }
+    };
+
   }
 
   ngOnInit(): void {
@@ -42,7 +59,9 @@ export class HomeComponent implements OnInit {
       this.loadingLikedTowns = false
     })
   }
-
+  getRef(fullPageRef) {
+    this.fullpage_api = fullPageRef;
+  }
   getTown() {
     for (var i = 0; i < this.townsList.length; i++){
       if (this.fieldSearch === this.townsList[i].name) {
@@ -71,5 +90,9 @@ export class HomeComponent implements OnInit {
   redirectTown(id){
     this.router.navigate(['town/', id])
   }
+}
+
+function fullPageRef(fullPageRef: any) {
+  throw new Error('Function not implemented.');
 }
 

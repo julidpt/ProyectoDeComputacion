@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from 'src/environments/environment';
+import {HttpParams} from "@angular/common/http";
 
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
@@ -14,13 +15,14 @@ import { Label } from 'ng2-charts';
 })
 
 export class AdminComponent implements OnInit {
-  admin = {
-    name:'Alfonso',
-    surnames:'Vega García', 
-    email:'alfonso@gmail.com',
-    phone:'1234567890'
-  }
+  // admin = {
+  //   name:'Alfonso',
+  //   surnames:'Vega García', 
+  //   email:'alfonso@gmail.com',
+  //   phone:'1234567890'
+  // }
 
+  currentUsers: any;
   admins: any;
   topWeekTowns: any;
   topTowns: any;
@@ -28,6 +30,13 @@ export class AdminComponent implements OnInit {
   constructor(private authService: AuthService, private http: HttpClient) {}
 
   ngOnInit(): void {
+    var token = localStorage.getItem('token');
+    console.log(token);
+
+    this.http.get(`${baseUrl}user/getUser`).toPromise().then(response => {
+      this.currentUsers = response;
+    })
+
     this.http.get(`${baseUrl}user/getUsers`).toPromise().then(response => {
       this.admins = response;
     })

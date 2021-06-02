@@ -6,10 +6,10 @@
       </a>
     </div>
     <div class="col-md-4 input">
-      <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la busqueda" [ngbTypeahead]="filterTowns">
+      <input *ngIf="router.url != ('/' || '/#firstPage')" type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la busqueda" [ngbTypeahead]="filterTowns">
     </div>
     <div class="col-md-2 button">
-      <button class="btn btn-light" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
+      <button *ngIf="router.url != '/'" class="btn btn-light" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
     </div>
     <div class="col-md-2 user">
       <button class="btn btn-outline-primary" routerLinkActive="is-active" (click)="exit()"><i class="bi bi-person"></i> {{ text }} </button>

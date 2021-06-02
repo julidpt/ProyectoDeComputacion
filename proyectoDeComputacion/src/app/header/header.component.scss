@@ -8,6 +8,8 @@ input.ng-untouched {
     border-bottom: solid grey;
 }
 
+::ng-deep .dropdown-menu { width: 100%; }
+
 .form-control {
     display: block;
     width: 100%;

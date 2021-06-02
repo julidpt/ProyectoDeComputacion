@@ -1,15 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-2 admin">
+        <div class="col-md-3 admin">
             <p align="center">
-                <i class="bi bi-person user"></i>
+                <img src="https://image.flaticon.com/icons/png/512/560/560216.png" class="user">
+                <!-- <i class="bi bi-person user"></i> -->
             </p>
             <hr>
             <div class="row">
-                <div class="col-md-10">
-                    <p align="left"> {{admin.name}} </p>
-                    <p align="left"> {{admin.surnames}} </p>
-                    <p align="left"> {{admin.email}} </p>
+                <div class="col-md-10" *ngFor="let currentUser of currentUsers">
+                    <p align="left"> {{currentUser.name}} </p>
+                    <p align="left"> {{currentUser.surnames}} </p>
+                    <p align="left"> {{currentUser.email}} </p>
                 </div>
                 <div class="col-md-2">
                     <p align="right"><a routerLink="/admin" (click)="editUser()"><i class="bi bi-pencil-square"></i></a></p>
@@ -18,9 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="vertical"></div>
-        </div>
+        <div class="col-md-1"></div>
         <div class="col-md-8 functions">
             <!-- <mat-tab-group style="margin-top:5%;"> -->
                 <!-- <mat-tab label="Lanzar un Webscraper"> -->
@@ -86,8 +85,8 @@
                             <tr *ngFor="let admin of admins">
                             <th></th>
                             <td> {{ admin.name }} {{ admin.surnames }} </td>
-                            <td><a routerLink="/admin"><i class="bi bi-pencil-square" (click)="editUser()"></i></a></td>
-                            <td><a routerLink="/admin"><i class="bi bi-x-square" (click)="deleteUser()"></i></a></td>
+                            <td><a routerLink="/admin"><i class="bi bi-pencil" (click)="editUser()"></i></a></td>
+                            <td><a routerLink="/admin"><i class="bi bi-trash" (click)="deleteUser()"></i></a></td>
                             </tr>
                         </tbody>
                     </table>

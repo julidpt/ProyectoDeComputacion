@@ -14,19 +14,17 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
   fieldSearch: string = '';
   json: any;
-  townsList: [{id: string, name: string}] | [] = []
+  townsList: [{id_town: string, name: string}] | [] = []
   // @ViewChild(componente hijo) child: componente hijo
 
   text!: string;
 
-  constructor(private authService: AuthService, private http: HttpClient, private router: Router) { }
+  constructor(private authService: AuthService, private http: HttpClient, public router: Router) { }
 
   ngOnInit(): void {
     this.http.get(`${baseUrl}town/getTowns`).toPromise().then(response => {
-      this.townsList = response as [{id: string, name: string}]
+      this.townsList = response as [{id_town: string, name: string}]
     })
-
-    this.exit()
   }
 
   filterTowns: OperatorFunction<any, any> = (text$: Observable<string>) =>
@@ -39,7 +37,7 @@ export class HeaderComponent implements OnInit {
   getTown() {
     for (var i = 0; i < this.townsList.length; i++){
       if (this.fieldSearch === this.townsList[i].name) {
-        var town = this.townsList[i].id
+        var town = this.townsList[i].id_town
         this.router.navigate(['town/', town])
       } 
     }

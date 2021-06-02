@@ -1,18 +1,25 @@
+.container {
+    margin: 0;
+}
+
 .user {
-    font-size: 10em;
+    // font-size: 10em;
+    margin-top: 5%;
+    width: 75%;
+
+}
+
+.admin {
+    background-color: #d7d7d7;
 }
 
 p {
     font-weight: bold;
 }
 
-.example-section {
-    margin-left: 5%;
-}
-
-.functions {
-    margin-left: -5%;
-}
+// .example-section {
+//     margin-left: 5%;
+// }
 
 .webScraper {
     margin-top: 5%;

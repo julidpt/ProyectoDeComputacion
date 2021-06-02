@@ -25,7 +25,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +53,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ChartsModule,
     MatTabsModule,
     BrowserAnimationsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    AngularFullpageModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

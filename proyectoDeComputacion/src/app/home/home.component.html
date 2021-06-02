@@ -1,45 +1,48 @@
-<div class="search d-flex flex-column justify-content-center align-items-center">
-  <h1 class="title">Busca tu pueblo</h1>
-  <div class="d-flex justify-content-center align-items-center col-md-6 group">
-    <div class="input">
-      <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la busqueda" [ngbTypeahead]="filterTowns">
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+  <div class="section imagenFondo">
+    <div class="search d-flex flex-column justify-content-center align-items-center">
+    <h1 class="title fadein">Encuentra un pueblo. Hoy.</h1>
+    <div class="d-flex justify-content-center align-items-center col-md-6 group fadein">
+      <div class="input">
+        <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la búsqueda" [ngbTypeahead]="filterTowns">
+      </div>
+      <div class="button">
+        <button class="btn btn-primary" (click)="getTown()" type="submit">Busqueda</button>
+      </div>
     </div>
-    <div class="button">
-      <button class="btn btn-primary" (click)="getTown()" type="submit">Busqueda</button>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="popular col-md-12">
-      <h2>Búsquedas populares</h2>
-      <carousel *ngIf="loadingTopTowns==false" [height]="350" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
-        <div class="carousel-cell" *ngFor="let town of topTowns">
-          <div class="card">
-            <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{town.name}}</h5>
-              <a (click)="redirectTown(town.id_town)" class="btn btn-primary">Ver más<i class="bi bi-arrow-right-short"></i></a>
+  </div></div>
+	<div class="section" (click)="fullpage_api.moveSectionDown()"><div class="container">
+    <div class="row">
+      <div class="popular col-md-12">
+        <h2>Búsquedas populares esta semana</h2>
+        <carousel *ngIf="loadingTopTowns==false" [cellWidth]="300" [autoplay]="true" [loop]="true" [autoplayInterval]="1000">
+          <div class="carousel-cell" *ngFor="let town of topTowns">
+            <div class="card">
+              <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{town.name}}</h5>
+                <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
+              </div>
             </div>
           </div>
-        </div>
-      </carousel>
+        </carousel>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="liked col-md-12">
-      <h2>Mejor valorados</h2>
-      <carousel *ngIf="loadingLikedTowns==false" [height]="300" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="3000">
-        <div class="carousel-cell" *ngFor="let town of likedTowns">
-          <div class="card">
-            <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{town.name}}</h5>
-              <a routerLink="/town/{{town.id_town}}" class="btn btn-primary">Ver más<i class="bi bi-arrow-right-short"></i></a>
+    <div class="row">
+      <div class="liked col-md-12">
+        <h2>Mejor valorados</h2>
+        <carousel *ngIf="loadingLikedTowns==false" [cellWidth]="300" [autoplay]="true" [loop]="true" [autoplayInterval]="1000">
+          <div class="carousel-cell" *ngFor="let town of likedTowns">
+            <div class="card">
+              <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{town.name}}</h5>
+                <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
+              </div>
             </div>
           </div>
-        </div>
-      </carousel>
+        </carousel>
+      </div>
     </div>
-  </div>
+  </div></div>
 </div>

@@ -1,107 +1,62 @@
-<div class="container">
-  <div class="rown head">
-    <h1>Resultados obtenidos para {{townData.name}}...</h1>
-  </div>
-  <div class="row town">
-    <div class="col-md-4">
-      <div class="image">
-        <img class="" src="{{townData.image_url}}" alt="Card image cap">
+
+<div class="all">
+  <div class="container">
+    <div class="rown head">
+      <h1>Resultados obtenidos para {{townData.name}}...</h1>
+    </div>
+    <div class="row town">
+      <div class="col-md-4">
+        <div class="image">
+          <h3>Escudo</h3>
+          <img class="" src="{{townData.image_url}}" alt="Card image cap">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info">
+          <h3><i class="bi bi-book"></i> Datos</h3>
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item">Región: {{townData.region}}</li>
+              <li class="list-group-item">Provincia: {{townData.province}}</li>
+              <li class="list-group-item">Comunidad Autonoma: {{townData.aacc}}</li>
+              <li class="list-group-item">Población: {{townData.population}}</li>
+              <li class="list-group-item">Densidad: {{townData.density}}</li>
+              <li class="list-group-item">Vaciada: {{townData.emptied}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ocio">
+          <h3><i class="bi bi-info-circle"></i> Información</h3>
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item">Ofertas de trabajo: {{townData.jobs.length}}</li>
+              <li class="list-group-item">Retsaurantes: {{townData.restaurants.length}}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <h3>Información</h3>
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item">Región: {{townData.region}}</li>
-          <li class="list-group-item">Provincia: {{townData.province}}</li>
-          <li class="list-group-item">Comunidad Autonoma: {{townData.aacc}}</li>
-          <li class="list-group-item">Población: {{townData.population}}</li>
-          <li class="list-group-item">Densidad: {{townData.density}}</li>
-          <li class="list-group-item">Vaciada: {{townData.empty}}</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <h3>Ocio</h3>
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item"><i class="bi bi-briefcase"></i> {{townData.jobs.length}}</li>
-          <li class="list-group-item"><i class="bi bi-shop"></i> {{townData.restaurants.length}}</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row restaurants">
-    <div class="tarjeta">
+    <div class="row restaurants">
       <div class="col-md-12">
         <h2>Restaurantes mejor valorados...</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Restaurante</h5>
-                <p class="card-text">
-                    <i class="bi bi-geo-alt"></i>
-                    Localizacion
-                  </p>
-              </div>
-            </div>
-            <!-- <div class="card" *ngFor="let restaurantData of townData.restaurants">
-              <div class="card-body">
-                <h5 class="card-title">{{restaurantData.name}}</h5>
-                <p class="card-text">
-                    <i class="bi bi-geo-alt"></i>
-                    {{restaurantData.location}}
-                  </p>
-              </div>
-            </div> -->
-          </div>
-          <div class="col">
+        <div class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let restaurant of townData.topRestaurants">
             <div class="card">
               <div class="card-horizontal">
-                <div class="img-square-wrapper">
-                    <img class="" src="http://via.placeholder.com/100x100" alt="Card image cap">
+                <div class="img-square-wrapper d-flex center">
+                    <img class="" src="{{restaurant.image_url}}" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Restaurante</h5>
+                  <h5 class="card-title">{{restaurant.name}}</h5>
                   <p class="card-text">
                     <i class="bi bi-geo-alt"></i>
-                    Localizacion
+                    {{restaurant.location}}
                   </p>
                   <p class="card-text">
                     <i class="bi bi-star"></i>
-                    4.5/5
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Restaurante</h5>
-                <p class="card-text">
-                    <i class="bi bi-geo-alt"></i>
-                    Localizacion
-                  </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-horizontal">
-                <div class="img-square-wrapper">
-                    <img class="" src="http://via.placeholder.com/100x100" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Restaurante</h5>
-                  <p class="card-text">
-                    <i class="bi bi-geo-alt"></i>
-                    Localizacion
-                  </p>
-                  <p class="card-text">
-                    <i class="bi bi-star"></i>
-                    4.5/5
+                    {{restaurant.sentiment}}
                   </p>
                 </div>
               </div>
