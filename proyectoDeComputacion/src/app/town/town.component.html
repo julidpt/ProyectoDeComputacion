@@ -1,12 +1,11 @@
-
 <div class="all">
   <div class="container">
     <div class="rown head">
       <h1>Resultados obtenidos para {{townData.name}}...</h1>
     </div>
     <div class="row town">
-      <div class="col-md-4">
-        <div class="image">
+      <div class="col-md-4 image">
+        <div>
           <h3>Escudo</h3>
           <img class="" src="{{townData.image_url}}" alt="Card image cap">
         </div>
@@ -15,7 +14,7 @@
         <div class="info">
           <h3><i class="bi bi-book"></i> Datos</h3>
           <div>
-            <ul class="list-group">
+            <ul class="list-group list-group-flush">
               <li class="list-group-item">Región: {{townData.region}}</li>
               <li class="list-group-item">Provincia: {{townData.province}}</li>
               <li class="list-group-item">Comunidad Autonoma: {{townData.aacc}}</li>
@@ -30,9 +29,9 @@
         <div class="ocio">
           <h3><i class="bi bi-info-circle"></i> Información</h3>
           <div>
-            <ul class="list-group">
+            <ul class="list-group list-group-flush">
               <li class="list-group-item">Ofertas de trabajo: {{townData.jobs.length}}</li>
-              <li class="list-group-item">Retsaurantes: {{townData.restaurants.length}}</li>
+              <li class="list-group-item">Restaurantes: {{townData.restaurants.length}}</li>
             </ul>
           </div>
         </div>
