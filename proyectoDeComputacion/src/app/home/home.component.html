@@ -13,7 +13,7 @@
   <div class="row">
     <div class="popular col-md-12">
       <h2>Búsquedas populares</h2>
-      <carousel *ngIf="loadingTopTowns==false" [height]="200" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
+      <carousel *ngIf="loadingTopTowns==false" [height]="350" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
         <div class="carousel-cell" *ngFor="let town of topTowns">
           <div class="card">
             <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
