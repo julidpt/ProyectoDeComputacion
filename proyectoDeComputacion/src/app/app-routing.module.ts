@@ -42,10 +42,6 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'search/:town',
-    component: TownComponent
-  },
-  {
     path: 'confirmation',
     component: ConfirmationComponent
   }

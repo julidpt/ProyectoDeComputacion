@@ -39,13 +39,14 @@ h1 {
   h5 {
     font-weight: bold;
   }
-  .card-horizontal {
-    display: flex;
-    flex: 1 1 auto;
-  }
+  // .card-horizontal {
+  //   display: flex;
+  //   flex: 1 1 auto;
+  // }
+  
   img {
-    margin: auto;
     width: 100%;
     height: auto;
+    max-height: 12em;
   }
 }

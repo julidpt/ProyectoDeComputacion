@@ -22,4 +22,6 @@ export class TownComponent implements OnInit {
       this.loading = false
     })
   }
+
+  // getPunct()
 }

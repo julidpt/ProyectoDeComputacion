@@ -21,16 +21,7 @@ export class AuthService {
   }
 
   userRegister(userPayload) {
-    console.log(userPayload);
-
-    this.http.post(`${baseUrl}user/register`, userPayload).subscribe((response: any) => {
-      console.log(response);
-      if (response['status'] == "ok") {
-        this.router.navigate(['/login']);
-      } else {
-        alert('email ya existente en la bbdd');
-      }
-    })
+    return this.http.post<any>(`${baseUrl}user/register`, userPayload)
   }
 
   userValidation() {
@@ -44,17 +35,7 @@ export class AuthService {
   }
 
   userLogin(userPayload) {
-    console.log(userPayload);
-
-    this.http.post(`${baseUrl}user/login`, userPayload).subscribe((response: any) => {
-      console.log(response);
-      if (response['status'] == 'ok') {
-        localStorage.setItem('token', response['token']);
-        this.router.navigate(['/admin']);
-      } else {
-        alert('usuario no registrado en la bbdd')
-      }
-    })
+    return this.http.post(`${baseUrl}user/login`, userPayload);
   }
 
   loggedIn() {
@@ -63,5 +44,10 @@ export class AuthService {
 
   userLogout() {
     localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
   }
 }

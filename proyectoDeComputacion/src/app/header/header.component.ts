@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   text!: string;
 
-  constructor(private authService: AuthService, private http: HttpClient, public router: Router) { }
+  constructor(public authService: AuthService, private http: HttpClient, public router: Router) { }
 
   ngOnInit(): void {
     this.http.get(`${baseUrl}town/getTowns`).toPromise().then(response => {
@@ -41,17 +41,6 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(['town/', town])
       } 
     }
-  }
-
-  search() {
-    this.http.post(`${baseUrl}search`, { 
-      text: this.fieldSearch
-    }).toPromise().then(response => {
-      console.log(response);
-      this.json = response;
-
-      }
-    )
   }
 
   exit() {

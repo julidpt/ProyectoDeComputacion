@@ -20,9 +20,10 @@ export class LoginComponent implements OnInit {
       Validators.minLength(6)
     ])
   });
+  badreq: boolean = false;
   // @ViewChild('content') block: ElementRef;
 
-  constructor(private http: HttpClient, private route: Router, private authService: AuthService) { }
+  constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.authService.userValidation;
@@ -37,7 +38,15 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    this.authService.userLogin(this.form.value);
+    this.authService.userLogin(this.form.value)
+      .subscribe(
+        response => {
+          localStorage.setItem('token', response['token']);
+          this.router.navigate(['/']);
+        },
+        error => {
+          this.badreq = true;
+        })
   }
 
   validate() {

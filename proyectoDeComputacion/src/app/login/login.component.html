@@ -11,7 +11,7 @@
       <div>
         <h3 class="signin-text">Iniciar Sesión</h3>
         <form [formGroup]="form" (ngSubmit)="submit()">
-          <div class="alert alert-danger" role="alert">
+          <div *ngIf="this.badreq == true" class="alert alert-danger" role="alert">
             email o contraseña incorrectos
           </div>
           <div class="form-group">
