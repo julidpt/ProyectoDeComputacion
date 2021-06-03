@@ -16,21 +16,24 @@
     font-weight: bolder;
     color: white;
   }
-
-  .fadein {
-      animation: fadeInAnimation ease 3s;
+  .fadein-text {
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
-  }
-
-  @keyframes fadeInAnimation {
-      0% {
-          opacity: 0;
-      }
-      100% {
-          opacity: 1;
-      }
-  }
+      animation: fadeInAnimation ease 3s;
+    }
+  .fadein-search {
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation: fadeInAnimation ease 3s;
+    }
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
   img {
     min-height: 100%;
@@ -39,15 +42,21 @@
 
   .group {
     background-color: white;
-    border-radius: 0.5rem;
+    border-radius: 2.5rem;
 
     .input {
       width: 100%;
-      margin: 1em 0.5em 1em 1em;
+      margin: 0.5em -0.5em 0.5em 0.5em;
+      .form-control {
+        border-radius: 2.5rem !important;
+      }
     }
 
     .button {
-      margin: 1em 1em 1em 0.5em;
+      margin: 0.5em 0.5em 0.5em -1.5em;
+      .rounded{
+        border-radius: 2.5rem !important;
+      }
     }
   }
   

@@ -1,13 +1,14 @@
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
   <div class="section imagenFondo">
     <div class="search d-flex flex-column justify-content-center align-items-center">
-    <h1 class="title fadein">Encuentra un pueblo. Hoy.</h1>
-    <div class="d-flex justify-content-center align-items-center col-md-6 group fadein">
+    <h1 class="title fadein-text">Encuentra un pueblo. Hoy.</h1>
+    <br>
+    <div class="d-flex justify-content-center align-items-center col-md-5 group fadein-search">
       <div class="input">
         <input type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la búsqueda" [ngbTypeahead]="filterTowns">
       </div>
       <div class="button">
-        <button class="btn btn-primary" (click)="getTown()" type="submit">Busqueda</button>
+        <button class="btn btn-primary bi-search rounded" (click)="getTown()" type="submit"></button>
       </div>
     </div>
   </div></div>
