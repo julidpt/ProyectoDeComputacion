@@ -1,8 +1,56 @@
+.logo {
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a:hover {
+    box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
 .content {
-  margin: 8%;
+  margin: 5vh auto 20px;
+  max-width: 430px;
   background-color: #fff;
-  padding: 4rem 1rem 4rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 8px;
   box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
+
+  .alert-danger {
+    display: flex;
+    justify-content: center;
+    background-color: #fdf6f6;
+    border-color: #de7575;
+    color: #c20707;
+  }
+
+  .alert-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5em;
+
+    i {
+      margin-right: 0.5em;
+    }
+  }
+
+  h3{
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+  }
+
+  .form-group {
+    margin-bottom: 1.5em;
+  }
 }
 
 .signin-text {
@@ -12,7 +60,7 @@
 }
 
 input.ng-invalid {
-  border-bottom: solid red;
+  border-bottom: solid #de7575;
 }
 
 input.ng-untouched {
@@ -49,17 +97,6 @@ input.ng-valid {
   background-color: 0099ff;
 }
 
-.img{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 75%;
-    height: 75%;
-  }
-}
-
 .form-control.login-user {
   border: 0px solid white !important;
 }
@@ -67,14 +104,13 @@ input.ng-valid {
 .submitButton{
   display: flex;
   align-content: center;
-  
-  .btn {
-      width: 40%;
+
+  .btn{
+    width: 100%;
   }
 
   .btn:hover {
-      background-color: 0099ff;
-      
+    background-color: 0099ff;
   }
 }
 
@@ -87,5 +123,5 @@ input.ng-valid {
 }
 
 .error {
-  color: red;
+  color: #c20707;
 }

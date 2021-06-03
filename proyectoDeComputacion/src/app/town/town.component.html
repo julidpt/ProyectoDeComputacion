@@ -39,13 +39,13 @@
     </div>
     <div class="row restaurants">
       <div class="col-md-12">
-        <h2>Restaurantes mejor valorados...</h2>
+        <h4>Restaurantes mejor valorados...</h4>
         <div class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
           <div class="col" *ngFor="let restaurant of townData.topRestaurants">
             <div class="card">
               <div class="card-horizontal">
                 <div class="img-square-wrapper d-flex center">
-                    <img class="" src="{{restaurant.image_url}}" alt="Card image cap">
+                    <img class="" src="{{restaurant.image_url}}" alt="restaurante">
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">{{restaurant.name}}</h5>
