@@ -17,10 +17,6 @@ p {
     font-weight: bold;
 }
 
-// .example-section {
-//     margin-left: 5%;
-// }
-
 .webScraper {
     margin-top: 5%;
 }
@@ -54,8 +50,4 @@ h5 {
     margin-top: 10%;
 }
 
-@media (max-width: 800px) {
-    .vertical {
-        display: none;
-    }
-}
+@media (max-width: 800px) {}

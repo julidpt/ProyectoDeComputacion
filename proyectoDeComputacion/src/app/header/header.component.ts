@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
       } 
     }
   }
-
+  
   exit() {
     if (this.authService.loggedIn()) {
       this.text = "Cerrar Sesión";

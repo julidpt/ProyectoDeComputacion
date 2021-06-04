@@ -8,15 +8,16 @@
     <div class="col-md-4 input">
       <input *ngIf="router.url != ('/' || '/#firstPage')" type="text" class="form-control" [(ngModel)]="fieldSearch" placeholder="Introduzca la busqueda" [ngbTypeahead]="filterTowns">
     </div>
-    <div class="col-md-2 button">
+    <div class="col-md-1 button">
       <button *ngIf="router.url != '/'" class="btn btn-light" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
     </div>
-    <div class="col-md-2 user">
+    <div class="col-md-3 user">
       <ng-container *ngIf="!authService.loggedIn(); else profile">
-        <button class="btn btn-outline-primary" routerLink="/login" routerLinkActive="is-active"><i class="bi bi-person"></i>Iniciar Sesion</button>
+        <button class="btn btn-outline-primary" routerLink="/login" routerLinkActive="is-active"><i class="bi bi-person"></i> Iniciar Sesion</button>
       </ng-container>
       <ng-template #profile>
-        <button class="btn btn-outline-primary" routerLink="/admin" routerLinkActive="is-active"><i class="bi bi-person"></i>Perfil</button>
+        <button class="btn btn-outline-primary" routerLink="/admin" routerLinkActive="is-active"><i class="bi bi-person"></i> Perfil</button>
+        <button class="btn btn-outline-danger" routerLinkActive="is-active" (click)="exit()"><i class="bi bi-box-arrow-right"></i> Cerrar Sesion</button>
       </ng-template>
     </div>
   </div>
