@@ -3,55 +3,54 @@ $margin-footer: 8%;
 $font-size-media: 0.6em;
 
 .navbar {
-    z-index: 99999;
-    padding-left: 8%;
+  z-index: 99999;
+  padding-left: 8%;
 }
 
 a {
-    margin: 1em 0.5em 1em; 
-    color: lightgray;
+  margin: 1em 0.5em 1em;
+  color: lightgray;
 }
 
 a:hover {
-    color: gray;
+  color: gray;
 }
 
 .row {
-    padding-top: 5em;
+  padding-top: 5em;
 
-    .col-md-4 {
-        padding: 1em 1em 0;
-    }
+  .col-md-4 {
+    padding: 1em 1em 0;
+  }
 
-    img {
-        width: auto;
-        height: 100%;
-        max-height: 3em;
-    }
+  img {
+    width: auto;
+    height: 100%;
+    max-height: 3em;
+  }
 
-    h1 {
-        margin-bottom: 1em;
-        color: white; 
-        font-weight: bold;
-    }
+  h1 {
+    margin-bottom: 1em;
+    color: white;
+    font-weight: bold;
+  }
 
-    p {
-        margin-bottom: 0.5em;
-        color: grey;
-    }
+  p {
+    margin-bottom: 0.5em;
+    color: grey;
+  }
+
+  a {
+    margin-left: 0;
+    margin-bottom: 0.5em;
+    text-decoration: none;
+    color: grey;
+  }
+
+  a:hover {
+    color: lightgray;
+  }
 }
 
 @media (max-width: 800px) {
-    // a {
-    //     font-size: $font-size-media;
-    // }
-    // .btn-outline-dark {
-    //     font-size: $font-size-media;
-    // }
-    // .bi-github {
-    //     font-size: $font-size-media;
-    // }
-    // .bi-linkedin {
-    //     font-size: $font-size-media;
-    // }
-  }
+}

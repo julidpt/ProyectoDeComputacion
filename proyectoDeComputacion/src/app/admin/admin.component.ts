@@ -22,26 +22,25 @@ export class AdminComponent implements OnInit {
   // }
 
   currentUser: any
-  admins: any
+  users: any
   topWeekTowns: any
   topTowns: any
 
   constructor(private authService: AuthService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    var token = localStorage.getItem('token');
-
     this.http.get(`${baseUrl}user/getUser`).toPromise().then(response => {
       this.currentUser = response;
     })
  
     this.http.get(`${baseUrl}user/getUsers`).toPromise().then(response => {
       console.log(response)
-      this.admins = response;
+      this.users = response;
     })
 
     this.http.get(`${baseUrl}town/getTopWeekTowns`).toPromise().then(response => {
       this.topWeekTowns = response;
+      console.log(response)
     })
 
     this.http.get(`${baseUrl}town/getTopTowns`).toPromise().then(response => {
@@ -53,7 +52,7 @@ export class AdminComponent implements OnInit {
   editUser() {
     var name = prompt('Introduce el nombre:', '');
     var surnames = prompt('Introduce el apellido:', '')
-    // console.log(name, surnames);
+    console.log(name, surnames);
     // this.http.post(`${baseUrl}user/edit`, name && surnames).toPromise().then(response => {})
   }
 
