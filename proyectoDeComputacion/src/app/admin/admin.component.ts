@@ -21,22 +21,22 @@ export class AdminComponent implements OnInit {
   //   phone:'1234567890'
   // }
 
-  currentUsers: any;
-  admins: any;
-  topWeekTowns: any;
-  topTowns: any;
+  currentUser: any
+  admins: any
+  topWeekTowns: any
+  topTowns: any
 
   constructor(private authService: AuthService, private http: HttpClient) {}
 
   ngOnInit(): void {
     var token = localStorage.getItem('token');
-    console.log(token);
 
     this.http.get(`${baseUrl}user/getUser`).toPromise().then(response => {
-      this.currentUsers = response;
+      this.currentUser = response;
     })
  
     this.http.get(`${baseUrl}user/getUsers`).toPromise().then(response => {
+      console.log(response)
       this.admins = response;
     })
 
