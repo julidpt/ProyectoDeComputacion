@@ -28,6 +28,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
     MatTabsModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
-    AngularFullpageModule
+    AngularFullpageModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [
     AuthService,

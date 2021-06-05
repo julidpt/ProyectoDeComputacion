@@ -14,7 +14,7 @@
   padding: 1em;
   img {
     max-height: 16em;
-    width: auto;
+    width: 100%;
     height: auto;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5))
   }
@@ -39,14 +39,17 @@ h1 {
   h5 {
     font-weight: bold;
   }
-  // .card-horizontal {
-  //   display: flex;
-  //   flex: 1 1 auto;
-  // }
   
   img {
     width: 100%;
     height: auto;
     max-height: 12em;
   }
+}
+
+:host >>> ngx-skeleton-loader .circle {
+  border-radius: 5px;
+  height: 50px;
+  background-color: #992929;
+  border: 1px solid white;
 }

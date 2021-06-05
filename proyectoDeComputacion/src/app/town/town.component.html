@@ -2,12 +2,14 @@
   <div class="container">
     <div class="rown head">
       <h1>Resultados obtenidos para {{townData.name}}...</h1>
+      <h1 *ngIf="loading == true">Cargando resultados...</h1>
     </div>
     <div class="row town">
       <div class="col-md-4 image">
         <div>
           <h3>Escudo</h3>
           <img class="" src="{{townData.image_url}}" alt="Card image cap">
+          <ngx-skeleton-loader appearance="circle" *ngIf="loading == true"></ngx-skeleton-loader>
         </div>
       </div>
       <div class="col-md-4">
@@ -22,6 +24,7 @@
               <li class="list-group-item">Densidad: {{townData.density}}</li>
               <li class="list-group-item">Vaciada: {{townData.emptied}}</li>
             </ul>
+            <ngx-skeleton-loader count="6" appearance="" *ngIf="loading == true"></ngx-skeleton-loader>
           </div>
         </div>
       </div>
@@ -33,6 +36,7 @@
               <li class="list-group-item">Ofertas de trabajo: {{townData.jobs.length}}</li>
               <li class="list-group-item">Restaurantes: {{townData.restaurants.length}}</li>
             </ul>
+            <ngx-skeleton-loader count="2" appearance="" *ngIf="loading == true"></ngx-skeleton-loader>
           </div>
         </div>
       </div>
@@ -45,17 +49,23 @@
             <div class="card">
               <div class="card-horizontal">
                 <div class="img-square-wrapper d-flex center">
-                    <img class="" src="{{restaurant.image_url}}" alt="restaurante">
+                  <img class="" src="{{restaurant.image_url}}" alt="restaurante">
+                  <ngx-skeleton-loader appearance="" *ngIf="loading == true"></ngx-skeleton-loader>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{restaurant.name}}</h5>
+                  <h5 class="card-title d-flex ">
+                    {{restaurant.name}}
+                    <ngx-skeleton-loader appearance="" *ngIf="loading == true"></ngx-skeleton-loader>
+                  </h5>
                   <p class="card-text">
                     <i class="bi bi-geo-alt"></i>
                     {{restaurant.location}}
+                    <ngx-skeleton-loader appearance="" *ngIf="loading == true"></ngx-skeleton-loader>
                   </p>
                   <p class="card-text">
                     <i class="bi bi-hand-thumbs-up"></i>
                     {{restaurant.sentiment}}
+                    <ngx-skeleton-loader appearance="" *ngIf="loading == true"></ngx-skeleton-loader>
                   </p>
                 </div>
               </div>

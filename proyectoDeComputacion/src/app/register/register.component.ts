@@ -26,7 +26,14 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(6)])
   });
   json: any = false;
-  alert: any;
+  goodreq: boolean = false;
+  badreq: boolean = false;
+
+  constructor(private http: HttpClient, private route: Router, private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
+
+  ngOnInit(): void {
+    
+  }
 
   get name(){
     return this.form.get('name')
@@ -62,30 +69,21 @@ export class RegisterComponent implements OnInit {
             matchingControl.setErrors(null);
         }
     }
-  } 
-
-  // checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
-  //   return (group: FormGroup) => {
-  //     let passwordInput = group.controls[passwordKey],
-  //         passwordConfirmationInput = group.controls[passwordConfirmationKey];
-  //     if (passwordInput.value !== passwordConfirmationInput.value) {
-  //       return passwordConfirmationInput.setErrors({notEquivalent: true})
-  //     }
-  //     else {
-  //         return passwordConfirmationInput.setErrors(null);
-  //     }
-  //   }
-  // }
-
-  constructor(private http: HttpClient, private route: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
-
-  ngOnInit(): void {
-    
   }
 
   submit() {
-    console.log(this.form.value);
-    this.authService.userRegister(this.form.value);
+    this.authService.userRegister(this.form.value)
+    .subscribe(
+      response => {
+        this.badreq = false;
+        this.goodreq = true;
+        setTimeout(() => {
+          this.router.navigate(['/admin']);
+        }, 1000)
+      },
+      error => {
+        this.badreq = true;
+      })
   }
 
 }

@@ -23,6 +23,14 @@
   border-radius: 8px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
 
+  .alert-success {
+    display: flex;
+    justify-content: center;
+    background-color: #e6ffe6;
+    border-color: #006600;
+    color: #006600;
+  }
+
   .alert-danger {
     display: flex;
     justify-content: center;
@@ -125,91 +133,3 @@ input.ng-valid {
 .error {
   color: #c20707;
 }
-
-// .content {
-//     margin: 8%;
-//     background-color: #fff;
-//     padding: 4rem 1rem 4rem 1rem;
-//     box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
-// }
-
-// .img{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     img {
-//       width: 75%;
-//       height: 75%;
-//     }
-// }
-
-// .signin-text {
-// font-style: normal;
-// font-weight: 600 !important;
-// text-align: center;
-// }
-
-// .form-control {
-//     display: block;
-//     width: 100%;
-//     font-size: 1rem;
-//     font-weight: 400;
-//     line-height: 1.5;
-//     border-style: solid !important;
-//     border-width: 0 0 0.063rem 0 !important;
-//     color: #495057;
-//     height: auto;
-//     border-radius: 0;
-//     background-color: #fff;
-//     background-clip: padding-box;
-// }
-
-// .form-control:focus {
-//     color: #495057;
-//     background-color: #fff;
-//     outline: 0;
-//     box-shadow: none;
-// }
-
-// .submitButton{
-//     display: flex;
-//     justify-content: center;
-
-//     .btn {
-//         width: 40%;
-//     }
-
-//     .btn:hover {
-//         background-color: 0099ff;
-
-//     }
-// }
-
-// input.ng-invalid {
-//     border-bottom: solid red;
-// }
-
-// input.ng-valid {
-//     border-bottom: solid green;
-// }
-
-// input.ng-untouched {
-//     border-bottom: solid grey;
-// }
-
-// .link{
-//     padding: 2rem 0 0 0;
-
-//     a {
-//         border: 0 solid white !important;
-//     }
-// }
-
-// .form-control.login-user {
-//     border: 0px solid white !important;
-// }
-
-// .error {
-//     color: red;
-// }
