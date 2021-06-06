@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3 admin">
             <p align="center">
-                <img src="https://image.flaticon.com/icons/png/512/560/560216.png" class="user">
+                <img src="/assets/admin.png" class="user">
                 <!-- <i class="bi bi-person user"></i> -->
             </p>
             <hr>
@@ -19,81 +19,89 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-8 functions">
-            <!-- <mat-tab-group style="margin-top:5%;"> -->
-            <!-- <mat-tab label="Lanzar un Webscraper"> -->
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Búsquedas de los últimos 7 días</h5>
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr *ngFor="let topWeekTown of topWeekTowns">
-                                <th></th>
-                                <td> {{ topWeekTown.name }} </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="col-md-9 functions">
+            <div class="container">
+                <!-- <mat-tab-group style="margin-top:5%;"> -->
+                <!-- <mat-tab label="Lanzar un Webscraper"> -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Búsquedas de los últimos 7 días</h5>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr *ngFor="let topWeekTown of topWeekTowns">
+                                    <th></th>
+                                    <td> {{ topWeekTown.name }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>10 búsquedas más realizadas</h5>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr *ngFor="let topTown of topTowns">
+                                    <th></th>
+                                    <td> {{ topTown.name }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>10 búsquedas más realizadas</h5>
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr *ngFor="let topTown of topTowns">
-                                <th></th>
-                                <td> {{ topTown.name }} </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- <section class="example-section">
+                            <br>
+                            <mat-checkbox class="example-margin">CORNERJOB</mat-checkbox>
+                            <br>
+                            <mat-checkbox class="example-margin">20 Minutos</mat-checkbox>
+                            <br>
+                            <mat-checkbox class="example-margin">Busco restaurantes</mat-checkbox>
+                            <br>
+                            <mat-checkbox class="example-margin">15Mpedia</mat-checkbox>
+                            <br><br>
+                            <button type="button" class="btn btn-primary" (click)="webScraper()">Lanzar Webscrapers</button>
+                        </section>
+                        <br>
+                        <div class="progress" style="margin-top:5%;">
+                            <div id="trainingProgressBar" class="progress-bar progress-bar-success progress-bar-striped active" 
+                                role="progressbar" 
+                                aria-valuemin="0" 
+                                aria-valuemax="100" 
+                                [attr.aria-valuenow]="trainingProgress" 
+                                [style.width.%]="trainingProgress">
+                                {{trainingProgress}}% Completado
+                            </div>
+                        </div> -->
+                <!-- </mat-tab> -->
+                <!-- <mat-tab label="Gráficas y estadísticas"> -->
+                <div class="graphContainer">
+                    <div class="pie" [chart]="donutChart"></div>
                 </div>
+
+                <button type="button" class="btn btn-primary">Actualizar</button>
+
+                <!-- <div class="graph">
+                    <div style="display:block;">
+                        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                            [legend]="barChartLegend" [chartType]="barChartType" width="200" height="100"></canvas>
+                    </div>
+                    <button type="button" class="btn btn-primary" (click)="randomize()">Actualizar</button>
+                </div> -->
+                <!-- </mat-tab> -->
+                <!-- <mat-tab label="Administradores"> -->
+                <table class="table table-striped">
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <th></th>
+                            <td> {{ user.name }} {{ user.surnames }} </td>
+                            <td><a routerLink="/admin"><i class="bi bi-pencil" (click)="editUser()"></i></a></td>
+                            <td><a routerLink="/admin"><i class="bi bi-trash" (click)="deleteUser()"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary" routerLink="/register" style="margin-bottom: 10%;">Añadir
+                    administrador</button>
+                <!-- </mat-tab> -->
+                <!-- </mat-tab-group> -->
             </div>
-            <!-- <section class="example-section">
-                        <br>
-                        <mat-checkbox class="example-margin">CORNERJOB</mat-checkbox>
-                        <br>
-                        <mat-checkbox class="example-margin">20 Minutos</mat-checkbox>
-                        <br>
-                        <mat-checkbox class="example-margin">Busco restaurantes</mat-checkbox>
-                        <br>
-                        <mat-checkbox class="example-margin">15Mpedia</mat-checkbox>
-                        <br><br>
-                        <button type="button" class="btn btn-primary" (click)="webScraper()">Lanzar Webscrapers</button>
-                    </section>
-                    <br>
-                    <div class="progress" style="margin-top:5%;">
-                        <div id="trainingProgressBar" class="progress-bar progress-bar-success progress-bar-striped active" 
-                            role="progressbar" 
-                            aria-valuemin="0" 
-                            aria-valuemax="100" 
-                            [attr.aria-valuenow]="trainingProgress" 
-                            [style.width.%]="trainingProgress">
-                            {{trainingProgress}}% Completado
-                        </div>
-                    </div> -->
-            <!-- </mat-tab> -->
-            <!-- <mat-tab label="Gráficas y estadísticas"> -->
-            <div class="graph">
-                <div style="display:block;">
-                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-                        [legend]="barChartLegend" [chartType]="barChartType" width="200" height="100"></canvas>
-                </div>
-                <button type="button" class="btn btn-primary" (click)="randomize()">Actualizar</button>
-            </div>
-            <!-- </mat-tab> -->
-            <!-- <mat-tab label="Administradores"> -->
-            <table class="table table-striped">
-                <tbody>
-                    <tr *ngFor="let user of users">
-                        <th></th>
-                        <td> {{ user.name }} {{ user.surnames }} </td>
-                        <td><a routerLink="/admin"><i class="bi bi-pencil" (click)="editUser()"></i></a></td>
-                        <td><a routerLink="/admin"><i class="bi bi-trash" (click)="deleteUser()"></i></a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button type="button" class="btn btn-primary" routerLink="/register" style="margin-bottom: 10%;">Añadir
-                administrador</button>
-            <!-- </mat-tab> -->
-            <!-- </mat-tab-group> -->
         </div>
     </div>
+</div>

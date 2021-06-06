@@ -1,11 +1,13 @@
 import { UsersService } from './../services/users.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit  } from '@angular/core';
 
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label } from 'ng2-charts';
 import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 import { TownsService } from '../services/towns.service';
+import { Chart } from 'angular-highcharts';
+import { Options } from 'highcharts';
 
 @Component({
   selector: 'app-admin',
@@ -13,12 +15,12 @@ import { TownsService } from '../services/towns.service';
   styleUrls: ['./admin.component.scss']
 })
 
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit { 
   currentUser: any
   users: any
   topWeekTowns: any
   topTowns: any
-  searchedTowns: any = ""
+  searchedTowns: any = false
 
   constructor(private userService: UsersService, private townService: TownsService) {}
 
@@ -50,9 +52,14 @@ export class AdminComponent implements OnInit {
     this.townService.getSearchedTowns()
       .subscribe(
         response => {
+          console.log(response)
           this.searchedTowns = response;
+          
+          // console.log(ConvertStringToNumber(this.searchedTowns[0].searches)
+          // console.log(this.searchedTowns[1].searches)
+          // console.log(this.searchedTowns[2].searches)
         })
-  }
+      }
 
   editUser() {
     var name = prompt('Introduce el nombre:', '');
@@ -71,29 +78,80 @@ export class AdminComponent implements OnInit {
     // this.http.delete(`${baseUrl}user/delete/:id`, ).toPromise().then(response => {})
   }
 
-  public barChartOptions: ChartOptions = {
-    responsive: true,
-    scales: { xAxes: [{}], yAxes: [{}] },
-    plugins: {
-      datalabels: {
-        anchor: 'end',
-        align: 'end',
-      }
-    }
-  };
-
-  public barChartLabels: Label[] = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-  public barChartType: ChartType = 'bar';
-  public barChartLegend = true;
-  public barChartPlugins = [pluginDataLabels];
-
-  public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40, 32, 44, 93 ,55, 72], label: 'Búsquedas' },
-    { data: [this.searchedTowns[0], this.searchedTowns[1], this.searchedTowns[2], this.searchedTowns[3], this.searchedTowns[4], this.searchedTowns[5], this.searchedTowns[6]], label: 'Búsquedas' }
-  ];
-
-  public randomize(): void {
-    this.barChartData[0].data = [ Math.round(Math.random() * 100), 59, 80, (Math.random() * 100), 56, (Math.random() * 100), 40, 32, (Math.random() * 100), 93, (Math.random() * 100), 55, ];
+  donutChartOptions: Options = {
+    chart: {
+        type: 'pie',
+        plotShadow: false,
+    },
+    credits: {
+        enabled: false
+    },
+    plotOptions: {
+        pie: {
+            innerSize: '99%',
+            borderWidth: 40,
+            borderColor: '',
+            slicedOffset: 20,
+            dataLabels: {
+                connectorWidth: 0
+            }
+        }
+    },
+    title: {
+        verticalAlign: 'middle',
+        floating: true,
+        text: 'Búsquedas'
+    },
+    legend: {
+        enabled: false,
+    },
+    series: [
+        {
+            type: 'pie',
+            data: [
+                {name: 'Lunes', y: 3, color: '#44394A'},
+                {name: 'Martes', y: 3, color: '#E2DC16'},
+                {name: 'Miercoles', y: 3, color: '#FF6B16'},
+                {name: 'Jueves', y: 3, color: '#0CC931'},
+                {name: 'Viernes', y: 3, color: '#5E5AEC'},
+                {name: 'Sabado', y: 3, color: '#3DCEBE'},
+                {name: 'Domingo', y: 3, color: '#BBB7C6'},
+            ]
+        }
+    ]
   }
 
+  donutChart = new Chart(this.donutChartOptions);
+
+  // public barChartOptions: ChartOptions = {
+  //   responsive: true,
+  //   scales: { xAxes: [{}], yAxes: [{}] },
+  //   plugins: {
+  //     datalabels: {
+  //       anchor: 'end',
+  //       align: 'end',
+  //     }
+  //   }
+  // };
+
+  // public barChartLabels: Label[] = ['', '', '', '', '', '', ''];
+  // public barChartType: ChartType = 'bar';
+  // public barChartLegend = true;
+  // public barChartPlugins = [pluginDataLabels];
+
+  // public barChartData: ChartDataSets[] = [
+  //   { data: [ this.lunes, this.martes, this.miercoles, this.jueves, this.viernes, this.sabado, this.domingo ], label: 'Búsquedas' }
+  // ];
+
+  // public randomize(): void {
+  //   this.barChartData[0].data = [ this.lunes, this.searchedTowns[1].searches, this.searchedTowns[2].searches, this.searchedTowns[3].searches, this.searchedTowns[4].searches, this.searchedTowns[5].searches, this.searchedTowns[6].searches ];
+  // }
+
 }
+
+function ConvertStringToNumber(input: string) {
+  var numeric = Number(input);
+  return numeric;
+}
+
+

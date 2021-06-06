@@ -13,7 +13,6 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit {
   fieldSearch: string = '';
-  json: any;
   townsList: [{id_town: string, name: string}] | [] = []
   // @ViewChild(componente hijo) child: componente hijo
 

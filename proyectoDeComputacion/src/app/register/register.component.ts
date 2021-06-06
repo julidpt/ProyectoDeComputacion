@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.minLength(6)])
   });
-  json: any = false;
   goodreq: boolean = false;
   badreq: boolean = false;
 

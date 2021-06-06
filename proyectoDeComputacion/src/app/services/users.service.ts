@@ -14,7 +14,7 @@ export class UsersService {
   }
 
   getUsers() {
-    return this.http.get(`${baseUrl}user/getUser`);
+    return this.http.get(`${baseUrl}user/getUsers`);
   }
 
 

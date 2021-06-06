@@ -15,16 +15,6 @@ export class AuthService {
     return this.http.post<any>(`${baseUrl}user/register`, userPayload)
   }
 
-  userValidation() {
-    this.activatedRoute.queryParams.subscribe(params => {
-      let email = params['email'];
-      let token = params['token'];
-
-      console.log(email);
-      console.log(token);
-    })
-  }
-
   userLogin(userPayload) {
     return this.http.post(`${baseUrl}user/login`, userPayload);
   }

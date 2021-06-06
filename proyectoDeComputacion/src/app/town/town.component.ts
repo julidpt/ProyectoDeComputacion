@@ -18,11 +18,8 @@ export class TownComponent implements OnInit {
     this.townService.getTown(this.route.snapshot.params.town)
       .then(
         response => {
-          console.log()
           this.townData = response;
           this.loading = false
-          console.log(this.townData)
-          console.log(this.loading)
         })
   }
 

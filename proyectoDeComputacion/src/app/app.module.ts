@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     BrowserAnimationsModule,
     MatCheckboxModule,
     AngularFullpageModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    ChartModule
   ],
   providers: [
     AuthService,
