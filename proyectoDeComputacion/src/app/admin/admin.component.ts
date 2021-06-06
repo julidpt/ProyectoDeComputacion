@@ -25,6 +25,7 @@ export class AdminComponent implements OnInit {
   users: any
   topWeekTowns: any
   topTowns: any
+  searchedTowns: any = ""
 
   constructor(private authService: AuthService, private http: HttpClient) {}
 
@@ -47,6 +48,13 @@ export class AdminComponent implements OnInit {
       this.topTowns = response;
     })
 
+    this.http.get(`${baseUrl}town/getSearchedTowns`).toPromise().then(response => {
+      console.log(response)
+      this.searchedTowns = response;
+      console.log(this.searchedTowns[0])
+      console.log(this.searchedTowns[1])
+    })
+
   }
 
   editUser() {
@@ -66,14 +74,6 @@ export class AdminComponent implements OnInit {
     // this.http.delete(`${baseUrl}user/delete/:id`, ).toPromise().then(response => {})
   }
 
-  // public trainingProgress: number = 0;
-
-  // webScraper() {
-  //   // alert("¡Web Scrapers lanzados!");
-  //   this.authService.webScraper();
-  //   this.trainingProgress = 100;
-  // }
-
   public barChartOptions: ChartOptions = {
     responsive: true,
     scales: { xAxes: [{}], yAxes: [{}] },
@@ -85,14 +85,14 @@ export class AdminComponent implements OnInit {
     }
   };
 
-  public barChartLabels: Label[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  public barChartLabels: Label[] = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40, 32, 44, 93 ,55, 72], label: 'Opiniones' },
-    { data: [28, 48, 40, 19, 86, 27, 90, 22, 15, 89, 44, 92], label: 'Servicios' }
+    { data: [65, 59, 80, 81, 56, 55, 40, 32, 44, 93 ,55, 72], label: 'Búsquedas' },
+    { data: [this.searchedTowns[0], this.searchedTowns[1], this.searchedTowns[2], this.searchedTowns[3], this.searchedTowns[4], this.searchedTowns[5], this.searchedTowns[6]], label: 'Búsquedas' }
   ];
 
   public randomize(): void {
