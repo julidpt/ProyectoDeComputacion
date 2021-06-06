@@ -2,10 +2,10 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { baseUrl } from 'src/environments/environment';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, OperatorFunction } from 'rxjs';
-import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { TownsService } from '../services/towns.service';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   showNavigationIndicators = false;
   townsList: [{id_town: string, name: string}] | [] = [] 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, config: NgbCarouselConfig) {
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, config: NgbCarouselConfig, private townService: TownsService) {
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
     this.config = {
@@ -47,21 +47,31 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get(`${baseUrl}town/getTowns`).toPromise().then(response => {
-      this.townsList = response as [{id_town: string, name: string}]
-    })
-    this.http.get(`${baseUrl}town/getTopWeekTowns`).toPromise().then(response => {
-      this.topTowns = response;
-      this.loadingTopTowns = false
-    })
-    this.http.get(`${baseUrl}town/getLikedTowns`).toPromise().then(response => {
-      this.likedTowns = response;
-      this.loadingLikedTowns = false
-    })
+    this.townService.getTowns()
+      .subscribe(
+        response => {
+        this.townsList = response as [{id_town: string, name: string}]
+        })
+
+    this.townService.getTopWeekTowns()
+      .subscribe(
+        response => {
+          this.topTowns = response;
+          this.loadingTopTowns = false
+        })
+
+    this.townService.getLikedTowns()
+      .subscribe(
+        response => {
+          this.likedTowns = response;
+          this.loadingLikedTowns = false
+        })
   }
+
   getRef(fullPageRef) {
     this.fullpage_api = fullPageRef;
   }
+
   getTown() {
     for (var i = 0; i < this.townsList.length; i++){
       if (this.fieldSearch === this.townsList[i].name) {

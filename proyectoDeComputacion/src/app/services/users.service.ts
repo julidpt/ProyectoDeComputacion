@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+import { baseUrl } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +7,15 @@ import { Injectable } from '@angular/core';
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getUser() {
+    return this.http.get(`${baseUrl}user/getUser`);
+  }
+
+  getUsers() {
+    return this.http.get(`${baseUrl}user/getUser`);
+  }
+
+
 }

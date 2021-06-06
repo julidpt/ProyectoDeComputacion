@@ -1,11 +1,11 @@
+import { UsersService } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { HttpClient } from '@angular/common/http';
-import { baseUrl } from 'src/environments/environment';
 
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label } from 'ng2-charts';
+import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
+import { TownsService } from '../services/towns.service';
 
 @Component({
   selector: 'app-admin',
@@ -14,47 +14,44 @@ import { Label } from 'ng2-charts';
 })
 
 export class AdminComponent implements OnInit {
-  // admin = {
-  //   name:'Alfonso',
-  //   surnames:'Vega García', 
-  //   email:'alfonso@gmail.com',
-  //   phone:'1234567890'
-  // }
-
   currentUser: any
   users: any
   topWeekTowns: any
   topTowns: any
   searchedTowns: any = ""
 
-  constructor(private authService: AuthService, private http: HttpClient) {}
+  constructor(private userService: UsersService, private townService: TownsService) {}
 
   ngOnInit(): void {
-    this.http.get(`${baseUrl}user/getUser`).toPromise().then(response => {
-      this.currentUser = response;
-    })
+    this.userService.getUser()
+      .subscribe(
+        response => {
+          this.currentUser = response;
+        })
  
-    this.http.get(`${baseUrl}user/getUsers`).toPromise().then(response => {
-      console.log(response)
-      this.users = response;
-    })
+    this.userService.getUsers()
+      .subscribe(
+        response => {
+          this.users = response;
+        })
 
-    this.http.get(`${baseUrl}town/getTopWeekTowns`).toPromise().then(response => {
-      this.topWeekTowns = response;
-      console.log(response)
-    })
+    this.townService.getTopWeekTowns()
+      .subscribe(
+        response => {
+          this.topWeekTowns = response;
+        })
 
-    this.http.get(`${baseUrl}town/getTopTowns`).toPromise().then(response => {
-      this.topTowns = response;
-    })
+    this.townService.getTopTowns()
+      .subscribe(
+        response => {
+          this.topTowns = response;
+        })
 
-    this.http.get(`${baseUrl}town/getSearchedTowns`).toPromise().then(response => {
-      console.log(response)
-      this.searchedTowns = response;
-      console.log(this.searchedTowns[0])
-      console.log(this.searchedTowns[1])
-    })
-
+    this.townService.getSearchedTowns()
+      .subscribe(
+        response => {
+          this.searchedTowns = response;
+        })
   }
 
   editUser() {

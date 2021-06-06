@@ -2,13 +2,25 @@
     background-color: #ffffff;
     box-shadow: 0 0.01em 1em #adadad;
     z-index: 99999;
+    top: 0;
+    width: 100%;
+    padding-top: 1%;
+}
+
+.navbar-alt {
+    background-color: #49505700;
+    box-shadow: 0 0 0 !important;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 input.ng-untouched {
     border-bottom: solid grey;
 }
 
-::ng-deep .dropdown-menu { width: 100%; }
+::ng-deep .dropdown-menu { width: 40%; }
 
 .form-control {
     display: block;
@@ -42,6 +54,10 @@ input.ng-untouched {
 }
 
 .btn-outline-danger {
+    margin-left: 3%;
+}
+
+.btn-danger {
     margin-left: 3%;
 }
 
