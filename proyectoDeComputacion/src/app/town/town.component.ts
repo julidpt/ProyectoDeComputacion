@@ -22,4 +22,12 @@ export class TownComponent implements OnInit {
       this.loading = false
     })
   }
+
+  like(): void {
+    this.http.post(`${baseUrl}town/like`, { 
+      id_town: this.townData.id_town
+    }).toPromise().then(response => {
+      console.log('ok')
+    });
+  }
 }

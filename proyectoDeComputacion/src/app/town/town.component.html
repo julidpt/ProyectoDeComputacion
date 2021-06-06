@@ -1,6 +1,6 @@
 <div class="all">
   <div class="container">
-    <div class="rown head">
+    <div class="row head">
       <h1>Resultados obtenidos para {{townData.name}}...</h1>
       <h1 *ngIf="loading == true">Cargando resultados...</h1>
     </div>
@@ -39,6 +39,11 @@
             <ngx-skeleton-loader count="2" appearance="" *ngIf="loading == true"></ngx-skeleton-loader>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="like col-md-12">
+        <button type="button" class="btn btn-outline-secondary" (click)="like()"><i class="bi bi-heart"></i></button>
       </div>
     </div>
     <div class="row restaurants">
