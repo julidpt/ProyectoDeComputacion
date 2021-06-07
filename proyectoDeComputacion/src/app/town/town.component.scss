@@ -8,10 +8,16 @@
 }
 
 .image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 1em 0;
   border-radius: 1%;
   background-color: white;
-  text-align: center;
   padding: 1em;
+
   img {
     max-height: 16em;
     width: auto;
@@ -21,6 +27,8 @@
 }
 
 .data, .info {
+  height: 100%;
+  margin: 1em 0;
   border-radius: 1%;
   background-color: white;
   padding: 1em;
@@ -34,13 +42,11 @@
   margin-top: 5%;
   display: flex;
   justify-content: flex-end;
+
   .btn {
     border-radius: 100%;
     min-height: 4rem;
     min-width: 4rem;
-    .bi-heart {
-      border: 0%;
-    }
   }
 }
 
@@ -50,6 +56,8 @@ h1 {
 }
 
 .card {
+  height: 100%;
+
   h5 {
     font-weight: bold;
   }
@@ -58,5 +66,9 @@ h1 {
     width: 100%;
     height: auto;
     max-height: 12em;
+  }
+
+  i {
+    margin-right: 0.5em;
   }
 }
