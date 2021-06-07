@@ -1,0 +1,56 @@
+<div class="page-wrap">
+    <div class="container">
+      <div class="row logo">
+        <h1 class="d-flex justify-content-center">
+          <a routerLink="/">
+            <img src="/assets/logo.png" alt="logo">
+          </a>
+        </h1>
+      </div>
+      <div class="row content">
+        <div>
+          <h3 class="signin-text">Editar</h3>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <div *ngIf="goodreq == true;" class="alert alert-success" role="alert">
+              usuario editado
+            </div>
+            <div *ngIf="badreq == true;" class="alert alert-danger" role="alert">
+              email ya existente
+            </div>
+            <div class="form-group">
+              <label for="phone">Nombre</label>
+              <input type="text" formControlName="name" id="name" name="name" class="form-control" required>
+              <span class="error" *ngIf="name?.invalid && name?.touched">Introduzca el nombre</span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Apellidos</label>
+              <input type="text" formControlName="surnames" id="surnames" name="surnames" class="form-control" required>
+              <span class="error" *ngIf="surnames?.invalid && surnames?.touched">Introduzca el/los apellido/s</span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" formControlName="email" class="form-control" required>
+              <span class="error" *ngIf="email?.invalid && (email?.touched || email?.dirty)">Introduzca un emailvalido</span>
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input formControlName="password" type="password" id="password" name="password" class="form-control"
+                required>
+              <span class="error" *ngIf="password?.invalid && (password?.touched || password?.dirty)">Introduzca la contraseña</span>
+            </div>
+            <div class="form-group">
+              <label for="password">Repetir Contraseña</label>
+              <input type="password" formControlName="confirmPassword" id="confirmPassword" name="password"
+                class="form-control" required>
+              <span class="error" *ngIf="confirmPassword?.invalid && (confirmPassword?.touched || confirmPassword?.dirty)">Las contraseñas deben coincidir</span>
+            </div>
+            <div class="submitButton">
+              <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-primary btn-block mx-auto">
+                Editar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

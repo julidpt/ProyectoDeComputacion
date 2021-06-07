@@ -30,6 +30,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ChartModule } from 'angular-highcharts';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ChartModule } from 'angular-highcharts';
     TownComponent,
     UserComponent,
     AdminComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

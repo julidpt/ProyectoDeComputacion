@@ -17,5 +17,7 @@ export class UsersService {
     return this.http.get(`${baseUrl}user/getUsers`);
   }
 
-
+  userEdit(userPayload, id) {
+    return this.http.post<any>(`${baseUrl}user/edit/${id}`, userPayload)
+  }
 }

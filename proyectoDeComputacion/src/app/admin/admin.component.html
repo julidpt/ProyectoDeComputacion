@@ -7,15 +7,13 @@
             </p>
             <hr>
             <div class="row">
-                <div class="col-md-10">
+                <div>
                     <p align="left"> {{currentUser.name}} </p>
                     <p align="left"> {{currentUser.surnames}} </p>
                     <p align="left"> {{currentUser.email}} </p>
                 </div>
-                <div class="col-md-2">
-                    <p align="right"><a routerLink="/admin" (click)="editUser()"><i class="bi bi-pencil-square"></i></a></p>
-                    <p align="right"><a routerLink="/admin" (click)="editEmail()"><i class="bi bi-pencil-square"></i></a></p>
-                    <p align="right"><a routerLink="/admin" (click)="editEmail()"><i class="bi bi-pencil-square"></i></a></p>
+                <div>
+                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{currentUser.id_user}}"><i class="bi bi-pencil"></i> Editar Usuario</button>
                 </div>
             </div>
         </div>
@@ -92,7 +90,7 @@
                         <tr *ngFor="let user of users">
                             <th></th>
                             <td> {{ user.name }} {{ user.surnames }} </td>
-                            <td><a routerLink="/admin"><i class="bi bi-pencil" (click)="editUser()"></i></a></td>
+                            <td><a routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i></a></td>
                             <td><a routerLink="/admin"><i class="bi bi-trash" (click)="deleteUser()"></i></a></td>
                         </tr>
                     </tbody>

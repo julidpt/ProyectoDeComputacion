@@ -9,6 +9,7 @@ import { TownComponent } from './town/town.component';
 import { UserComponent } from './user/user.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { AuthGuard } from './services/auth.guard';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit/:id',
+    component: EditComponent,
     canActivate: [AuthGuard]
   },
   {
