@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^3.0.0-beta.0",
     "@angular/animations": "~11.1.2",
     "@angular/cdk": "^11.2.13",
     "@angular/common": "~11.1.2",
@@ -26,6 +27,7 @@
     "@fullpage/angular-fullpage": "0.0.15",
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "@types/chart.js": "^2.9.32",
+    "@types/googlemaps": "3.39.12",
     "angular-highcharts": "^11.3.1",
     "angular-responsive-carousel": "^2.0.2",
     "bootstrap": "^5.0.0-beta2",
