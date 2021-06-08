@@ -1,98 +1,98 @@
 .container {
-    margin: 0;
+  margin: 0;
 }
 
 #gradient-0 stop {
-    stop-color: #506ef9;
+  stop-color: #506ef9;
 }
 
 #gradient-0 stop[offset="0"] {
-    stop-opacity: 0.25;
+  stop-opacity: 0.25;
 }
 
 #gradient-0 stop[offset="1"] {
-    stop-opacity: 0;
+  stop-opacity: 0;
 }
 
 .highcharts-color-0 {
-     fill: #506ef9;
-     stroke: #506ef9 ;
+  fill: #506ef9;
+  stroke: #506ef9;
 }
 
 .highcharts-color-0 .highcharts-area {
-    fill-opacity: 1;
-    fill: url(#gradient-0);
+  fill-opacity: 1;
+  fill: url(#gradient-0);
 }
 
 .graphContainer {
-    display: grid;
-    padding: 20px;
-    grid-template-columns: repeat(auto-fit, mimax(350px, 500px));
-    grid-gap: 20px;
-    place-content: center;
-    margin-top: 30px;
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, mimax(350px, 500px));
+  grid-gap: 20px;
+  place-content: center;
+  margin-top: 30px;
 
-    & > * {
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
+  & > * {
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .user {
-    // font-size: 10em;
-    margin-top: 5%;
-    width: 75%;
-
+  // font-size: 10em;
+  margin-top: 5%;
+  width: 75%;
 }
 
 .col-md-9 {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .admin {
-    background-color: #d7d7d7;
+  background-color: #d7d7d7;
 }
 
 p {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .webScraper {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .graph {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 table {
-    counter-reset: rowNumber;
-    margin-top: 5%;
-  }
-  
-  table tr {
-    counter-increment: rowNumber;
-  }
-  
-  table tr th:first-child::before {
-    content: counter(rowNumber);
-    // min-width: 1em;
-    margin-right: 0.5em;
+  counter-reset: rowNumber;
+  margin-top: 5%;
+}
+
+table tr {
+  counter-increment: rowNumber;
+}
+
+table tr th:first-child::before {
+  content: counter(rowNumber);
+  // min-width: 1em;
+  margin-right: 0.5em;
 }
 
 .vertical {
-    border-left: 1px solid black;
-    margin-top: 20%;
-    height: 125vh;
+  border-left: 1px solid black;
+  margin-top: 20%;
+  height: 125vh;
 }
 
 h5 {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 
 .editButton {
-    width: 100%;
+  width: 100%;
 }
 
-@media (max-width: 800px) {}
+@media (max-width: 800px) {
+}

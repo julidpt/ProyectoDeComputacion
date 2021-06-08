@@ -10,7 +10,7 @@ import { Options, reduce } from 'highcharts';
   styleUrls: ['./admin.component.scss']
 })
 
-export class AdminComponent implements OnInit { 
+export class AdminComponent implements OnInit {
   currentUser: any
   users: any
   admins: any
@@ -20,7 +20,7 @@ export class AdminComponent implements OnInit {
 
   loading: boolean = true
 
-  constructor(private userService: UsersService, private townService: TownsService) {}
+  constructor(private userService: UsersService, private townService: TownsService) { }
 
   ngOnInit(): void {
     this.userService.getUser()
@@ -28,7 +28,7 @@ export class AdminComponent implements OnInit {
         response => {
           this.currentUser = response;
         })
- 
+
     this.userService.getUsers()
       .subscribe(
         response => {
@@ -58,7 +58,7 @@ export class AdminComponent implements OnInit {
           this.loading = false
           console.log(response)
           this.searchedTowns = response;
-          
+
           console.log(this.searchedTowns[0].searches)
           console.log(this.searchedTowns[1].searches)
           console.log(this.searchedTowns[2].searches)
@@ -67,7 +67,7 @@ export class AdminComponent implements OnInit {
           console.log(this.searchedTowns[5].searches)
           console.log(this.searchedTowns[6].searches)
         })
-      }
+  }
 
   editUser() {
     var name = prompt('Introduce el nombre:', '');
@@ -91,11 +91,11 @@ export class AdminComponent implements OnInit {
       styledMode: false,
     },
     plotOptions: {
-        series: {
-          marker: {
-            enabled: false,
-          }
+      series: {
+        marker: {
+          enabled: false,
         }
+      }
     },
     legend: {
       enabled: false,
