@@ -26,4 +26,12 @@ export class UsersService {
   userEdit(userPayload, id) {
     return this.http.post<any>(`${baseUrl}user/edit/${id}`, userPayload)
   }
+
+  deleteUser(id) {
+    return this.http.delete<any>(`${baseUrl}user/delete/${id}`)
+  }
+
+  setAdmin(id) {
+    return this.http.get<any>(`${baseUrl}user/setAdmin/${id}`)
+  }
 }

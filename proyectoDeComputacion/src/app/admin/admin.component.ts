@@ -67,6 +67,7 @@ export class AdminComponent implements OnInit {
           console.log(this.searchedTowns[5].searches)
           console.log(this.searchedTowns[6].searches)
         })
+<<<<<<< Updated upstream
   }
 
   editUser() {
@@ -74,16 +75,16 @@ export class AdminComponent implements OnInit {
     var surnames = prompt('Introduce el apellido:', '')
     console.log(name, surnames);
     // this.http.post(`${baseUrl}user/edit`, name && surnames).toPromise().then(response => {})
+=======
+>>>>>>> Stashed changes
   }
 
-  editEmail() {
-    var email = prompt('Introduce el email:', '');
-    console.log(email);
+  deleteUser(id_user) {
+    this.userService.deleteUser(id_user).subscribe()
   }
-
-  deleteUser() {
-    alert("Usuario borrado")
-    // this.http.delete(`${baseUrl}user/delete/:id`, ).toPromise().then(response => {})
+  
+  setAdmin (id_user) {
+    this.userService.setAdmin(id_user).subscribe()
   }
 
   areaChartOptions: Options = {

@@ -19,6 +19,7 @@
               <p>Poblacion</p>
               <strong *ngIf="!loading">{{townData.population}}</strong>
             </div>
+            <ngx-skeleton-loader appearance="" *ngIf="loading"></ngx-skeleton-loader>
           </div>
           <div class="col-md-4 col-4">
             <div class="density">
@@ -35,7 +36,7 @@
       </div>
       <div #caja class="stats col-md-4">
         <div class="row">
-          <div class="data">
+          <div class="data mw-100">
             <h3><i class="bi bi-book"></i> Datos</h3>
             <div>
               <ul *ngIf="!loading" class="list-group list-group-flush">
@@ -44,12 +45,12 @@
                 <li class="list-group-item">Comunidad Autonoma: {{townData.aacc}}</li>
                 <li class="list-group-item">Vaciada: {{townData.emptied}}</li>
               </ul>
-              <ngx-skeleton-loader count="6" appearance="" *ngIf="loading"></ngx-skeleton-loader>
+              <ngx-skeleton-loader count="4" appearance="" *ngIf="loading"></ngx-skeleton-loader>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="info">
+          <div class="info mw-100">
             <h3><i class="bi bi-info-circle"></i> Información</h3>
             <div>
               <ul *ngIf="!loading" class="list-group list-group-flush">
@@ -63,57 +64,54 @@
       </div>
       <div class="map col-md-4">
         <div class="row">
-          <div class="map2">
+          <div *ngIf="!loading" class="h-100">
             <agm-map [latitude]= "townData.latitude" [longitude]="townData.longitude">
               <agm-marker [latitude]="townData.latitude" [longitude]="townData.longitude"></agm-marker>
             </agm-map>
           </div>
+          <ngx-skeleton-loader appearance="" *ngIf="loading"></ngx-skeleton-loader>
         </div>
       </div>
     </div>
     <div class="row restaurants">
       <div class="col-md-12">
         <h4 *ngIf="!loading">Los mejores {{townData.topRestaurants.length}} restaurantes según la crítica</h4>
-        <!-- <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
+        <ngx-skeleton-loader *ngIf="loading"count="1" appearance=""></ngx-skeleton-loader>
+        <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
           <div class="col" *ngFor="let restaurant of townData.topRestaurants">
             <div class="card">
-              <div class="card-horizontal">
-                <div class="img-square-wrapper d-flex center">
-                  <img class="" src="{{restaurant.image_url}}" alt="restaurante">
+              <div class="img-square-wrapper d-flex center">
+                <img class="" src="{{restaurant.image_url}}" alt="restaurante">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title d-flex">
+                  <p >{{restaurant.name}}</p>
+                </h5>
+                <div class="card-text d-flex">
+                  <i class="bi bi-geo-alt"></i>
+                  <p>{{restaurant.location}}</p>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title d-flex">
-                    <p >{{restaurant.name}}</p>
-                  </h5>
-                  <div class="card-text d-flex">
-                    <i class="bi bi-geo-alt"></i>
-                    <p>{{restaurant.location}}</p>
-                  </div>
-                  <div class="card-text d-flex">
-                    <i class="bi bi-hand-thumbs-up"></i>
-                    <p>{{restaurant.sentiment}}</p>
-                  </div>
+                <div class="card-text d-flex">
+                  <i class="bi bi-hand-thumbs-up"></i>
+                  <p>{{restaurant.sentiment}}</p>
                 </div>
               </div>
             </div>
           </div>
-        </div> -->
-        <div class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
+        </div>
+        <div *ngIf="loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
           <div class="col">
             <div class="card">
               <div class="card-horizontal">
-                <div class="img-square-wrapper d-flex center">
-                  <ngx-skeleton-loader appearance=""></ngx-skeleton-loader>
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title d-flex">
-                    <ngx-skeleton-loader appearance=""></ngx-skeleton-loader>
+                  <h5 class="card-title">
+                    <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
                   </h5>
-                  <div class="card-text d-flex">
-                    <ngx-skeleton-loader appearance=""></ngx-skeleton-loader>
+                  <div class="card-text">
+                    <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
                   </div>
-                  <div class="card-text d-flex">
-                    <ngx-skeleton-loader appearance=""></ngx-skeleton-loader>
+                  <div class="card-text">
+                    <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
                   </div>
                 </div>
               </div>

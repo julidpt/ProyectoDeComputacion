@@ -50,6 +50,7 @@
                 <mat-tab label="Usuarios">
                     <div class="container">
                         <div class="row">
+<<<<<<< Updated upstream
                             <div class="col-md-6">
                                 <h5>Usuarios</h5>
                                 <table class="table table-striped">
@@ -79,6 +80,36 @@
                                 </table>
                             </div>
                         </div>
+=======
+                        <div class="col-md-6">
+                        <h5>Usuarios</h5>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr *ngFor="let user of users">
+                                    <th></th>
+                                    <td> {{ user.name }} {{ user.surnames }} </td>
+                                    <td><a routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i></a></td>
+                                    <td><a routerLink="/admin"><i class="bi bi-trash" (click)="deleteUser(user.id_user)"></i></a></td>
+                                    <td><a routerLink="/admin"><i class="bi bi-person-badge" (click)="setAdmin(user.id_user)"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Administradores</h5>
+                        <table class="table table-striped col-6">
+                            <tbody>
+                                <tr *ngFor="let admin of admins">
+                                    <th></th>
+                                    <td> {{ admin.name }} {{ admin.surnames }} </td>
+                                    <td><a routerLink="/edit/{{admin.id_user}}"><i class="bi bi-pencil"></i></a></td>
+                                    <td><a routerLink="/admin"><i class="bi bi-trash" (click)="deleteUser(admin.id_user)"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+>>>>>>> Stashed changes
                     </div>
                 </mat-tab>
             </mat-tab-group>
