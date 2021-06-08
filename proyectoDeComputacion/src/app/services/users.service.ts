@@ -16,6 +16,12 @@ export class UsersService {
   getUsers() {
     return this.http.get(`${baseUrl}user/getUsers`);
   }
+  getAdmins() {
+    return this.http.get(`${baseUrl}user/getAdmins`);  
+  }
+  getAllUsers() {
+    return this.http.get(`${baseUrl}user/getAllUsers`);  
+  }
 
   userEdit(userPayload, id) {
     return this.http.post<any>(`${baseUrl}user/edit/${id}`, userPayload)

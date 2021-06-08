@@ -2,6 +2,28 @@
     margin: 0;
 }
 
+#gradient-0 stop {
+    stop-color: #506ef9;
+}
+
+#gradient-0 stop[offset="0"] {
+    stop-opacity: 0.25;
+}
+
+#gradient-0 stop[offset="1"] {
+    stop-opacity: 0;
+}
+
+.highcharts-color-0 {
+     fill: #506ef9;
+     stroke: #506ef9 ;
+}
+
+.highcharts-color-0 .highcharts-area {
+    fill-opacity: 1;
+    fill: url(#gradient-0);
+}
+
 .graphContainer {
     display: grid;
     padding: 20px;

@@ -10,6 +10,9 @@ import { UserComponent } from './user/user.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { AuthGuard } from './services/auth.guard';
 import { EditComponent } from './edit/edit.component';
+import { forgotPasswordComponent } from './login/forgot-psswd/forgot-psswd.component'
+import { ChangePasswordComponent } from './login/change-password/change-password.component';
+
 
 const routes: Routes = [
   {
@@ -50,6 +53,14 @@ const routes: Routes = [
   {
     path: 'confirmation',
     component: ConfirmationComponent
+  },
+  {
+    path: 'forgot-password',
+    component: forgotPasswordComponent
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent
   }
 ];
 

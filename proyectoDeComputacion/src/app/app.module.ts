@@ -31,6 +31,8 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ChartModule } from 'angular-highcharts';
 import { EditComponent } from './edit/edit.component';
+import { forgotPasswordComponent } from './login/forgot-psswd/forgot-psswd.component';
+import { ChangePasswordComponent } from './login/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { EditComponent } from './edit/edit.component';
     UserComponent,
     AdminComponent,
     ConfirmationComponent,
-    EditComponent
+    EditComponent,
+    forgotPasswordComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
