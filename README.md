@@ -61,6 +61,11 @@ Angular Material
 ng add @angular/material
 ```
 
+Angular Highcharts
+```sh
+npm install highcharts-angular --save
+```
+
 # Comandos de Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
