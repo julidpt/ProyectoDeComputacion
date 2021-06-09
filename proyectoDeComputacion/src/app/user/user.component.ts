@@ -21,5 +21,11 @@ export class UserComponent implements OnInit {
         response => {
           this.user = response;
         })
+
+    this.townService.getUserLikedTowns()
+      .subscribe(
+        response => {
+          this.likedTowns = response;
+        })
   }
 }

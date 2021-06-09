@@ -29,7 +29,8 @@
           </div>
           <div class="col-md-4 col-4">
             <div class="like">
-              <button type="button" class="btn btn-outline-secondary" (click)="like()"><i class="bi bi-heart"></i></button>
+              <button *ngIf="!liked" type="button" class="btn btn-outline-secondary" (click)="like()"><i class="bi bi-heart"></i></button>
+              <button *ngIf="liked" type="button" class="btn btn-outline-secondary" (click)="dislike()"><i class="bi bi-heart-fill"></i></button>
             </div>
           </div>
         </div>
