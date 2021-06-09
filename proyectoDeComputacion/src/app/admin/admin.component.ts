@@ -34,6 +34,7 @@ export class AdminComponent implements OnInit {
         response => {
           this.users = response;
         })
+        
     this.userService.getAdmins()
       .subscribe(
         response => {
@@ -67,16 +68,6 @@ export class AdminComponent implements OnInit {
           console.log(this.searchedTowns[5].searches)
           console.log(this.searchedTowns[6].searches)
         })
-<<<<<<< Updated upstream
-  }
-
-  editUser() {
-    var name = prompt('Introduce el nombre:', '');
-    var surnames = prompt('Introduce el apellido:', '')
-    console.log(name, surnames);
-    // this.http.post(`${baseUrl}user/edit`, name && surnames).toPromise().then(response => {})
-=======
->>>>>>> Stashed changes
   }
 
   deleteUser(id_user) {

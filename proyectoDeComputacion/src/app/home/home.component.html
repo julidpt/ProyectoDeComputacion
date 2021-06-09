@@ -16,7 +16,7 @@
     <div class="row">
       <div class="popular col-md-12">
         <h2>Búsquedas populares esta semana</h2>
-        <carousel *ngIf="loadingTopTowns==false" [cellWidth]="300" [autoplay]="true" [loop]="true" [autoplayInterval]="1000">
+        <carousel *ngIf="loadingTopTowns==false" [cellWidth]="300" [loop]="true">
           <div class="carousel-cell" *ngFor="let town of topTowns">
             <div class="card card-horizontal">
               <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
@@ -32,7 +32,7 @@
     <div class="row">
       <div class="liked col-md-12">
         <h2>Mejor valorados</h2>
-        <carousel *ngIf="loadingLikedTowns==false" [cellWidth]="300" [autoplay]="true" [loop]="true" [autoplayInterval]="1000">
+        <carousel *ngIf="loadingLikedTowns==false" [cellWidth]="300" [loop]="true">
           <div class="carousel-cell" *ngFor="let town of likedTowns">
             <div class="card card-horizontal">
               <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">

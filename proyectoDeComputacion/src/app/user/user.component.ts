@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { TownsService } from '../services/towns.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-user',
@@ -7,43 +8,18 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  user = {
-    name:'Juan',
-    surnames:'Lasso de la Vega', 
-    email:'juan@gmail.com',
-    phone:'1234567890'
-  }
+  user: any
+  likedTowns: any
 
-  cards = [{"imagen":"../../assets/towns/santillana.jpg", "nombre": "Santillana del Mar"}, 
-           {"imagen":"../../assets/towns/trujillo.jpg", "nombre": "Trujillo"},
-           {"imagen":"../../assets/towns/pedraza.jpg", "nombre": "Pedraza"},
-           {"imagen":"../../assets/towns/chinchon.jpg", "nombre": "Chinchón"}];
+  loading: boolean = true
 
-  constructor(private authService: AuthService) {}
+  constructor(private userService: UsersService, private townService: TownsService) {}
 
   ngOnInit(): void {
-    // this.authService.user.subscribe(value => {
-    //   if (value) {
-    //     this.user.id = value.userid;
-    //     this.user.username = value.username;
-    //   }
-    // })
+    this.userService.getUser()
+      .subscribe(
+        response => {
+          this.user = response;
+        })
   }
-
-  editUser() {
-    var name = prompt('Introduce el nombre:', '');
-    var surnames = prompt('Introduce el apellido:', '')
-    console.log(name, surnames);
-  }
-
-  editEmail() {
-    var email = prompt('Introduce el email:', '');
-    console.log(email);
-  }
-
-  editPhone() {
-    var phone = prompt('Introduce el teléfono:', '');
-    console.log(phone);
-  }
-
 }

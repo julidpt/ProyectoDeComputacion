@@ -14,11 +14,12 @@
     </div>
     <div class="col-md-3 user">
       <ng-container *ngIf="!authService.loggedIn(); else profile">
-        <button class="btn" [ngClass]="{ 'btn-primary': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-primary' : router.url != ('/#firstPage') && router.url != ('/')}" routerLink="/login" routerLinkActive="is-active"><i class="bi bi-person"></i> Iniciar Sesion</button>
-        </ng-container>
+        <button class="btn" [ngClass]="{ 'btn-primary': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-primary' : router.url != ('/#firstPage') && router.url != ('/')}" routerLink="/register" routerLinkActive="is-active">Registro</button>
+        <button class="btn" [ngClass]="{ 'btn-primary': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-primary' : router.url != ('/#firstPage') && router.url != ('/')}" routerLink="/login" routerLinkActive="is-active">Iniciar Sesion</button>
+      </ng-container>
       <ng-template #profile>
-        <button class="btn"  [ngClass]="{ 'btn-primary': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-primary' : router.url != ('/#firstPage') && router.url != ('/')}" routerLink="/admin" routerLinkActive="is-active"><i class="bi bi-person"></i> Perfil</button>
-        <button class="btn"  [ngClass]="{ 'btn-danger': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-danger' : router.url != ('/#firstPage') && router.url != ('/')}" routerLinkActive="is-active" (click)="exit()"><i class="bi bi-box-arrow-right"></i> Cerrar Sesion</button>
+        <button class="btn"  [ngClass]="{ 'btn-primary': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-primary' : router.url != ('/#firstPage') && router.url != ('/')}" routerLink="/admin" routerLinkActive="is-active">Perfil</button>
+        <button class="btn"  [ngClass]="{ 'btn-danger': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-danger' : router.url != ('/#firstPage') && router.url != ('/')}" routerLinkActive="is-active" (click)="exit()">Cerrar Sesion</button>
       </ng-template>
     </div>
   </div>

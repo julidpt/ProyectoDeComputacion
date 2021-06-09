@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    component: UserComponent
+    component: UserComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'town/:town',
@@ -42,13 +43,11 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterComponent,
-    canActivate: [AuthGuard]
+    component: RegisterComponent
   },
   {
     path: 'edit/:id',
-    component: EditComponent,
-    canActivate: [AuthGuard]
+    component: EditComponent
   },
   {
     path: 'confirmation',

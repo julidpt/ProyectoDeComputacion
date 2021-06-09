@@ -10,13 +10,19 @@ export class TownsService {
   constructor(private http: HttpClient) { }
 
   likeTown(id_town) {
-    return this.http.post(`${baseUrl}town/like`, { 
+    return this.http.post(`${baseUrl}town/like/${id_town}`, { 
       id_town: id_town
     })
   }
 
-  async getTown(id_town) {
-    return await this.http.get<any>(`${baseUrl}town/getTown/${id_town}`).toPromise();
+  dislikeTown(id_town) {
+    return this.http.post(`${baseUrl}town/dislike/${id_town}`, { 
+      id_town: id_town
+    })
+  }
+
+  getTown(id_town) {
+    return this.http.get<any>(`${baseUrl}town/getTown/${id_town}`);
   }
 
   getTowns() {
@@ -36,6 +42,10 @@ export class TownsService {
   }
 
   getSearchedTowns() {
+    return  this.http.get(`${baseUrl}town/getSearchedTowns`);
+  }
+
+  getUserTowns() {
     return  this.http.get(`${baseUrl}town/getSearchedTowns`);
   }
 }
