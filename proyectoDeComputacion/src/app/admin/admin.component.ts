@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UsersService } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { TownsService } from '../services/towns.service';
@@ -11,7 +12,7 @@ import { Options, reduce } from 'highcharts';
 })
 
 export class AdminComponent implements OnInit {
-  currentUser: any
+  admin: any
   users: any
   admins: any
   topWeekTowns: any
@@ -20,13 +21,16 @@ export class AdminComponent implements OnInit {
 
   loading: boolean = true
 
-  constructor(private userService: UsersService, private townService: TownsService) { }
+  constructor(private userService: UsersService, private townService: TownsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userService.getUser()
+    this.userService.getAdmin()
       .subscribe(
         response => {
-          this.currentUser = response;
+          this.admin = response;
+        }, 
+        error => {
+          this.router.navigate(['/'])
         })
 
     this.userService.getUsers()
@@ -74,7 +78,7 @@ export class AdminComponent implements OnInit {
     this.userService.deleteUser(id_user).subscribe()
   }
   
-  setAdmin (id_user) {
+  setAdmin(id_user) {
     this.userService.setAdmin(id_user).subscribe()
   }
 

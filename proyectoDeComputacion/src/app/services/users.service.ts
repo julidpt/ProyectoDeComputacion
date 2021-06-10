@@ -17,6 +17,10 @@ export class UsersService {
     return this.http.get(`${baseUrl}user/getUsers`);
   }
 
+  getAdmin() {
+    return this.http.get(`${baseUrl}user/getAdmin`);
+  }
+
   getAdmins() {
     return this.http.get(`${baseUrl}user/getAdmins`);  
   }

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MustMatch} from '../utils/register.validator';
 
 @Component({
   selector: 'app-register',
@@ -22,13 +20,17 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.minLength(6)]),
     confirmPassword: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6)])
-  });
+      Validators.required])
+  },
+  // {
+  //   Validators: this.MustMatch('password', 'confirmPassword')
+  // }
+  );
   goodreq: boolean = false;
   badreq: boolean = false;
+  unauth: boolean = false;
 
-  constructor(private http: HttpClient, private route: Router, private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -54,16 +56,16 @@ export class RegisterComponent implements OnInit {
     return this.form.get('confirmPassword')
   }
 
-  confirmedValidator(controlName: string, matchingControlName: string){
+  MustMatch(controlName: string, matchingControlName: string){
     return (formGroup: FormGroup) => {
         const control = formGroup.controls[controlName];
         const matchingControl = formGroup.controls[matchingControlName];
 
-        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+        if (matchingControl.errors && !matchingControl.errors.mustMatch) {
             return;
         }
         if (control.value !== matchingControl.value) {
-            matchingControl.setErrors({ confirmedValidator: true });
+            matchingControl.setErrors({ mustMatch: true });
         } else {
             matchingControl.setErrors(null);
         }
@@ -75,13 +77,20 @@ export class RegisterComponent implements OnInit {
     .subscribe(
       response => {
         this.badreq = false;
+        this.unauth = false;
         this.goodreq = true;
         setTimeout(() => {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/login']);
         }, 1000)
       },
       error => {
-        this.badreq = true;
+        if (error.status == 401) {
+          this.badreq = false;
+          this.unauth = true;
+        } else {
+          this.badreq = false;
+          this.badreq = true;
+        }
       })
   }
 

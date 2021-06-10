@@ -14,7 +14,10 @@
           <div *ngIf="goodreq == true;" class="alert alert-success" role="alert">
             usuario registrado
           </div>
-          <div *ngIf="badreq == true;" class="alert alert-danger" role="alert">
+          <div *ngIf="this.badreq == true" class="alert alert-danger" role="alert">
+            error del servidor
+          </div>
+          <div *ngIf="unauth == true;" class="alert alert-danger" role="alert">
             email ya existente
           </div>
           <div class="form-group">
@@ -36,7 +39,7 @@
             <label for="password">Contraseña</label>
             <input formControlName="password" type="password" id="password" name="password" class="form-control"
               required>
-            <span class="error" *ngIf="password?.invalid && (password?.touched || password?.dirty)">Introduzca la contraseña</span>
+            <span class="error" *ngIf="password?.invalid && (password?.touched || password?.dirty)">Mínimo 6 caracteres</span>
           </div>
           <div class="form-group">
             <label for="password">Repetir Contraseña</label>

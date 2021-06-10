@@ -10,7 +10,6 @@ import { UsersService } from '../services/users.service';
 export class UserComponent implements OnInit {
   user: any
   likedTowns: any
-
   loading: boolean = true
 
   constructor(private userService: UsersService, private townService: TownsService) {}
@@ -26,6 +25,7 @@ export class UserComponent implements OnInit {
       .subscribe(
         response => {
           this.likedTowns = response;
+          this.loading = false
         })
   }
 }

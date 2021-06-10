@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
       Validators.required
     ])
   });
+  unauth: boolean = false;
   badreq: boolean = false;
   // @ViewChild('content') block: ElementRef;
 
@@ -42,7 +43,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error => {
-          this.badreq = true;
+          if (error.status == 401) {
+            this.unauth = true;
+          } else {
+            this.badreq = true;
+          }
         })
   }
 
