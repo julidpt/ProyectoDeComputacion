@@ -6,20 +6,18 @@
     </div>
     <div class="row town">
       <div class="numbers col-md-4">
-        <div class="row">
+        <div class="row x">
           <div class="image">
-            <h3>Escudo</h3>
             <img *ngIf="!loading" class="" src="{{townData.image_url}}" alt="Card image cap">
             <ngx-skeleton-loader appearance="circle" *ngIf="loading"></ngx-skeleton-loader>
           </div>
         </div>
-        <div class="row">
+        <div class="row y">
           <div class="col-md-4 col-4">
             <div class="population">
-              <p>Poblacion</p>
+              <p>Población</p>
               <strong *ngIf="!loading">{{townData.population}}</strong>
             </div>
-            <ngx-skeleton-loader appearance="" *ngIf="loading"></ngx-skeleton-loader>
           </div>
           <div class="col-md-4 col-4">
             <div class="density">
@@ -37,7 +35,7 @@
       </div>
       <div #caja class="stats col-md-4">
         <div class="row">
-          <div class="data mw-100">
+          <div class="data">
             <h3><i class="bi bi-book"></i> Datos</h3>
             <div>
               <ul *ngIf="!loading" class="list-group list-group-flush">
@@ -65,12 +63,14 @@
       </div>
       <div class="map col-md-4">
         <div class="row">
-          <div *ngIf="!loading" class="h-100">
+          <div *ngIf="!loading" class="map2">
             <agm-map [latitude]= "townData.latitude" [longitude]="townData.longitude">
               <agm-marker [latitude]="townData.latitude" [longitude]="townData.longitude"></agm-marker>
             </agm-map>
           </div>
-          <ngx-skeleton-loader appearance="" *ngIf="loading"></ngx-skeleton-loader>
+          <div *ngIf="loading" class="map2">
+            
+          </div>
         </div>
       </div>
     </div>
