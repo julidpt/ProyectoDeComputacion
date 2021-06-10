@@ -26,9 +26,7 @@ export class AdminComponent implements OnInit {
   // highcharts
   Highcharts: typeof Highcharts = Highcharts; // required
   chartConstructor: string = 'chart'; // optional string, defaults to 'chart'
-  chartOptions: Highcharts.Options = {
-    series: [{ data:[], type: 'line',  yAxis: 'y axis' }]
-  }; // required optional function, defaults to null
+  chartOptions: Highcharts.Options = { series: [{ data:[], type: 'line',  yAxis: 'y axis' }] }; // required optional function, defaults to null
   updateFlag: boolean = false; // optional boolean
   oneToOneFlag: boolean = true; // optional boolean, defaults to false
   runOutsideAngular: boolean = false; // optional boolean, defaults to false
