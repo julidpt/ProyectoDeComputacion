@@ -29,10 +29,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { ChartModule } from 'angular-highcharts';
 import { EditComponent } from './edit/edit.component';
 import { forgotPasswordComponent } from './login/forgot-psswd/forgot-psswd.component';
 import { ChangePasswordComponent } from './login/change-password/change-password.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,7 @@ import { ChangePasswordComponent } from './login/change-password/change-password
     MatCheckboxModule,
     AngularFullpageModule,
     NgxSkeletonLoaderModule,
-    ChartModule
+    HighchartsChartModule
   ],
   providers: [
     AuthService,

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TownsService } from '../services/towns.service';
 import { UsersService } from '../services/users.service';
@@ -12,13 +13,16 @@ export class UserComponent implements OnInit {
   likedTowns: any
   loading: boolean = true
 
-  constructor(private userService: UsersService, private townService: TownsService) {}
+  constructor(private userService: UsersService, private townService: TownsService, private router: Router) {}
 
   ngOnInit(): void {
     this.userService.getUser()
       .subscribe(
         response => {
           this.user = response;
+        },
+        error => {
+          this.router.navigate(['/login'])
         })
 
     this.townService.getUserLikedTowns()
