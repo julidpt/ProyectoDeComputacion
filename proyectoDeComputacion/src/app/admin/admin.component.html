@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container all">
     <div class="row">
         <div class="col-md-3 admin">
             <p align="center">
@@ -7,14 +7,15 @@
             </p>
             <hr>
             <div class="row">
-                <div>
+                <div *ngIf="!loading">  
                     <p align="left"> {{admin.name}} </p>
                     <p align="left"> {{admin.surnames}} </p>
                     <p align="left"> {{admin.email}} </p>
                 </div>
-                <div>
+                <div *ngIf="!loading">
                     <button class="btn btn-outline-primary editButton" routerLink="/edit/{{admin.id_user}}"><i class="bi bi-pencil"></i>Editar Usuario</button>
                 </div>
+                <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader>
             </div>
         </div>
         <div class="col-md-9 functions">
@@ -32,6 +33,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader>
                             </div>
                             <div class="col-md-6">
                                 <h5>10 búsquedas más realizadas</h5>
@@ -43,6 +45,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader>
                             </div>
                         </div>
                     </div>
@@ -63,6 +66,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader>
                             </div>
                             <div class="col-md-6">
                                 <h5>Administradores</h5>
@@ -76,13 +80,14 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader>
                             </div>
                         </div>
                     </div>
                 </mat-tab>
             </mat-tab-group>
             <br>
-            <div class="graphContainer">
+            <div class="graphContainer" *ngIf="!loading">
                 <div class="area" [chart]="areaChart"></div>
             </div>
         </div>

@@ -24,6 +24,7 @@ export class UserComponent implements OnInit {
     this.townService.getUserLikedTowns()
       .subscribe(
         response => {
+          console.log(response)
           this.likedTowns = response;
           this.loading = false
         })

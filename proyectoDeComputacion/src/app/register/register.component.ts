@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -21,11 +21,7 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(6)]),
     confirmPassword: new FormControl('', [
       Validators.required])
-  },
-  // {
-  //   Validators: this.MustMatch('password', 'confirmPassword')
-  // }
-  );
+  });
   goodreq: boolean = false;
   badreq: boolean = false;
   unauth: boolean = false;
@@ -56,20 +52,8 @@ export class RegisterComponent implements OnInit {
     return this.form.get('confirmPassword')
   }
 
-  MustMatch(controlName: string, matchingControlName: string){
-    return (formGroup: FormGroup) => {
-        const control = formGroup.controls[controlName];
-        const matchingControl = formGroup.controls[matchingControlName];
-
-        if (matchingControl.errors && !matchingControl.errors.mustMatch) {
-            return;
-        }
-        if (control.value !== matchingControl.value) {
-            matchingControl.setErrors({ mustMatch: true });
-        } else {
-            matchingControl.setErrors(null);
-        }
-    }
+  MustMatch() : { [key: string]: boolean } | null {
+    return this.password?.value !== this.confirmPassword?.value ? {mismatch: true} : null
   }
 
   submit() {

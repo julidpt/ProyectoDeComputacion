@@ -24,6 +24,7 @@ export class AdminComponent implements OnInit {
   constructor(private userService: UsersService, private townService: TownsService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log('1')
     this.userService.getAdmin()
       .subscribe(
         response => {
@@ -60,9 +61,9 @@ export class AdminComponent implements OnInit {
     this.townService.getSearchedTowns()
       .subscribe(
         response => {
-          this.loading = false
           console.log(response)
           this.searchedTowns = response;
+          this.loading = false
 
           console.log(this.searchedTowns[0].searches)
           console.log(this.searchedTowns[1].searches)

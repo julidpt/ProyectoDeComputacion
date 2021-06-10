@@ -1,35 +1,31 @@
-<div class="container">
+<div class="container all">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3 admin">
             <p align="center">
-                <i class="bi bi-person user"></i>
+                <img src="/assets/admin.png" class="user">
+                <!-- <i class="bi bi-person user"></i> -->
             </p>
             <hr>
             <div class="row">
-                <div class="col-md-10 info">
-                    <p align="left"><i class="bi bi-person"></i> {{user.name}} {{user.surnames}}</p>
-                    <p align="left"><i class="bi bi-inbox"></i> {{user.email}}</p>
-                    <p align="left"><i class="bi bi-telephone"></i> {{user.phone}}</p>
+                <div>
+                    <p align="left"> {{user.name}} </p>
+                    <p align="left"> {{user.surnames}} </p>
+                    <p align="left"> {{user.email}} </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="vertical"></div>
-        </div>
-        <div class="col-md-6 cards">
-            <h3> Pueblos guardados </h3>
-            <carousel [height]="500" [cellWidth]="300" [autoplay]="true" [autoplayInterval]="2000">
-                <div class="carousel-cell" *ngFor="let town of likedTowns">
-                    <div class="card">
-                        <img class="card-img-top" src="{{town.iamge_url}}" alt="Card image cap">
+        <div class="col-md-9 functions">
+            <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
+                <div class="col" *ngFor="let town of likedTowns">
+                    <div class="card card-horizontal">
+                        <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
                         <div class="card-body">
-                        <h5 class="card-title">{{town.name}}</h5>
-                        <a routerLink="/town/{{town.id_town}}" class="btn btn-primary">Ver Mas</a>
-                        <a class="align-right"><i class="bi bi-bookmark-fill"></i></a>
+                          <h5 class="card-title">{{town.name}}</h5>
+                          <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
                         </div>
                     </div>
                 </div>
-            </carousel>
+            </div>
         </div>
     </div>
 </div>

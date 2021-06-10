@@ -77,7 +77,7 @@
     <div class="row restaurants">
       <div class="col-md-12">
         <h4 *ngIf="!loading">Los mejores {{townData.topRestaurants.length}} restaurantes según la crítica</h4>
-        <ngx-skeleton-loader *ngIf="loading"count="1" appearance=""></ngx-skeleton-loader>
+        <h4 *ngIf="loading">Cargando mejores restaurantes...</h4>
         <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
           <div class="col" *ngFor="let restaurant of townData.topRestaurants">
             <div class="card">
