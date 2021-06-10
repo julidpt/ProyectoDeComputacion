@@ -21,26 +21,29 @@ export class TownComponent implements OnInit {
   constructor(private route: ActivatedRoute, private townService: TownsService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.townService.getTown(this.route.snapshot.params.town)
-      .subscribe(
-        response => {
-          this.townData = response;
-          this.loading = false
-        })
-
     if (this.authService.loggedIn()) {
-      console.log('llega')
       this.townService.getUserLikedTown(this.route.snapshot.params.town)
         .subscribe(
           response => {
-            console.log('si')
             this.liked = true
+            this.getTownData()
           },
           error => {
-            console.log('no')
             this.liked = false
+            this.getTownData()
           })
+    } else {
+      this.getTownData()
     }
+  }
+
+  getTownData() {
+    this.townService.getTown(this.route.snapshot.params.town)
+    .subscribe(
+      response => {
+        this.townData = response;
+        this.loading = false
+      })
   }
 
   like(): void {

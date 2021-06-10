@@ -28,5 +28,12 @@ export class UserComponent implements OnInit {
           this.likedTowns = response;
           this.loading = false
         })
+    this.townService.getUserLikedTowns()
+      .subscribe(
+        response => {
+          console.log(response)
+          this.likedTowns = response;
+          this.loading = false
+        })
   }
 }

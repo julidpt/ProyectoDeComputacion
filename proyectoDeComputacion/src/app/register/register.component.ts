@@ -18,9 +18,7 @@ export class RegisterComponent implements OnInit {
       Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(6)]),
-    confirmPassword: new FormControl('', [
-      Validators.required])
+      Validators.minLength(6)])
   });
   goodreq: boolean = false;
   badreq: boolean = false;
@@ -52,30 +50,26 @@ export class RegisterComponent implements OnInit {
     return this.form.get('confirmPassword')
   }
 
-  MustMatch() : { [key: string]: boolean } | null {
-    return this.password?.value !== this.confirmPassword?.value ? {mismatch: true} : null
-  }
-
   submit() {
     this.authService.userRegister(this.form.value)
-    .subscribe(
-      response => {
-        this.badreq = false;
-        this.unauth = false;
-        this.goodreq = true;
-        setTimeout(() => {
-          this.router.navigate(['/login']);
-        }, 1000)
-      },
-      error => {
-        if (error.status == 401) {
+      .subscribe(
+        response => {
           this.badreq = false;
-          this.unauth = true;
-        } else {
-          this.badreq = false;
-          this.badreq = true;
-        }
-      })
+          this.unauth = false;
+          this.goodreq = true;
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 1000)
+        },
+        error => {
+          if (error.status == 401) {
+            this.badreq = false;
+            this.unauth = true;
+          } else {
+            this.badreq = false;
+            this.badreq = true;
+          }
+        })
   }
 
 }

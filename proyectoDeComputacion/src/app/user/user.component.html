@@ -2,22 +2,28 @@
     <div class="row">
         <div class="col-md-3 admin">
             <p align="center">
-                <img src="/assets/admin.png" class="user">
+                <img src="/assets/user.png" class="user">
                 <!-- <i class="bi bi-person user"></i> -->
             </p>
             <hr>
             <div class="row">
-                <div>
+                <div *ngIf="!loading">  
                     <p align="left"> {{user.name}} </p>
                     <p align="left"> {{user.surnames}} </p>
                     <p align="left"> {{user.email}} </p>
                 </div>
+                <div *ngIf="!loading">
+                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i>Editar Usuario</button>
+                </div>
+                <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader>
             </div>
         </div>
         <div class="col-md-9 functions">
+            <div class="cards-user">
+            <h2>Pueblos sabrosos mototrucooooooooooooooooo</h2>
             <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
                 <div class="col" *ngFor="let town of likedTowns">
-                    <div class="card card-horizontal">
+                    <div class="card" routerLink="/town/{{town.id_town}}">
                         <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
                         <div class="card-body">
                           <h5 class="card-title">{{town.name}}</h5>
@@ -26,6 +32,33 @@
                     </div>
                 </div>
             </div>
+            <h2>Pueblos miraos</h2>
+            <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
+                <div class="col" *ngFor="let town of likedTowns">
+                    <div class="card" routerLink="/town/{{town.id_town}}">
+                        <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{town.name}}</h5>
+                          <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
+                        </h5>
+                        <div class="card-text">
+                          <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </div>
