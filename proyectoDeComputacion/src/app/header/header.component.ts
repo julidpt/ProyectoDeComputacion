@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { baseUrl } from 'src/environments/environment';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { HostListener } from "@angular/core";
 
 @Component({
   selector: 'app-header',
@@ -17,8 +18,25 @@ export class HeaderComponent implements OnInit {
   // @ViewChild(componente hijo) child: componente hijo
 
   text!: string;
+  active: boolean = false;
+  screenHeight!: number;
+  screenWidth!: number;
 
-  constructor(public authService: AuthService, private http: HttpClient, public router: Router) { }
+  constructor(public authService: AuthService, private http: HttpClient, public router: Router) {
+    this.getScreenSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+    console.log(this.screenWidth, this.screenHeight);
+
+    if (this.screenWidth < 700) {
+      console.log('This will always executed.');
+      this.active = true;
+    }
+  }
 
   ngOnInit(): void {
     this.http.get(`${baseUrl}town/getTowns`).toPromise().then(response => {
