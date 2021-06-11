@@ -10,7 +10,16 @@ import { UsersService } from '../services/users.service';
 export class UserComponent implements OnInit {
   user: any
   likedTowns: any
+  searchedTowns: any
+  mostSearchedTown: any
+  mostRecentTowns: any
+  dailyChallenge: any
+  resultado: any
+  totalTowns: any
+  totalTownsUser: any
   loading: boolean = true
+  loadingLikedTowns = true
+  loadingSearchedTowns = true
 
   constructor(private userService: UsersService, private townService: TownsService) {}
 
@@ -24,16 +33,65 @@ export class UserComponent implements OnInit {
     this.townService.getUserLikedTowns()
       .subscribe(
         response => {
-          console.log(response)
+
           this.likedTowns = response;
           this.loading = false
+          this.loadingLikedTowns = false
         })
-    this.townService.getUserLikedTowns()
+    this.townService.getUserSearchedTowns()
       .subscribe(
         response => {
-          console.log(response)
-          this.likedTowns = response;
+        
+          this.searchedTowns = response;
           this.loading = false
+          this.loadingSearchedTowns = false
         })
+    this.townService.getUserMostSearchedTowns()
+    .subscribe(
+      response => {
+
+        this.mostSearchedTown = response;
+        this.loading = false
+      })
+    this.townService.getUserMostRecentTowns()
+    .subscribe(
+    response => {
+
+      this.mostRecentTowns = response;
+      this.loading = false
+    })
+    this.townService.getDailyChallenge()
+    .subscribe(
+    response => {
+      this.dailyChallenge = response[0].total
+      if(this.resultado > 10) {
+        this.resultado = 100
+      }
+      else this.resultado = this.dailyChallenge * 10
+
+      this.loading = false
+    })
+
+    this.townService.getTotalSearchedTowns()
+    .subscribe(
+    response => {
+      this.totalTownsUser = (response[0].total*100)/8134
+
+      console.log(this.totalTownsUser)
+
+      this.loading = false
+    })
+
+    this.townService.getTotalSearches()
+    .subscribe(
+    response => {
+      this.totalTowns = (response[0].total*100)/8134
+
+      console.log(this.totalTowns)
+
+      this.loading = false
+    })
   }
+
 }
+

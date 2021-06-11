@@ -1,4 +1,4 @@
-<div class="container all">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-3 admin">
             <p align="center">
@@ -15,50 +15,110 @@
                 <div *ngIf="!loading">
                     <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i>Editar Usuario</button>
                 </div>
-                <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader>
+                <!-- <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
             </div>
         </div>
         <div class="col-md-9 functions">
+        <div class="container">
+        <div class="col-container row">
+        <div class="col-4" style="padding:0">
             <div class="cards-user">
-            <h2>Pueblos sabrosos mototrucooooooooooooooooo</h2>
-            <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
-                <div class="col" *ngFor="let town of likedTowns">
-                    <div class="card" routerLink="/town/{{town.id_town}}">
-                        <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
+            <h5> Pueblo más visitado</h5>
+            <div *ngIf="!loading">
+                    <div class="card card-most-viewed  match-height" routerLink="/town/{{mostSearchedTown[1].id_town}}">
+                        <img src="{{mostSearchedTown[1].image_url}}" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">{{town.name}}</h5>
-                          <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
+                          <h5 class="card-title">{{mostSearchedTown[1].name}}</h5>
+                          <a routerLink="/town/{{mostSearchedTown[1].id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
                         </div>
                     </div>
-                </div>
             </div>
-            <h2>Pueblos miraos</h2>
-            <div *ngIf="!loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
-                <div class="col" *ngFor="let town of likedTowns">
-                    <div class="card" routerLink="/town/{{town.id_town}}">
-                        <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">{{town.name}}</h5>
-                          <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
-                        </div>
+            </div>
+            </div>
+                    <div class="col-4">
+                        <div class= "h-100">
+                        <h5>Búsquedas recientes</h5>
+                        <table class="table table-striped ">
+                            <tbody>
+                                <tr *ngFor="let town of mostRecentTowns">
+                                    <th></th>
+                                    <td><img class="table-img" src="{{town.image_url}}" alt="Card image cap"></td>
+                                    <th></th>
+                                    <td> {{ town.name }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        <!-- <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
+                    </div>
+                    <div class="col-4">
+                        <h5>Municipios favoritos</h5>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr *ngFor="let town of likedTowns">
+                                    <th></th>
+                                    <td><img class="table-img" src="{{town.image_url}}" alt="Card image cap"></td>
+                                    <th></th>
+                                    <td> {{ town.name }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
                     </div>
                 </div>
-            </div>
-            <div *ngIf="loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
-                <div class="col">
-                  <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">
-                          <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
-                        </h5>
-                        <div class="card-text">
-                          <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
+                  <div class="row">   
+                    <div class="col-7">
+                        <h5>10 búsquedas más realizadas</h5>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr *ngFor="let town of mostSearchedTown">
+                                    <th></th>
+                                    <td><img class="table-img" src="{{town.image_url}}" alt="Card image cap"></td>
+                                    <th></th>
+                                    <td> {{ town.name }} </td>
+                                    <td> {{ town.aacc }} </td>
+                                    <td><i class="bi bi-box-arrow-in-right" routerLink="/town/{{town.id_town}}"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
+                    </div>
+                    
+                    <div class="col-5">
+                        <div class=container>
+                            <h5>Estadisticas</h5>
+                        <div class="row progress-bar-padding">
+                        <h6>Reto diario (10 búsquedas distintas)</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100" style="width: {{resultado}}%">
+                            {{resultado}} % Completado
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                  </div>
+                        <div class="row progress-bar-padding">
+                            <h6>Municipios visitados</h6>
+                              <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="60"
+                                aria-valuemin="0" aria-valuemax="100" style="width:{{totalTownsUser}}%">
+                                  {{totalTownsUser}} % Completado
+                                </div>
+                              </div>
+                        <div class="row progress-bar-padding">
+                        <h6>Total municipios visitados por la comunidad</h6>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60"
+                            aria-valuemin="0" aria-valuemax="100" style="width:{{totalTowns}}%">
+                              {{totalTowns}} % Completado
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
-        </div>
-    </div>
-</div>
+            </div>
+

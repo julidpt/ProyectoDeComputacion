@@ -76,14 +76,51 @@
 // }
 
 .card-img-top {
-  width: 100%;
-  height: 15vw;
-  object-fit: cover;
+  
+}
+.match-height {
+	display:flex;
+	justify-content:space-between;
+}
+.img, .text {
+	flex: 0 0 40%;
+	padding:10px;
+}
+.img {
+	padding:0;
+	position:fixed;
+	overflow:hidden;
+	object-fit: cover;
 }
 
-.cards-user {
-  padding-top: 1em;
+.col-container {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */
 }
+
+.img-fluid {
+  display: block;
+  width: 100%;
+  max-height: 50%;
+  }
+
+.col-4 {
+  display: table-cell; /* Make elements inside the container behave like table cells */
+}
+
+
+.progress-bar-padding {
+
+  padding-top: 1.5em;
+  --bs-gutter-x: 0 !important;
+
+}
+
+.contenedor {
+
+  max-width: max-content;
+}
+
 
 .all {
     min-height: 100vh;
@@ -121,10 +158,20 @@
   .graph {
     margin-top: 5%;
   }
+
+  .card-most-viewed {
+    margin-top: 5%;
+    display:flex;
+  }
+
+  .table-img {
+    position:absolute; width: 20px; height: 20px;
+  }
   
   table {
     counter-reset: rowNumber;
     margin-top: 5%;
+    margin-bottom: 0 !important;
   }
   
   table tr {
@@ -149,6 +196,9 @@
   
   .editButton {
     width: 100%;
+  }
+  .cards-user {
+    height: 100%;
   }
   
   @media (max-width: 800px) {

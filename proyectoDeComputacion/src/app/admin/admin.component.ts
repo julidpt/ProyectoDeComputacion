@@ -21,7 +21,7 @@ export class AdminComponent implements OnInit {
 
   loading: boolean = true
 
-  constructor(private userService: UsersService, private townService: TownsService, private router: Router) { }
+  constructor(private userService: UsersService, private townService: TownsService, private router: Router) {}
 
   ngOnInit(): void {
     console.log('1')
@@ -165,6 +165,8 @@ export class AdminComponent implements OnInit {
   };
 
   areaChart = new Chart(this.areaChartOptions);
+  htmlstring = `<div class="graphContainer"><div class="area" [chart]="areaChart"></div></div>`;
+  // htmlstring =  `<p>Hola Mundo</p>`;
 
   // donutChartOptions: Options = {
   //   chart: {
@@ -210,29 +212,4 @@ export class AdminComponent implements OnInit {
   // }
 
   // donutChart = new Chart(this.donutChartOptions);
-
-  // public barChartOptions: ChartOptions = {
-  //   responsive: true,
-  //   scales: { xAxes: [{}], yAxes: [{}] },
-  //   plugins: {
-  //     datalabels: {
-  //       anchor: 'end',
-  //       align: 'end',
-  //     }
-  //   }
-  // };
-
-  // public barChartLabels: Label[] = ['', '', '', '', '', '', ''];
-  // public barChartType: ChartType = 'bar';
-  // public barChartLegend = true;
-  // public barChartPlugins = [pluginDataLabels];
-
-  // public barChartData: ChartDataSets[] = [
-  //   { data: [ this.lunes, this.martes, this.miercoles, this.jueves, this.viernes, this.sabado, this.domingo ], label: 'Búsquedas' }
-  // ];
-
-  // public randomize(): void {
-  //   this.barChartData[0].data = [ this.lunes, this.searchedTowns[1].searches, this.searchedTowns[2].searches, this.searchedTowns[3].searches, this.searchedTowns[4].searches, this.searchedTowns[5].searches, this.searchedTowns[6].searches ];
-  // }
-
 }
