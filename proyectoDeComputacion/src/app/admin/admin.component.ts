@@ -125,9 +125,11 @@ export class AdminComponent implements OnInit {
 
   deleteUser(id_user) {
     this.userService.deleteUser(id_user).subscribe()
+    window.location.reload();
   }
   
   setAdmin(id_user) {
     this.userService.setAdmin(id_user).subscribe()
+    window.location.reload();
   }
 }
