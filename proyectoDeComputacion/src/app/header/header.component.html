@@ -13,14 +13,25 @@
       <button *ngIf="router.url != ('/') && router.url !=('/#firstPage')" class="btn btn-light" (click)="getTown()" type="submit"><i class="bi bi-search"></i></button>
     </div>
     <div class="col-md-3 user">
-      <ng-container *ngIf="!authService.loggedIn(); else profile">
+      <button class="btn btn-primary" mat-button [matMenuTriggerFor]="menu"><i class="bi bi-person user"></i></button>
+      <mat-menu #menu="matMenu">
+        <ng-container *ngIf="!authService.loggedIn(); else profile">
+          <button class="btn register" [ngClass]="{ 'btn-primary': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-primary' : router.url != ('/#firstPage') && router.url != ('/')}" routerLink="/register" routerLinkActive="is-active">Registro</button>
+          <button class="btn btn-primary login" routerLink="/login" routerLinkActive="is-active">Iniciar Sesión</button>
+        </ng-container>
+        <ng-template #profile>
+          <button class="btn close" [ngClass]="{ 'btn-danger': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-danger' : router.url != ('/#firstPage') && router.url != ('/')}" routerLinkActive="is-active" (click)="exit()">Cerrar Sesión</button>
+          <button class="btn btn-primary profile" routerLink="/user" routerLinkActive="is-active">Perfil</button>
+        </ng-template>
+      </mat-menu>
+      <!-- <ng-container *ngIf="!authService.loggedIn(); else profile">
         <button class="btn register" [ngClass]="{ 'btn-primary': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-primary' : router.url != ('/#firstPage') && router.url != ('/')}" routerLink="/register" routerLinkActive="is-active">Registro</button>
         <button class="btn btn-primary login" routerLink="/login" routerLinkActive="is-active">Iniciar Sesión</button>
-      </ng-container>
-      <ng-template #profile>
+      </ng-container> -->
+      <!-- <ng-template #profile>
         <button class="btn close" [ngClass]="{ 'btn-danger': router.url == ('/#firstPage') || router.url == ('/'), 'btn-outline-danger' : router.url != ('/#firstPage') && router.url != ('/')}" routerLinkActive="is-active" (click)="exit()">Cerrar Sesión</button>
         <button class="btn btn-primary profile" routerLink="/user" routerLinkActive="is-active">Perfil</button>
-      </ng-template>
+      </ng-template> -->
     </div>
   </div>
 </div>

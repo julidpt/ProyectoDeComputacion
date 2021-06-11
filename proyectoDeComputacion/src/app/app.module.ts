@@ -33,6 +33,7 @@ import { EditComponent } from './edit/edit.component';
 import { forgotPasswordComponent } from './login/forgot-psswd/forgot-psswd.component';
 import { ChangePasswordComponent } from './login/change-password/change-password.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -50,14 +51,12 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ConfirmationComponent,
     EditComponent,
     forgotPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDQBd9Kz5c5bDVhsI2M0euX1LAT8vw0ZHg'
-    }),
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyDQBd9Kz5c5bDVhsI2M0euX1LAT8vw0ZHg' }),
     RouterModule,
     HttpClientModule,
     FormsModule,
@@ -70,7 +69,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatCheckboxModule,
     AngularFullpageModule,
     NgxSkeletonLoaderModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatMenuModule
   ],
   providers: [
     AuthService,
