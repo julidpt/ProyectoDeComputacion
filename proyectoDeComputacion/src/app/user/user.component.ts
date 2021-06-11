@@ -17,7 +17,10 @@ export class UserComponent implements OnInit {
   dailyChallenge: any
   resultado: any
   totalTowns: any
+  totalTownsRaw: any
+  totalTownsUserRaw: any
   totalTownsUser: any
+  liked: boolean = false
   loading: boolean = true
   loadingLikedTowns = true
   loadingSearchedTowns = true
@@ -68,7 +71,7 @@ export class UserComponent implements OnInit {
     .subscribe(
     response => {
       this.dailyChallenge = response[0].total
-      if(this.resultado > 10) {
+      if(this.dailyChallenge > 10) {
         this.resultado = 100
       }
       else this.resultado = this.dailyChallenge * 10
@@ -80,7 +83,7 @@ export class UserComponent implements OnInit {
     .subscribe(
     response => {
       this.totalTownsUser = (response[0].total*100)/8134
-
+      this.totalTownsUserRaw = response[0].total
       console.log(this.totalTownsUser)
 
       this.loading = false
@@ -90,11 +93,35 @@ export class UserComponent implements OnInit {
     .subscribe(
     response => {
       this.totalTowns = (response[0].total*100)/8134
+      this.totalTownsRaw = response[0].total
 
       console.log(this.totalTowns)
 
       this.loading = false
     })
+  }
+
+  like(): void {
+    this.townService.likeTown(this.likedTowns.id_town)
+      .subscribe(
+        response => {
+          this.liked = true
+        },
+        error => {
+          if (error.status == 500) {
+            console.log(error.status)
+          } else {
+            this.router.navigate(['login'])
+          }
+        });
+  }
+
+  dislike(): void {
+    this.townService.dislikeTown(this.likedTowns.id_town)
+      .subscribe(
+        response => {
+          this.liked = false
+        });
   }
 
 }

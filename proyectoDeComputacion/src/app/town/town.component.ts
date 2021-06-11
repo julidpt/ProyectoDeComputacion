@@ -51,7 +51,6 @@ export class TownComponent implements OnInit {
       .subscribe(
         response => {
           this.liked = true
-          console.log('ok')
         },
         error => {
           if (error.status == 500) {
@@ -67,7 +66,22 @@ export class TownComponent implements OnInit {
       .subscribe(
         response => {
           this.liked = false
-          console.log('ok')
         });
+  }
+
+  convertPob(num) {
+    var res = num/1000
+
+    if (res >= 1000) {
+      return Math.trunc(res/1000) + ' M'
+    } else if (res >= 1) {
+      return Math.trunc(res) + ' mil'
+    } else {
+      return num
+    }
+  }
+
+  convertDens(num) {
+    return Math.trunc(num)
   }
 }

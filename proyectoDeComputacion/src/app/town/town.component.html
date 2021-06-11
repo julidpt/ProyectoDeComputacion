@@ -16,19 +16,19 @@
           <div class="col-md-4 col-4">
             <div class="population">
               <p>Población</p>
-              <strong *ngIf="!loading">{{townData.population}}</strong>
+              <strong *ngIf="!loading">{{convertPob(townData.population)}}</strong>
             </div>
           </div>
           <div class="col-md-4 col-4">
             <div class="density">
               <p>Densidad</p>
-              <strong *ngIf="!loading">{{townData.density}}</strong>
+              <strong *ngIf="!loading">{{convertDens(townData.density)}}</strong>
             </div>
           </div>
           <div class="col-md-4 col-4">
             <div class="like">
-              <a *ngIf="!liked" type="button" (click)="like()"><i class="bi bi-heart"></i></a>
-              <a *ngIf="liked" type="button" (click)="dislike()"><i class="bi bi-heart-fill"></i></a>
+              <a *ngIf="(!liked && !loading)" type="button" (click)="like()"><i class="bi bi-heart"></i></a>
+              <a *ngIf="(liked && !loading)" type="button" (click)="dislike()"><i class="bi bi-heart-fill"></i></a>
             </div>
           </div>
         </div>
@@ -39,10 +39,10 @@
             <h3><i class="bi bi-book"></i> Datos</h3>
             <div>
               <ul *ngIf="!loading" class="list-group list-group-flush">
-                <li class="list-group-item">Región: {{townData.region}}</li>
-                <li class="list-group-item">Provincia: {{townData.province}}</li>
-                <li class="list-group-item">Comunidad Autonoma: {{townData.aacc}}</li>
-                <li class="list-group-item">Vaciada: {{townData.emptied}}</li>
+                <li class="list-group-item">Región: <strong>{{townData.region}}</strong></li>
+                <li class="list-group-item">Provincia: <strong>{{townData.province}}</strong></li>
+                <li class="list-group-item">Comunidad Autonoma: <strong>{{townData.aacc}}</strong></li>
+                <li class="list-group-item">Vaciada: <strong>{{townData.emptied}}</strong></li>
               </ul>
               <ngx-skeleton-loader count="4" appearance="" *ngIf="loading"></ngx-skeleton-loader>
             </div>
@@ -100,17 +100,15 @@
         <div *ngIf="loading" class="row row-cols-1 row-col-sm-2 row-cols-md-3 g-4">
           <div class="col">
             <div class="card">
-              <div class="card-horizontal">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
-                  </h5>
-                  <div class="card-text">
-                    <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
-                  </div>
-                  <div class="card-text">
-                    <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
-                  </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
+                </h5>
+                <div class="card-text">
+                  <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
+                </div>
+                <div class="card-text">
+                  <ngx-skeleton-loader count="1" appearance=""></ngx-skeleton-loader>
                 </div>
               </div>
             </div>
