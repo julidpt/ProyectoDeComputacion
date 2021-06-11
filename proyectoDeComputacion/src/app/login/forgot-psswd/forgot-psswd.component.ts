@@ -38,8 +38,4 @@ export class forgotPasswordComponent implements OnInit {
             this.badreq = true;
           })
     }
-  
-  
-
-
 }

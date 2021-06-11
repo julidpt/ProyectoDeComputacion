@@ -7,47 +7,50 @@
             </p>
             <hr>
             <div class="row">
-                <div *ngIf="!loading">  
+                <div *ngIf="!loading">
                     <p> {{user.name}} {{user.surnames}} </p>
                     <p> {{user.email}} </p>
                 </div>
                 <div *ngIf="!loading">
-                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i> Editar Usuario</button>
+                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i
+                            class="bi bi-pencil"></i> Editar Usuario</button>
                 </div>
                 <!-- <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
             </div>
         </div>
         <div class="col-md-9 functions">
-        <div class="container">
-        <div class="col-container row">
-        <div class="col-4" style="padding:0">
-            <div class="cards-user">
-            <h5> Pueblo más visitado</h5>
-            <div *ngIf="!loading">
-                    <div class="card card-most-viewed  match-height" routerLink="/town/{{mostSearchedTown[1].id_town}}">
-                        <img src="{{mostSearchedTown[1].image_url}}" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">{{mostSearchedTown[1].name}}</h5>
-                          <a routerLink="/town/{{mostSearchedTown[1].id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
+            <div class="container">
+                <div class="col-container row">
+                    <div class="col-4" style="padding:0">
+                        <div class="cards-user">
+                            <h5> Pueblo más visitado</h5>
+                            <div *ngIf="!loading">
+                                <div class="card card-most-viewed  match-height"
+                                    routerLink="/town/{{mostSearchedTown[1].id_town}}">
+                                    <img src="{{mostSearchedTown[1].image_url}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{mostSearchedTown[1].name}}</h5>
+                                        <a routerLink="/town/{{mostSearchedTown[1].id_town}}"
+                                            class="btn btn-outline-primary btn-block">Ver más...</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-            </div>
-            </div>
-            </div>
                     <div class="col-4">
-                        <div class= "h-100">
-                        <h5>Búsquedas recientes</h5>
-                        <table class="table table-striped ">
-                            <tbody>
-                                <tr *ngFor="let town of mostRecentTowns">
-                                    <th></th>
-                                    <td><img class="table-img" src="{{town.image_url}}" alt="Card image cap"></td>
-                                    <th></th>
-                                    <td> {{ town.name }} </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <div class="h-100">
+                            <h5>Búsquedas recientes</h5>
+                            <table class="table table-striped ">
+                                <tbody>
+                                    <tr *ngFor="let town of mostRecentTowns">
+                                        <th></th>
+                                        <td><img class="table-img" src="{{town.image_url}}" alt="Card image cap"></td>
+                                        <th></th>
+                                        <td> {{ town.name }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <!-- <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
                     </div>
                     <div class="col-4">
@@ -65,7 +68,7 @@
                         <!-- <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
                     </div>
                 </div>
-                  <div class="row">   
+                <div class="row">
                     <div class="col-7">
                         <h5>10 búsquedas más realizadas</h5>
                         <table class="table table-striped">
@@ -83,41 +86,40 @@
                         </table>
                         <!-- <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
                     </div>
-                    
+
                     <div class="col-5">
                         <div class=container>
                             <h5>Estadisticas</h5>
-                        <div class="row progress-bar-padding">
-                        <h6>Reto diario (10 búsquedas distintas)</h6>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100" style="width: {{resultado}}%">
-                            {{resultado}} % Completado
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row progress-bar-padding">
-                            <h6>Municipios visitados</h6>
-                              <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="60"
-                                aria-valuemin="0" aria-valuemax="100" style="width:{{totalTownsUser}}%">
-                                  {{totalTownsUser}} % Completado
+                            <div class="row progress-bar-padding">
+                                <h6>Reto diario (10 búsquedas distintas)</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: {{resultado}}%">
+                                        {{resultado}} % Completado
+                                    </div>
                                 </div>
-                              </div>
-                        <div class="row progress-bar-padding">
-                        <h6>Total municipios visitados por la comunidad</h6>
-                          <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60"
-                            aria-valuemin="0" aria-valuemax="100" style="width:{{totalTowns}}%">
-                              {{totalTowns}} % Completado
                             </div>
-                          </div>
-                        </div>
+                            <div class="row progress-bar-padding">
+                                <h6>Municipios visitados</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="60"
+                                        aria-valuemin="0" aria-valuemax="100" style="width:{{totalTownsUser}}%">
+                                        {{totalTownsUser}} % Completado
+                                    </div>
+                                </div>
+                                <div class="row progress-bar-padding">
+                                    <h6>Total municipios visitados por la comunidad</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60"
+                                            aria-valuemin="0" aria-valuemax="100" style="width:{{totalTowns}}%">
+                                            {{totalTowns}} % Completado
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
                 </div>
             </div>
-            </div>
-
+        </div>
+    </div>
