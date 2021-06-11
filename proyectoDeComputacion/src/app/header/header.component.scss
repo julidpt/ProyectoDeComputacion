@@ -1,3 +1,5 @@
+$margin: 5%;
+
 .navbar {
     background-color: #ffffff;
     box-shadow: 0 0.01em 1em #adadad;
@@ -68,46 +70,18 @@ img {
     max-height: 3em;
 }
 
-// .register {
-//     margin-top: 5%;
-//     margin-left: 15%;
-// }
+.register2 {
+    margin: $margin;
+}
 
-// .login {
-//     margin-top: 5%;
-//     margin-left: 15%;
-//     margin-bottom: 5%;
-// }
-// .close {
-//     margin-top: 5%;
-//     margin-left: 15%;
-// }
+.login2 {
+    margin: $margin;
+}
 
-// .profile {
-//     margin-top: 5%;
-//     margin-left: 15%;
-//     margin-bottom: 5%;
-// }
+.close2 {
+    margin: $margin;
+}
 
-// @media (max-width: 700px) {
-//     .register {
-//         font-size: 75%;
-//         margin-top: 5%;
-//     }
-//     .login {
-//         font-size: 75%;
-//         width: max-content;
-//         margin-top: -32%;
-//         margin-left: 75%;
-//     }
-//     .close{
-//         margin-top: 10%;
-//         font-size: 75%;
-//         margin-left: 80%;
-//         width: max-content;
-//     }
-//     .profile {
-//         font-size: 75%;
-//         margin-top: -36%;
-//     }
-// }
+.profile2 {
+    margin: $margin;
+}
