@@ -29,7 +29,6 @@
 }
 
 .graphContainer {
-  // display: grid;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, mimax(350px, 500px));
   grid-gap: 20px;
@@ -42,7 +41,6 @@
 }
 
 .user {
-  // font-size: 10em;
   margin-top: 5%;
   width: 75%;
 }
@@ -69,21 +67,6 @@ p {
 .graph {
   margin-top: 5%;
 }
-
-// table {
-//   counter-reset: rowNumber;
-//   margin-top: 5%;
-// }
-
-// table tr {
-//   counter-increment: rowNumber;
-// }
-
-// table tr th:first-child::before {
-//   content: counter(rowNumber);
-//   // min-width: 1em;
-//   margin-right: 0.5em;
-// }
 
 .vertical {
   border-left: 1px solid black;
