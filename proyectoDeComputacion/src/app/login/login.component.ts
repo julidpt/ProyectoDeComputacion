@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   });
   unauth: boolean = false;
   badreq: boolean = false;
-  // @ViewChild('content') block: ElementRef;
 
   constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
 
@@ -49,10 +48,5 @@ export class LoginComponent implements OnInit {
             this.badreq = true;
           }
         })
-  }
-
-  validate() {
-    // this.authService.post('')
-    alert('email confirmado')
   }
 }

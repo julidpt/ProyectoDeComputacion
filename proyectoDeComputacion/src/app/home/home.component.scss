@@ -3,13 +3,56 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+
+  .arrow,
+.arrow:before {
+  position: absolute;
+  left: 50%;
+}
+
+.arrow{
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px #fff solid;
+  border-bottom: 2px #fff solid;
+}
+  
+.arrow:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+  
+@keyframes arrow{
+  0%{
+    opacity: 1;
+  }
+    
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
+}
+  
 }
 .search {
   height: 70vh;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  // background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('/assets/alt-home.jpg'); 
 
   .title {
     font-size: 2.5em;
@@ -95,7 +138,6 @@
 
 @media (max-width: 700px) {
   .search {
-    // height: 50vh;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

@@ -17,7 +17,6 @@ export class forgotPasswordComponent implements OnInit {
     });
     badreq: boolean = false;
     goodreq: boolean = false;
-    // @ViewChild('content') block: ElementRef;
   
     constructor(private http: HttpClient, private router: Router, private authService: AuthService) { }
   
@@ -38,8 +37,4 @@ export class forgotPasswordComponent implements OnInit {
             this.badreq = true;
           })
     }
-  
-  
-
-
 }

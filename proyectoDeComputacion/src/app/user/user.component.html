@@ -6,19 +6,20 @@
             </p>
             <hr>
             <div class="row">
-                <div *ngIf="!loading">  
+                <div *ngIf="!loading">
                     <p> {{user.name}} {{user.surnames}} </p>
                     <p> {{user.email}} </p>
                 </div>
                 <div *ngIf="!loading">
-                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i> Editar Usuario</button>
+                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i
+                            class="bi bi-pencil"></i> Editar Usuario</button>
                 </div>
-                <!-- <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
+                <ngx-skeleton-loader count="2" appearance="" *ngIf="loading"></ngx-skeleton-loader>
             </div>
         </div>
         <div class="col-md-9 functions">
         <div class="container">
-        <div class="col-container row">
+        <div class="row">
         <div class="col-md-4" style="padding:0">
             <div class="cards-user">
             <h5> Pueblo más visitado</h5>
@@ -32,20 +33,34 @@
                     </div>
             </div>
             </div>
+        </div>
+        <div class="col-md-8">
+            <div class="cards-user">
+            <div class="map">
+            <div class="row">
+              <div *ngIf="!loading" class="map2">
+                <agm-map [latitude]= "mostSearchedTown[1].latitude" [longitude]="mostSearchedTown[1].longitude">
+                  <agm-marker [latitude]="mostSearchedTown[1].latitude" [longitude]="mostSearchedTown[1].longitude"></agm-marker>
+                </agm-map>
+              </div>
             </div>
-            <div class="col-md-8">
-                <div class=contenedor>
-                    <h5>Estadisticas</h5>
-                <div class="row progress-bar-padding">
+          </div>
+        </div>
+    </div>
+        <div class="row" style="padding: 0 ">
+            <div class="col-12">
+                <div class="container-fluid">
+                    <h4 class="stats">Estadísticas</h4>
+                <div class="progress-bar-padding">
                 <h6>Reto diario (10 búsquedas distintas)</h6>
-                <div class="progress">
+                <div *ngIf="!loading" class="progress">
                     <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100"
                     aria-valuemin="0" aria-valuemax="100" style="width: {{resultado}}%">
                     {{resultado}} % Completado
                     </div>
                   </div>
                 </div>
-                <div class="row progress-bar-padding">
+                <div *ngIf="!loading" class="row progress-bar-padding">
                     <h6>Municipios visitados - {{totalTownsUserRaw}} de 8134</h6>
                       <div class="progress">
                         <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="60"
@@ -53,7 +68,7 @@
                           {{totalTownsUser}} % Completado
                         </div>
                       </div>
-                <div class="row progress-bar-padding">
+                <div *ngIf="!loading" class="row progress-bar-padding">
                 <h6>Total municipios visitados por los usuarios - {{totalTownsRaw}} de 8134</h6>
                   <div class="progress">
                     <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60"
@@ -62,9 +77,12 @@
                     </div>
                   </div>
                 </div>
+                <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader>
                 </div>
             </div>
+            
             </div>
+        </div>
 
                         <!-- <ngx-skeleton-loader count="5" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
                     </div>
@@ -121,5 +139,5 @@
             </div>
                 </div>
             </div>
-            </div>
-
+        </div>
+    </div>

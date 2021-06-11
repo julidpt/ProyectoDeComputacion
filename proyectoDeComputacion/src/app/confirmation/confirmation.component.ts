@@ -24,8 +24,5 @@ export class ConfirmationComponent implements OnInit {
       email: this.email,
       token: this.token
     }).toPromise()
-
-
   }
-
 }
