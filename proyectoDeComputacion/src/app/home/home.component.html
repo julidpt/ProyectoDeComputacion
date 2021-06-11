@@ -31,14 +31,18 @@
     </div>
     <div class="row">
       <div class="liked col-md-12">
-        <h2>Mejor valorados</h2>
+        <h2>Mejor valorados por los usuarios</h2>
         <carousel *ngIf="loadingLikedTowns==false" [cellWidth]="300" [loop]="true">
           <div class="carousel-cell" *ngFor="let town of likedTowns">
             <div class="card card-horizontal">
               <img class="card-img-top" src="{{town.image_url}}" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">{{town.name}}</h5>
-                <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
+                <div>
+                  <h5 class="card-title">{{town.name}}</h5>
+                </div>
+                <div class="d-flex justify-content-flex-end">
+                  <a routerLink="/town/{{town.id_town}}" class="btn btn-outline-primary btn-block">Ver más...</a>
+                </div>
               </div>
             </div>
           </div>

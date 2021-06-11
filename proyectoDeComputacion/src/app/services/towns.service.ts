@@ -45,6 +45,10 @@ export class TownsService {
     return  this.http.get(`${baseUrl}town/getSearchedTowns`);
   }
 
+  getTopLimitedTowns() {
+    return this.http.get(`${baseUrl}town/getTopLimitedTowns`);
+  }
+
   getUserLikedTowns() {
     return this.http.get(`${baseUrl}town/getUserLikedTowns`);
   }

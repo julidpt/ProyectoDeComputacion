@@ -34,7 +34,6 @@
   grid-template-columns: repeat(auto-fit, mimax(350px, 500px));
   grid-gap: 20px;
   place-content: center;
-  margin-top: 30px;
 
   & > * {
     border-radius: 20px;
@@ -71,20 +70,20 @@ p {
   margin-top: 5%;
 }
 
-table {
-  counter-reset: rowNumber;
-  margin-top: 5%;
-}
+// table {
+//   counter-reset: rowNumber;
+//   margin-top: 5%;
+// }
 
-table tr {
-  counter-increment: rowNumber;
-}
+// table tr {
+//   counter-increment: rowNumber;
+// }
 
-table tr th:first-child::before {
-  content: counter(rowNumber);
-  // min-width: 1em;
-  margin-right: 0.5em;
-}
+// table tr th:first-child::before {
+//   content: counter(rowNumber);
+//   // min-width: 1em;
+//   margin-right: 0.5em;
+// }
 
 .vertical {
   border-left: 1px solid black;
@@ -104,4 +103,11 @@ h5 {
   min-width: 100%;
 }
 
-@media (max-width: 700px) {}
+.bi-trash:hover {
+  color: #aa0d00;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}

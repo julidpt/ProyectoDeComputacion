@@ -17,6 +17,7 @@ export class AdminComponent implements OnInit {
   topWeekTowns: any
   topTowns: any
   searchedTowns: any
+  noUsers: boolean = true
   chart: any
 
   loading: boolean = true
@@ -46,7 +47,11 @@ export class AdminComponent implements OnInit {
     this.userService.getUsers()
       .subscribe(
         response => {
+          this.noUsers = false
           this.users = response;
+        },
+        error => {
+          this.noUsers = true
         })
         
     this.userService.getAdmins()
@@ -61,20 +66,21 @@ export class AdminComponent implements OnInit {
           this.topWeekTowns = response;
         })
 
-    this.townService.getTopTowns()
+    this.townService.getTopLimitedTowns()
       .subscribe(
         response => {
+          console.log(response)
           this.topTowns = response;
         })
 
     this.townService.getSearchedTowns()
       .subscribe(
         response => {
-          console.log(response)
           this.searchedTowns = response
           this.chartOptions = {
             chart: {
-              styledMode: false,
+              type: 'line',
+              plotShadow: false
             },
             plotOptions: {
               series: {
@@ -90,7 +96,7 @@ export class AdminComponent implements OnInit {
               enabled: false,
             },
             title: {
-              text: 'Búsquedas esta semana',
+              text: 'Búsquedas en los últimos 7 dias',
             },
             yAxis: {
               visible: true
@@ -98,19 +104,18 @@ export class AdminComponent implements OnInit {
             xAxis: {
                   visible: true,
                   categories: [
-                    'Lunes',
-                    'Martes',
-                    'Miercoles',
-                    'Jueves',
-                    'Viernes',
-                    'Sábado',
-                    'Domingo',
+                    '7 días',
+                    '6 días',
+                    '5 días',
+                    '4 días',
+                    '3 días',
+                    'Ayer',
+                    'Hoy',
                   ],
                 },
-            series: [{ 
+            series: [{
               data: this.searchedTowns.map(town => town.searches), 
               type: 'line',
-              
             }]
           } 
           this.updateFlag = true
