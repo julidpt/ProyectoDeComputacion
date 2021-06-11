@@ -68,6 +68,25 @@ img {
     max-height: 3em;
 }
 
-@media (max-width: 600px) {
-    
+@media (max-width: 700px) {
+    .register {
+        font-size: 75%;
+        margin-top: 5%;
+    }
+    .login {
+        font-size: 75%;
+        width: max-content;
+        margin-top: -32%;
+        margin-left: 75%;
+    }
+    .close{
+        margin-top: 10%;
+        font-size: 75%;
+        margin-left: 80%;
+        width: max-content;
+    }
+    .profile {
+        font-size: 75%;
+        margin-top: -36%;
+    }
 }

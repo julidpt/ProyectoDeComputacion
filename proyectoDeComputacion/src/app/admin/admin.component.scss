@@ -29,7 +29,7 @@
 }
 
 .graphContainer {
-  display: grid;
+  // display: grid;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, mimax(350px, 500px));
   grid-gap: 20px;
@@ -104,5 +104,4 @@ h5 {
   min-width: 100%;
 }
 
-@media (max-width: 800px) {
-}
+@media (max-width: 700px) {}
