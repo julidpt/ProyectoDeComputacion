@@ -52,8 +52,27 @@ export class TownsService {
   getUserLikedTowns() {
     return this.http.get(`${baseUrl}town/getUserLikedTowns`);
   }
+  getUserSearchedTowns() {
+    return this.http.get(`${baseUrl}town/getUserSearchedTowns`);
+  }
+
+  getUserMostSearchedTowns() {
+    return this.http.get(`${baseUrl}town/getUserMostSearchedTowns`);
+  }
+  getUserMostRecentTowns() {
+    return this.http.get(`${baseUrl}town/getUserMostRecentTowns`);
+  }
 
   getUserLikedTown(id) {
     return this.http.get(`${baseUrl}town/getUserLikedTown/${id}`);  
+  }
+  getDailyChallenge() {
+    return this.http.get(`${baseUrl}town/getDailyChallenge`);
+  }
+  getTotalSearchedTowns() {
+    return this.http.get(`${baseUrl}town/getTotalSearchedTowns`);
+  }
+  getTotalSearches() {
+    return this.http.get(`${baseUrl}town/getTotalSearches`);
   }
 }
