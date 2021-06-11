@@ -8,12 +8,11 @@
             <hr>
             <div class="row">
                 <div *ngIf="!loading">  
-                    <p align="left"> {{user.name}} </p>
-                    <p align="left"> {{user.surnames}} </p>
-                    <p align="left"> {{user.email}} </p>
+                    <p> {{user.name}} {{user.surnames}} </p>
+                    <p> {{user.email}} </p>
                 </div>
                 <div *ngIf="!loading">
-                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i>Editar Usuario</button>
+                    <button class="btn btn-outline-primary editButton" routerLink="/edit/{{user.id_user}}"><i class="bi bi-pencil"></i> Editar Usuario</button>
                 </div>
                 <!-- <ngx-skeleton-loader count="3" appearance="" *ngIf="loading"></ngx-skeleton-loader> -->
             </div>

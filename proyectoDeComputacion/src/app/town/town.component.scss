@@ -6,13 +6,6 @@
   padding: 5vh 0;
 }
 
-agm-map {
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-
-}
-
 .numbers {
   .col-md-4{
     padding: 0;
@@ -87,18 +80,61 @@ agm-map {
     padding: 1em;
     height: 100%;
 
-    .btn {
-      height: auto;
-      width: auto;
-      border-radius: 100%;
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      min-height: 100%;
+      min-width: 100%;
+
+      .bi-heart {
+        font-size: 2rem;
+      }
+
+      .bi-heart-fill {
+        font-size: 2rem;
+        color: red;
+      }
+
+      .bi-heart-fill:hover {
+        color: #aa0d00;
+      }
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    .like:hover {
+      box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
     }
   }
 
 
 .stats {
-  .data, .info {
+  .col-md-4{
+    padding: 0;
+  } 
+  .a {
+    height: 60%;
+  }
+
+  .z {
+    padding-top: 1%;
+    height: 38%;
+  }
+
+  .data {
     height: 100%;
     margin: 0.5em 0.5em 0 0.5em;
+    border-radius: 1%;
+    background-color: white;
+    padding: 1em;
+  }
+
+  .info{
+    height: 100%;
+    margin: 0.75em 0.5em 0 0.5em;
     border-radius: 1%;
     background-color: white;
     padding: 1em;
@@ -107,23 +143,23 @@ agm-map {
 
 .map {
   .row { 
-    min-height: 100%;
+    height: 45vh;
   }
   .map2 {
     height: 100%;
     margin: 0.5em 0 0.5em 0.5em;
     border-radius: 1%;
-    background-color: white;
-    min-height: 100%;
   }
-}
 
-:host >>> ngx-skeleton-loader .loader {
-  height: 100px;
+  agm-map {
+    width: 100%;
+    height: 45vh;
+  }
 }
 
 .restaurants, .town {
   margin-top: 5%;
+  height: 100%;
 }
 
 h1 {
