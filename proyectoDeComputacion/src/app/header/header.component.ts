@@ -15,9 +15,8 @@ import { HostListener } from "@angular/core";
 export class HeaderComponent implements OnInit {
   fieldSearch: string = '';
   townsList: [{id_town: string, name: string}] | [] = []
-  // @ViewChild(componente hijo) child: componente hijo
-
   text!: string;
+  
   active: boolean = false;
   screenHeight!: number;
   screenWidth!: number;
@@ -64,7 +63,6 @@ export class HeaderComponent implements OnInit {
     if (this.authService.loggedIn()) {
       this.text = "Cerrar Sesión";
       this.authService.userLogout();
-      // this.router.navigate(['/']);
     } else {
       this.text = "Iniciar Sesión";
       this.router.navigate(['/login']);

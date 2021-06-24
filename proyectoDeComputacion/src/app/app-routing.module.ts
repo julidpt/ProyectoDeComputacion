@@ -9,8 +9,8 @@ import { UserComponent } from './user/user.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { AuthGuard } from './services/auth.guard';
 import { EditComponent } from './edit/edit.component';
-import { forgotPasswordComponent } from './login/forgot-psswd/forgot-psswd.component'
-import { ChangePasswordComponent } from './login/change-password/change-password.component';
+import { forgotPasswordComponent } from './forgot-psswd/forgot-psswd.component'
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 const routes: Routes = [

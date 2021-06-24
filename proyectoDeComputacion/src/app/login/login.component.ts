@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
       Validators.required
     ])
   });
+  
   unauth: boolean = false;
   badreq: boolean = false;
 

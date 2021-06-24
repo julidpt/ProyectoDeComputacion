@@ -15,16 +15,17 @@ import { TownsService } from '../services/towns.service';
   providers: [NgbCarouselConfig]
 })
 export class HomeComponent implements OnInit {
-  config: any;
-  fullpage_api: any;
+  config: any
+  fullpage_api: any
   topTowns: any
   likedTowns: any
-  fieldSearch: string = '';
+  fieldSearch: string = ''
+  townsList: [{id_town: string, name: string}] | [] = [] 
+
   loadingTopTowns: boolean = true
   loadingLikedTowns: boolean = true
-  showNavigationArrows = false;
-  showNavigationIndicators = false;
-  townsList: [{id_town: string, name: string}] | [] = [] 
+  showNavigationArrows = false
+  showNavigationIndicators = false
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, config: NgbCarouselConfig, private townService: TownsService) {
     config.showNavigationArrows = true;

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,25 +14,27 @@ export class ChangePasswordComponent implements OnInit {
       Validators.required,
       Validators.minLength(6)])
   });
+
   email: any;
   token: any;
 
   badreq: boolean = false;
   goodreq: boolean = false;
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private authService: AuthService) {
+
+  constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService) {
     this.email = this.route.snapshot.queryParamMap.get('email')
     this.token = this.route.snapshot.queryParamMap.get('token')
-   }
-   ngOnInit(): void {
-    
-  }
-   get password(){
-    return this.form.get('password')
-  }
-   get confirmPassword(){
-    return this.form.get('confirmPassword')
   }
 
+  ngOnInit(): void { }
+   
+  get password(){
+    return this.form.get('password')
+  }
+   
+  get confirmPassword(){
+    return this.form.get('confirmPassword')
+  }
 
   submit() {
     this.authService.changePassword(this.form.value, this.email, this.token)

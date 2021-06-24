@@ -17,9 +17,6 @@ export class EditComponent implements OnInit {
       Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(6)]),
-    confirmPassword: new FormControl('', [
-      Validators.required,
       Validators.minLength(6)])
   });
   goodreq: boolean = false;
@@ -45,26 +42,6 @@ export class EditComponent implements OnInit {
     return this.form.get('password')
   }
 
-  get confirmPassword(){
-    return this.form.get('confirmPassword')
-  }
-
-  confirmedValidator(controlName: string, matchingControlName: string){
-    return (formGroup: FormGroup) => {
-        const control = formGroup.controls[controlName];
-        const matchingControl = formGroup.controls[matchingControlName];
-
-        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
-            return;
-        }
-        if (control.value !== matchingControl.value) {
-            matchingControl.setErrors({ confirmedValidator: true });
-        } else {
-            matchingControl.setErrors(null);
-        }
-    }
-  }
-
   submit() {
     this.userService.userEdit(this.form.value, this.route.snapshot.params.id)
       .subscribe(
@@ -72,12 +49,11 @@ export class EditComponent implements OnInit {
           this.badreq = false;
           this.goodreq = true;
           setTimeout(() => {
-            this.router.navigate(['/admin']);
+            this.router.navigate(['/']);
           }, 1000)
         },
         error => {
           this.badreq = true;
         })
   }
-
 }

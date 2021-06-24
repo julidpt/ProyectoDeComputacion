@@ -20,15 +20,14 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.minLength(6)])
   });
+  
   goodreq: boolean = false;
   badreq: boolean = false;
   unauth: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
   get name(){
     return this.form.get('name')
@@ -44,10 +43,6 @@ export class RegisterComponent implements OnInit {
 
   get password(){
     return this.form.get('password')
-  }
-
-  get confirmPassword(){
-    return this.form.get('confirmPassword')
   }
 
   submit() {

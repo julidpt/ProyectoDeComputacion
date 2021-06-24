@@ -20,10 +20,11 @@ export class UserComponent implements OnInit {
   totalTownsRaw: any
   totalTownsUserRaw: any
   totalTownsUser: any
+  
   liked: boolean = false
   loading: boolean = true
-  loadingLikedTowns = true
-  loadingSearchedTowns = true
+  loadingLikedTowns: boolean = true
+  loadingSearchedTowns: boolean = true
 
   constructor(private userService: UsersService, private townService: TownsService, private router: Router) {}
 

@@ -15,11 +15,9 @@ export class ConfirmationComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) { 
     this.email = this.route.snapshot.queryParamMap.get('email')
     this.token = this.route.snapshot.queryParamMap.get('token')
-
-}
+  }
 
   ngOnInit(): void {
-    console.log(this.token)
     this.http.post(`${baseUrl}user/validate`, { 
       email: this.email,
       token: this.token
