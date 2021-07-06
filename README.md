@@ -1,65 +1,105 @@
-# ProyectoDeComputacion-Frontend
-Desarrollo de código de la parte front del Proyecto de Computación I, II y III
+# Infopueblo-Frontend
 
-## Herramientas utlizadas
+Desarrollo de código de la parte backend del Proyecto de Infopueblo.
 
-- Angular
-- Bootstrap
+Para ello, se ha hecho uso de [Angular](https://angular.io/), un framework que facilitar la creación y programación de aplicaciones web de una sola página.
 
-## Instalación de paquetes
+## Configurar entorno
 
-npm
+Este proyecto se ha generado con [Angular CLI](https://github.com/angular/angular-cli) versión 11.1.4.
 
-```sh
-npm install npm
-```
-
-Angular
+Instalación de Angular:
 
 ```sh
 npm install -g @angular/cli
 ```
 
-Bootstrap v5
+Creación del proyecto:
+
+```sh
+ng new nombre-del-proyecto
+```
+
+Una vez creado el proyecto, Previamente a ejecutar cualquiera de los siguientes comandos, habrá que navegar a la carpeta en la que se encuentra el proyecto con `cd nombre-del-proyecto`.
+
+Ejecutar el proyecto:
+
+```sh
+ng serve -o
+```
+
+Crear componente:
+
+```sh
+ng generate component nombre-del-componente
+```
+
+Compilar el proyecto (usar la etiqueta `--prod` para una compilación en producción):
+
+```sh
+ng build
+```
+
+Para más ayuda, visitar la página [Angular CLI Overview and Command Reference](https://angular.io/cli).
+
+## Herramientas utlizadas
+
+- **Bootstrap**: Librería de estilos web.
+- **Bootstrap icons**: Paquete de iconos de la librería Bootstrap.
+- **Carousel for Angular**: Paquete que incluye un carousel optimizado para Angular.
+- **Angular Material**: Paquete de Material Design optimizado para Angular.
+- **Angular Highcharts**: Paquete de gráficas HighCharts optimizado para Angular.
+- **Angular Full Page**: Paquete para adaptar a la pantalla completa optimizado para Angular.
+- **Google Maps**: Paquete para incluir un mapa de Google Maps.
+- **Skeleton**: Paquete para usar un método de carga de resultados moderno.
+
+
+## Comandos de instalación
+
+Bootstrap v5:
 
 ```sh
 npm install bootstrap@next
 ```
 
-Bootstrap icons
+Bootstrap icons:
 
 ```sh
 npm install bootstrap-icons
 ```
 
-Carousel for Angular
+Carousel for Angular:
 
 ```sh
 npm i angular-responsive-carousel
 ```
 
-Angular Material
+Angular Material:
+
 ```sh
 ng add @angular/material
 ```
 
-Angular Highcharts
+Angular Highcharts:
+
 ```sh
 npm install highcharts-angular --save
 ```
 
-# Comandos de Angular
+Angular Full Page:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+```sh
+npm install @fullpage/angular-fullpage
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Google Maps:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm install --save @types/googlemaps
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Skeleton:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+npm install ngx-skeleton-loader
+```
